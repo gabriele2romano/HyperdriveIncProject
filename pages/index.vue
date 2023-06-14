@@ -1,6 +1,7 @@
 <template>
     <div>
-        <b-alert show variant="primary"><a href="#" class="alert-link">Primary Alert</a></b-alert>
+        <!--b-alert show variant="primary"><a href="#" class="alert-link">Primary Alert</a></b-alert-->
+        <b-alert :model-value="true">Default Alert</b-alert>
         <!--b-alert
       :show="dismissCountDown"
       dismissible
