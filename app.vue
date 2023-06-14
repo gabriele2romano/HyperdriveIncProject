@@ -9,5 +9,10 @@
  
   </header>
   
+  <div>
+    <!--NuxtWelcome /-->
+
  
+    <NuxtPage/>
+  </div>
 </template>
