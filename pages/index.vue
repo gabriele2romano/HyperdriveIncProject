@@ -1,5 +1,6 @@
 <template>
     <div>
+      <v-btn>CIAO</v-btn>
     <b-alert :model-value="true">Default Alert</b-alert>
     <b-alert
     v-model="dismissCountDown"
