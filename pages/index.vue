@@ -1,4 +1,9 @@
 <template>
+  <header>
+    <div>
+      <h1>TITLE</h1>
+    </div>
+  </header>
     <div>
       <v-btn>CIAO</v-btn>
     <b-alert :model-value="true">Default Alert</b-alert>
