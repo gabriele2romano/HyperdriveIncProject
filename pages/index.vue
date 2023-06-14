@@ -44,7 +44,8 @@
       </b-accordion>
 </div>
 </template>
-<script>
+<script setup lang="ts">
+const show = ref(false)
 /* export default {
      data() {
       return {
@@ -62,4 +63,6 @@
       }
     }
   } */
+
+
 </script>
