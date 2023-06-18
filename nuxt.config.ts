@@ -1,6 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@bootstrap-vue-next/nuxt'],
+  modules: ['@bootstrap-vue-next/nuxt','@nuxtjs/supabase'],
   bootstrapVueNext: {
     composables: true, // Will include all composables
     // composables: {useBreadcrumb: true, useColorMode: true, all: false}, // Will include only useBreadcrumb & useColorMode
@@ -15,6 +15,11 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  /* supabase: {
+    // Options
+  }, */
+  devtools: { enabled: true },
+  ssr: true
 });
 
 
