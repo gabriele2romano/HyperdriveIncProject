@@ -1,10 +1,12 @@
 <template>
   <header>
-    <div>
+    <NuxtLayout>
+    <div id="title">
       <h1>TITLE</h1>
     </div>
+    </NuxtLayout>
   </header>
-    <div>
+  <div>
       <v-btn>CIAO</v-btn>
     <b-alert :model-value="true">Default Alert</b-alert>
     <b-alert
@@ -36,12 +38,18 @@
           Accordion 3
         </b-accordion-item>
       </b-accordion>
-</div>
+  </div>
 </template>
+
 <script setup lang="ts">
-const showDismissibleAlert = ref(false)
+  const showDismissibleAlert = ref(false)
 
-const dismissCountDown = ref(10000)
-const countdown = ref(0)
-
+  const dismissCountDown = ref(10000)
+  const countdown = ref(0)
 </script>
+
+<style>
+  #title {
+    background-color: var(--color2);
+  }
+</style>
