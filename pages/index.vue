@@ -22,6 +22,7 @@ const { data:  people } = await useAsyncData('people', async () => {
 
 
 const { data: people } = await useFetch('/api')
+  console.log(people.value); // Check the structure of the data array in the browser console
 </script>
 
 <template>
