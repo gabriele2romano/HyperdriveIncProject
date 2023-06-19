@@ -836,7 +836,7 @@
   dependencies:
     cross-fetch "^3.1.5"
 
-"@supabase/realtime-js@^2.7.2":
+"@supabase/realtime-js@^2.7.2", "@supabase/realtime-js@^2.7.3":
   version "2.7.3"
   resolved "https://registry.npmjs.org/@supabase/realtime-js/-/realtime-js-2.7.3.tgz"
   integrity sha512-c7TzL81sx2kqyxsxcDduJcHL9KJdCOoKimGP6lQSqiZKX42ATlBZpWbyy9KFGFBjAP4nyopMf5JhPi2ZH9jyNw==
@@ -850,6 +850,18 @@
   resolved "https://registry.npmjs.org/@supabase/storage-js/-/storage-js-2.5.1.tgz"
   integrity sha512-nkR0fQA9ScAtIKA3vNoPEqbZv1k5B5HVRYEvRWdlP6mUpFphM9TwPL2jZ/ztNGMTG5xT6SrHr+H7Ykz8qzbhjw==
   dependencies:
+    cross-fetch "^3.1.5"
+
+"@supabase/supabase-js@^2.25.0":
+  version "2.25.0"
+  resolved "https://registry.npmjs.org/@supabase/supabase-js/-/supabase-js-2.25.0.tgz"
+  integrity sha512-AEh0suSrjfpQCOhY7hLsgX6gr8XEUWshVkTq9IODiHTnAR6NHiEQ865LTeWu8gqCDf2XH1n20JcSmovIe3Xixw==
+  dependencies:
+    "@supabase/functions-js" "^2.1.0"
+    "@supabase/gotrue-js" "^2.26.0"
+    "@supabase/postgrest-js" "^1.7.0"
+    "@supabase/realtime-js" "^2.7.3"
+    "@supabase/storage-js" "^2.5.1"
     cross-fetch "^3.1.5"
 
 "@supabase/supabase-js@2.24.0":
