@@ -12,13 +12,13 @@
               <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
+              <NuxtLink to="/people/." class="nav-link">About</NuxtLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/projects">Projects</a>
+              <NuxtLink to="/projects/." class="nav-link">Projects</NuxtLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/people">Contact</a>
+              <NuxtLink to="/contact/." class="nav-link">Contact</NuxtLink>
             </li>
           </ul>
         </div>

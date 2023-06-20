@@ -20,7 +20,7 @@
     "vuetify": "^3.3.4"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.25.0",
-    "@mdi/font": "^7.2.96"
+    "@mdi/font": "^7.2.96",
+    "@supabase/supabase-js": "^2.25.0"
   }
 }
