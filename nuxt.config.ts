@@ -1,6 +1,10 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@bootstrap-vue-next/nuxt','@nuxtjs/supabase','@nuxt/image',],
+  modules: [
+    '@bootstrap-vue-next/nuxt', //bootstrap vue for nuxt3
+    '@nuxtjs/supabase', //supabase for nuxt3
+    '@nuxt/image', //nux.img for nuxt3
+  ],
   bootstrapVueNext: {
     composables: true, // Will include all composables
     // composables: {useBreadcrumb: true, useColorMode: true, all: false}, // Will include only useBreadcrumb & useColorMode
@@ -16,15 +20,15 @@ export default defineNuxtConfig({
     },
   },
   alias: {
-    assets: "/<rootDir>/assets", //for enablig the fetch of assets with @/img or @/css
+    assets: "/<rootDir>/assets", //for enablig the fetch of assets with @/css
   },
-  /* supabase: {
+  supabase: {
     // Options
-  }, */
-  image: {
-    dir: 'assets/img' //enabling fetch for nuxt-img in assets/img
   },
-  devtools: { enabled: true },
+  image: {
+    //dir: 'assets/img' //enabling fetch for nuxt-img in assets/img -------- VERCEL DO NOT SUPPORT IT
+  },
+  devtools: { enabled: false },
   ssr: true
 });
 

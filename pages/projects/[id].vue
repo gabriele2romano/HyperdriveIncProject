@@ -6,7 +6,7 @@ solution = 'Intelligent Solar Energy Management Platform'
 
 <template>
     <NuxtLayout>
-        <v-parallax height="auto" src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" >
+        <v-parallax height="auto" src="/img/bg-projects.jpg" >
             <v-container class="d-flex fill-height text-light">
                 <!--Problem row-->
                 <v-row>
@@ -19,16 +19,8 @@ solution = 'Intelligent Solar Energy Management Platform'
                 </v-col>
                 
                 <v-col cols="12" md="4" sx="12">
-                    <v-sheet class="bg-darker-blue"><!-- 
-                        <img src="@/assets/img/bg-projects.jpg"  height="100%" cover/> -->
-                        <nuxt-img
-                            src="/bg-projects.jpg"
-                            alt=""
-                            class="float-left margin-fleche"
-                            quality="30"
-                        />
-                        <!-- <nuxt-img  preset="cover" src="assets/bg-project.jpg" ></nuxt-img>
-                        <NuxtImage src="assets/img/bg-project.jpg" ></NuxtImage> -->
+                    <v-sheet class="bg-darker-blue justify-center align-center flex-wrap text-center mx-auto" height="250" max-width="800" width="100%">
+                        <v-img src="/img/bg-projects.jpg"  height="100%" cover></v-img>
                     </v-sheet>
                 </v-col>
             </v-row>
@@ -44,8 +36,7 @@ solution = 'Intelligent Solar Energy Management Platform'
                 
                 <v-col cols="12" md="4" sx="12">
                     <v-sheet class="bg-darker-blue">
-                        <!-- <v-img src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png"  height="100%" cover></v-img> -->
-                        <!-- <nuxt-img  preset="cover" src="assets/bg-project.jpg"  ></nuxt-img> -->
+                        <v-img src="/img/bg-projects.jpg"  height="100%" cover></v-img>
                     </v-sheet>
                 </v-col>
                 
