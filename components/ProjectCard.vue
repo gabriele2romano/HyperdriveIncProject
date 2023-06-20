@@ -14,14 +14,14 @@
 
 <template>
     <div>
-        <NuxtLink to="/">
+        <NuxtLink to="/" style="text-decoration: none;">
         <v-card
             class="d-flex flex-column justify-center align-center"
-            width="400px"
-            color="#394867"
+            max-width="400px"
+            color="dark-blue"
         >
             <v-card-title
-                style="color:#f1f6f9; font-family: 'Raleway', sans-serif;"
+                style="color: light; font-family: 'Raleway', sans-serif;"
             >
                 {{ title }}
             </v-card-title>

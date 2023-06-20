@@ -315,6 +315,11 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
+"@mdi/font@^7.2.96":
+  version "7.2.96"
+  resolved "https://registry.npmjs.org/@mdi/font/-/font-7.2.96.tgz"
+  integrity sha512-e//lmkmpFUMZKhmCY9zdjRe4zNXfbOIJnn6xveHbaV2kSw5aJ5dLXUxcRt1Gxfi7ZYpFLUWlkG2MGSFAiqAu7w==
+
 "@netlify/functions@^1.6.0":
   version "1.6.0"
   resolved "https://registry.npmjs.org/@netlify/functions/-/functions-1.6.0.tgz"
