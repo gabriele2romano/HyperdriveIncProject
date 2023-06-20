@@ -6,6 +6,7 @@ const { data: people } = await useFetch('/api')
 
 <template>
   <header>
+    <NuxtLayout>
     <div>
       <Navbar />
     </div>
