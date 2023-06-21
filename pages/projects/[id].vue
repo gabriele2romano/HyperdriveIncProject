@@ -1,13 +1,13 @@
 <script setup>
 //const { data: problem } = await useFetch('/api')
-const problem = 'Inefficiencies in Solar Energy Management',
-solution = 'Intelligent Solar Energy Management Platform'
+const problem = 'Inefficiencies in Solar Energy Management'
+const solution = 'Intelligent Solar Energy Management Platform'
 </script>
 
 <template>
     <NuxtLayout>
         <v-parallax height="auto" src="/img/bg-projects.jpg" >
-            <v-container class="text-light">
+            <v-container class="text-light" height="auto">
                 <!--Problem row-->
                 <v-row>
                     <v-col cols="12" lg="8" md="8" sx="12">                    
@@ -46,5 +46,12 @@ solution = 'Intelligent Solar Energy Management Platform'
                 
             </v-container>
         </v-parallax>
+        <v-container>
+            <v-row>
+                <v-col cols="12" lg="8" md="8" sx="12">                    
+                    <ProjectCard />
+                </v-col>
+            </v-row>
+        </v-container>
     </NuxtLayout>
 </template>

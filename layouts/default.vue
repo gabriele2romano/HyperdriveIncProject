@@ -1,15 +1,12 @@
 <template>
     <div>
-        <AppHeader />
-        <!-- <v-container fluid>
-            <v-row>
-                <v-col cols="12" md="12">
-                    <slot/>
-                </v-col>
-            </v-row>
-        </v-container> -->
-        <!--AppFooter /-->
+        
+    <v-app>
+        <Desktop-componentAppHeader v-if="!$isMobile"/>
+        <Mobile-componentAppHeader v-else/>
         <slot/>
+        <AppFooter/>
+        </v-app>
     </div>
 </template>
 
@@ -24,3 +21,5 @@
     --main-font: 'Raleway', sans-serif;
 }
 </style>
+<script>
+</script>

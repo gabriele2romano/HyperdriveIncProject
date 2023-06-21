@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
-    "@supabase/supabase-js": "^2.25.0"
+    "@supabase/supabase-js": "^2.25.0",
+    "mobile-detect": "^1.4.5"
   }
 }

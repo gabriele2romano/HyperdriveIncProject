@@ -1,7 +1,5 @@
 <template>
-  <header>
     <NuxtPage />
-  </header>
 </template>
 <script>
 
