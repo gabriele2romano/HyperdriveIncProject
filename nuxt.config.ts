@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     '@bootstrap-vue-next/nuxt', //bootstrap vue for nuxt3
     '@nuxtjs/supabase', //supabase for nuxt3
     '@nuxt/image', //nux.img for nuxt3
+    '@nuxtjs/device', //detect which device is used
   ],
   bootstrapVueNext: {
     composables: true, // Will include all composables

@@ -2,8 +2,8 @@
     <div>
         
     <v-app>
-        <Desktop-componentAppHeader v-if="!$isMobile"/>
-        <Mobile-componentAppHeader v-else/>
+        <Mobile-componentAppHeader v-if="$device.isMobile"/>
+        <Desktop-componentAppHeader v-else/>
         <slot/>
         <AppFooter/>
         </v-app>
@@ -21,5 +21,6 @@
     --main-font: 'Raleway', sans-serif;
 }
 </style>
-<script>
+<script setup>
+const device = useDevice();
 </script>
