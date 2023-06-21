@@ -8,7 +8,6 @@ role = "General Administrator"
 </script>
 
 <template>
-    <NuxtLayout>
         <div>
             <!--Container for the page content-->
             <v-container 
@@ -110,7 +109,6 @@ max-width="1140"
 
 </v-container>
 </div>
-</NuxtLayout>
 </template>
 
 <!--

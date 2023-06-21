@@ -5,8 +5,7 @@ const solution = 'Intelligent Solar Energy Management Platform'
 </script>
 
 <template>
-    <NuxtLayout>
-        <v-parallax height="auto" src="/img/bg-projects.jpg" >
+        <v-parallax height="auto" src="/img/bg-projects.jpg" align-self="center" >
             <v-container class="text-light" height="auto">
                 <!--Problem row-->
                 <v-row>
@@ -53,5 +52,4 @@ const solution = 'Intelligent Solar Energy Management Platform'
                 </v-col>
             </v-row>
         </v-container>
-    </NuxtLayout>
 </template>

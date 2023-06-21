@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <NuxtLink to="/" class="nav-link">Home</NuxtLink>
             </li>
             <li class="nav-item">
               <NuxtLink to="/people/." class="nav-link">About</NuxtLink>

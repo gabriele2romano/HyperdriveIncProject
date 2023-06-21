@@ -5,7 +5,6 @@ const { data: people } = await useFetch('/api')
 </script>
 
 <template>
-  <NuxtLayout>
     <div> 
       
       <b-accordion class="col-3">
@@ -29,5 +28,4 @@ const { data: people } = await useFetch('/api')
         </ul>
       </div>
     </div>
-  </NuxtLayout>
 </template>

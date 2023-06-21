@@ -1,11 +1,10 @@
 <template>
     <div>
-        
-    <v-app>
-        <Mobile-componentAppHeader v-if="$device.isMobile"/>
-        <Desktop-componentAppHeader v-else/>
-        <slot/>
-        <AppFooter/>
+        <v-app>
+            <AppHeaderMobile v-if="$device.isMobile"/>
+            <AppHeaderDesktop v-else/>
+            <slot/>
+            <AppFooter/>
         </v-app>
     </div>
 </template>
@@ -22,5 +21,5 @@
 }
 </style>
 <script setup>
-const device = useDevice();
+const {device} = useDevice();
 </script>
