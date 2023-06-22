@@ -20,6 +20,11 @@
     
     --main-font: 'Raleway', sans-serif;
 }
+
+/* class useful to some components */
+.bg-darker-blue-div{
+    background-color: rgba(33, 42, 62, 0.75);
+}
 </style>
 <script setup>
 

@@ -3,7 +3,6 @@
 
 //const { data: people } = await useFetch('/api')
 </script>
-
 <template>
     <div> 
       

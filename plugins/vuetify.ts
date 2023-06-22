@@ -14,7 +14,8 @@ const customLightTheme = {
         light: '#f1f6f9',
         'dark-blue': '#394867',
         'darker-blue': '#212a3e',
-        grey: '#9ba4b5',
+        /*'darker-blue-transparent': '#212A3EBF',*/
+        'mega-grey': '#9ba4b5',
     }
 }
 
