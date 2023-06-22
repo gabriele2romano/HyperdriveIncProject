@@ -11,8 +11,7 @@
   
   <div>
     <!--NuxtWelcome /-->
-
- 
+    <!-- <ProjectCard title="Coso" description="Sample description"></ProjectCard> -->
     <NuxtPage/>
   </div>
 </template>

@@ -9,7 +9,7 @@
 
 <template>
     <NuxtLayout>
-    <div>
+    <div class="bg-mega-grey">
         <!--Container for the page content-->
         <v-container 
             fluid 
@@ -18,9 +18,11 @@
         >
             <!--First row: team navigation buttons under the header-->
             <v-row>
+                <v-spacer></v-spacer>
+
                 <v-col>
                     <v-btn
-                        class="text-light text-body-1 bg-dark-blue"
+                        class="text-light text-body-1 bg-dark-blue font-weight-bold"
                         variant="tonal" 
                         rounded=6
                     >
@@ -30,28 +32,31 @@
 
                 <v-col>
                     <v-btn
-                        class="text-darker-blue text-body-1"
+                        class="text-light text-body-1 font-weight-bold"
                         variant="text"
                         :ripple="false"
                     >
-                        <v-icon icon="mdi-arrow-left"></v-icon>
+                        <v-icon icon="mdi-arrow-left" color="darker-blue"></v-icon>
                         Previous member:<br>{{ prevMember }}
                     </v-btn>
                 </v-col>
 
                 <v-col>
                     <v-btn
-                        class="text-darker-blue text-body-1"
+                        class="text-light text-body-1 font-weight-bold"
                         variant="text"
                         :ripple="false"
                     >
                         Next member:<br>{{ nextMember }}
-                        <v-icon icon="mdi-arrow-right"></v-icon>
+                        <v-icon icon="mdi-arrow-right" color="darker-blue"></v-icon>
                     </v-btn>
                 </v-col>
+
+                <v-spacer></v-spacer>
             </v-row>
 
             <!--Second row: container for the person card-->
+            <v-row>
             <v-sheet
                 class="text-body-2 mx-auto bg-darker-blue"
                 max-width="1140"
@@ -59,6 +64,7 @@
                 <v-container fluid>
                 <v-row>
                     <v-col cols="12" md="3">
+                    <!--Person's picture-->
                     <v-img 
                         src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" height="100%" cover></v-img>
                     </v-col>
@@ -95,19 +101,25 @@
                 </v-row>
                 </v-container>
             </v-sheet>
+            </v-row>
 
             <!--Third row: divider for the supervised projects section-->
             <v-row justify="center">
             <v-col cols="12">
-                <div class="text-h4 text-center text-darker-blue">
+                <v-divider :thickness="7" color="light" class="border-opacity-100"></v-divider>
+
+                <div class="text-h4 text-center text-light font-weight-bold">
                     Discover the projects supervised by {{ name }}
                 </div>
-                <v-divider :thickness="3" color="darker-blue" class="border-opacity-100"></v-divider>
             </v-col>
             </v-row>
 
             <!--Fourth row: list of project cards-->
-
+            <v-row justify="center">
+            <v-col v-for="n in 3" cols="2">
+                <ProjectCard title="Coso" description="Sample description"></ProjectCard>
+            </v-col>
+            </v-row>
         </v-container>
     </div>
     </NuxtLayout>
