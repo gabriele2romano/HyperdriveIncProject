@@ -1,10 +1,13 @@
 <template>
-    <div>
-        <v-app>
+    <div id="app">
+        <v-app id="inspire">
             <!-- <AppHeaderMobile v-if="$device.isMobile"/>
             <AppHeaderDesktop v-else/> -->
             <AppHeader/>
-            <slot/>
+            
+    <div style="margin-top:50px;">
+        <slot/>
+        </div>
             <AppFooter/>
         </v-app>
     </div>
@@ -20,7 +23,6 @@
     
     --main-font: 'Raleway', sans-serif;
 }
-
 /* class useful to some components */
 .bg-darker-blue-div{
     background-color: rgba(33, 42, 62, 0.75);

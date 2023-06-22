@@ -1,27 +1,33 @@
 <script setup>
-    const props = defineProps(['country', 'foundation-year', 'funding-date']);
+    defineProps({
+        'country': String,
+        'foundationYear': String,
+        'fundingDate': String,
+    })
 </script>
 
 <template>
-    <v-container>
-        <v-row>
+    <v-container class="my-10">
+        <v-row no-gutters>
+            
             <v-col class="d-flex flex-column justify-center align-center">
-                <v-icon icon="mdi-flag-variant" size="x-large"></v-icon>
-                <div class="text-h4">Country</div>
-                <div class="text-body-3 mb-2">{{country}}</div>
+                <v-icon icon="mdi-flag-variant" size="80"></v-icon>
+                <div class="text-h5 font-weight-bold mt-2" style="white-space: nowrap;">Country</div>
+                <div class="text-h6 mt-1">{{country}}</div>
             </v-col>
 
             <v-col class="d-flex flex-column justify-center align-center">
-                <v-icon icon="mdi-flag-variant" size="x-large"></v-icon>
-                <div class="text-h4">Founded In</div>
-                <div class="text-body-3 mb-2">{{foundation-year}}</div>
+                <v-icon icon="mdi-calendar-month" size="80"></v-icon>
+                <div class="text-h5 font-weight-bold mt-2" style="white-space: nowrap;">Founded in</div>
+                <div class="text-h6 mt-1">{{foundationYear}}</div>
             </v-col>
 
             <v-col class="d-flex flex-column justify-center align-center">
-                <v-icon icon="mdi-flag-variant" size="x-large"></v-icon>
-                <div class="text-h4">Funding started in</div>
-                <div class="text-body-3 mb-2">{{funding-date}}</div>
+                <v-icon icon="mdi-hand-coin" size="80"></v-icon>
+                <div class="text-h5 font-weight-bold mt-2" style="white-space: nowrap;">Funding started in</div>
+                <div class="text-h6 mt-1">{{fundingDate}}</div>
             </v-col>
+           
         </v-row>
     </v-container>
 </template>
