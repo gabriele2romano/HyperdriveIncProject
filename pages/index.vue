@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 
-const { data: people } = await useFetch('/api')
+//const { data: people } = await useFetch('/api')
 </script>
 
 <template>
@@ -19,13 +19,13 @@ const { data: people } = await useFetch('/api')
         </b-accordion-item>
       </b-accordion>
       
-      <div>
+      <!-- <div>
         List
         <ul>
           <li v-for="person in people" :key="person.id">
             {{ person.name }} {{ person.surname }}
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
 </template>

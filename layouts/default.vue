@@ -1,8 +1,9 @@
 <template>
     <div>
         <v-app>
-            <AppHeaderMobile v-if="$device.isMobile"/>
-            <AppHeaderDesktop v-else/>
+            <!-- <AppHeaderMobile v-if="$device.isMobile"/>
+            <AppHeaderDesktop v-else/> -->
+            <AppHeader/>
             <slot/>
             <AppFooter/>
         </v-app>
@@ -21,5 +22,6 @@
 }
 </style>
 <script setup>
+
 const {device} = useDevice();
 </script>
