@@ -6,7 +6,7 @@
         <v-row align-self="center" justify="space-between">
             <v-col cols="12" md="4" xs="12" align-self="center" >
                 <div>
-                    <v-img src="/favicon.ico" max-width="150" class="mx-auto"></v-img>
+                    <v-img src="/img/logo.png" max-width="100" class="mx-auto"></v-img>
                 </div>
             </v-col>
             

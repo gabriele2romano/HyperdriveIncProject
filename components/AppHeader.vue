@@ -2,7 +2,7 @@
   <div>
     <b-navbar smart-scroll toggleable="lg" type="light" class="bg-light pa-1" fixed="top">
       <b-navbar-brand href="#">
-        <v-img src="/favicon.ico" max-width="30" class="mx-auto"/>
+        <v-img src="/favicon.ico" max-width="50" class="mx-auto"/>
       </b-navbar-brand>
       
       <b-navbar-toggle target="nav-collapse"/>
