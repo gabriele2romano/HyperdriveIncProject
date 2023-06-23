@@ -27,6 +27,11 @@
     .bg-darker-blue-div{
         background-color: rgba(33, 42, 62, 0.75);
     }
+
+    .bg-darken
+    {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 </style>
 <script setup>
 

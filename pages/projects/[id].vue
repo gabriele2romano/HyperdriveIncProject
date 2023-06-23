@@ -1,10 +1,16 @@
 <script setup>
-
 const {device} = useDevice();
-//const { data: problem } = await useFetch('/api')
-const problem = 'Inefficiencies in Solar Energy Management'
-const solution = 'Intelligent Solar Energy Management Platform'
-const project_description =  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."                        
+const { data: project } = await useFetch('/api/project')
+/*const project_title = project.title
+const problem = project.problem
+const solution = project.solution
+const project_description =  project.description
+const startup_name = project.startup.name */
+
+const project_title = 'Solaris'
+const problem = 'Solar energy is not being used efficiently in Malaysia.'
+const solution = 'Solaris aims to solve this problem by providing a platform for solar energy management.'
+const project_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
 const startup_name = 'Solaris'
 const startup_logo = '/img/logo.png'
 const startup_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
@@ -27,13 +33,18 @@ const supervisor = {
 
 <template>
     <div>
-        <v-parallax src="/img/bg-projects.jpg">
-            <div class="d-flex fill-height justify-center align-center">
-                <v-container class="text-light" max-width="80&" >
+        <v-parallax src="/img/bg-projects.jpg" >
+            <div class="d-flex fill-height justify-center align-center bg-darken">
+                <v-container class="text-light" max-width="80%" >
+                    <v-row>
+                        <v-col class="d-flex flex-column" cols="12">
+                            <div class="text-h2 pt-3 font-weight-bold">{{ project_title }}</div>
+                        </v-col>
+                    </v-row>
                     <!--Problem row-->
                     <v-row>
                         <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" sx="12">                    
-                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-thin justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                 <div>
                                     <div class="text-h4">Problem</div>
                                     <div class="text-body-3 mb-2">{{ problem }}</div>
@@ -51,7 +62,7 @@ const supervisor = {
                     <!--Solution row-->
                     <v-row>
                         <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" sx="12" order-md="last">                    
-                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-thin justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                 <div>
                                     <div class="text-h4">Solution</div>
                                     <div class="text-body-3 mb-2">{{ solution }}</div>
@@ -72,9 +83,9 @@ const supervisor = {
         <!--Project description and other images-->
         <v-container fluid class="bg-dark-blue">
             <v-row justify="center">
-                <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="8" md="8" sx="12">   
-                    <div class="text-h4 pa-2">Project Description</div>
-                    <p class="text-left"> {{ project_description }}</p>          
+                <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">   
+                    <div class="text-h4">Project Description</div>
+                    <p class="text-body-2"> {{ project_description }}</p>          
                     <v-carousel hide-delimiters>
                         <v-carousel-item
                         src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
@@ -105,8 +116,8 @@ const supervisor = {
                     </div>
                 </v-col>
                 <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="4" md="4" sx="12"> 
-                    <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5" height="250" width="100%">
-                        <div class="text-h4">{{ startup_name }}</div>
+                    <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5 font-weight-medium" height="250" width="100%">
+                        <div class="text-h4 font-weight-medium">{{ startup_name }}</div>
                         <div class="text-body-3 mb-2">{{ startup_description }}</div>
                     </div>
                 </v-col>
@@ -116,7 +127,7 @@ const supervisor = {
                     <v-divider :thickness="4" class="border-opacity-75" color="light" style="border-radius: 10%;"></v-divider>
                 </v-col>
             </v-row>
-            <div class="text-h3 text-center">Involved Areas</div>
+            <div class="text-h3 text-center font-weight-bold">Involved Areas</div>
             <v-row class="d-flex justify-center">
                 <v-col cols="12" md="3" v-for="area in project_areas" :key="area.id">
                     <ProjectIconCard :card_icon="area.icon" :card_title="area.name"/>
@@ -126,16 +137,16 @@ const supervisor = {
                 <v-col cols="8">
                     <v-sheet class="d-flex justify-center align-center bg-darker-blue text-light font-weight-thin text-center" width="100%">
                         <v-row class="ma-5">
-                            <v-col cols="12" md="8">
+                            <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                 <div>
-                                <div class="text-h4 pa-2">Meet the Project Supervisor</div>
+                                <div class="text-h4 pa-2 font-weight-thin">Meet the Project Supervisor</div>
                                 <div class="text-body-1 pt-2 d-none d-sm-block">{{ supervisor.name }} {{ supervisor.surname }}</div>
                                 <div class="text-body-2 pb-2 d-none d-sm-block">{{ supervisor.role }}</div>
                                 </div>
                             </v-col>
                             <v-col cols="12" md="4" order-md="first">
                                 <div class="pa-2 bg-light rounded-circle d-inline-block" >
-                                    <v-img src="/img/logo.png" max-height="120" max-width="120"></v-img>
+                                    <v-img src="/img/logo.png" max-height="250" max-width="250"></v-img>
                                 </div>
 
                             </v-col>
