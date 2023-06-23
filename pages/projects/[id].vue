@@ -1,7 +1,10 @@
 <script setup>
+
+const {device} = useDevice();
 //const { data: problem } = await useFetch('/api')
 const problem = 'Inefficiencies in Solar Energy Management'
 const solution = 'Intelligent Solar Energy Management Platform'
+const project_description =  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."                        
 const startup_name = 'Solaris'
 const startup_logo = '/img/logo.png'
 const startup_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
@@ -70,16 +73,8 @@ const supervisor = {
         <v-container fluid class="bg-dark-blue">
             <v-row justify="center">
                 <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="8" md="8" sx="12">   
-                    <div class="text-h4">Project Description</div>
-                    <p class="text-left">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>          
+                    <div class="text-h4 pa-2">Project Description</div>
+                    <p class="text-left"> {{ project_description }}</p>          
                     <v-carousel hide-delimiters>
                         <v-carousel-item
                         src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
@@ -103,8 +98,8 @@ const supervisor = {
         
         <!--Startup infos-->
         <v-container fluid class="bg-mega-grey">
-            <v-row class="justify-center" align-self="center">
-                <v-col cols="12" md="2" justify-center>   
+            <v-row class="d-flex justify-center align-items-center mt-5">
+                <v-col cols="12" md="2" class="d-flex justify-center">   
                     <div class="pa-6 bg-light rounded-circle d-inline-block">
                         <v-img src="/img/logo.png"  class="ma-auto" max-height="150" max-width="150"></v-img>
                     </div>
@@ -127,24 +122,30 @@ const supervisor = {
                     <ProjectIconCard :card_icon="area.icon" :card_title="area.name"/>
                 </v-col>
             </v-row>
-            <v-row class="d-flex justify-center">
-                <v-col cols="8" justify-center>
-                    <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-thin justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                        <v-row class="justify-center">
-                            <v-col cols="4" justify-center>
-                                <div class="pa-6 bg-light rounded-circle d-inline-block">
-                                    <v-img src="/img/logo.png"  class="ma-auto" max-height="120" max-width="120"></v-img>
-                                </div>
-                            </v-col>
-                            <v-col justify-center align-self="center">
+            <v-row class="d-flex justify-center align-items-center">
+                <v-col cols="8">
+                    <v-sheet class="d-flex justify-center align-center bg-darker-blue text-light font-weight-thin text-center" width="100%">
+                        <v-row class="ma-5">
+                            <v-col cols="12" md="8">
                                 <div>
-                                    <div class="text-h4">Meet the Project Supervisor</div>
-                                    <div class="text-body-1 ma-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
-                                    <div class="text-body-2 ma-2">{{ supervisor.role }}</div>
+                                <div class="text-h4 pa-2">Meet the Project Supervisor</div>
+                                <div class="text-body-1 pt-2 d-none d-sm-block">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                <div class="text-body-2 pb-2 d-none d-sm-block">{{ supervisor.role }}</div>
                                 </div>
                             </v-col>
-                        </v-row>
-                        
+                            <v-col cols="12" md="4" order-md="first">
+                                <div class="pa-2 bg-light rounded-circle d-inline-block" >
+                                    <v-img src="/img/logo.png" max-height="120" max-width="120"></v-img>
+                                </div>
+
+                            </v-col>
+                            <v-col cols="12" class="d-md-none">
+                                <div>
+                                <div class="text-body-1 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                <div class="text-body-2 pb-2">{{ supervisor.role }}</div>
+                                </div>
+                            </v-col>
+                        </v-row>                        
                     </v-sheet>
                 </v-col>
             </v-row>
