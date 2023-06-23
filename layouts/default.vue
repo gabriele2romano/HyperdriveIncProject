@@ -2,31 +2,31 @@
     <div id="app">
         <v-app id="inspire">
             <!-- <AppHeaderMobile v-if="$device.isMobile"/>
-            <AppHeaderDesktop v-else/> -->
-            <AppHeader/>
-            
-    <div style="margin-top:50px;">
-        <slot/>
+                <AppHeaderDesktop v-else/> -->
+                <AppHeader/>
+                
+                <div style="margin-top:50px">
+                    <slot/>
+                </div>
+                <AppFooter/>
+            </v-app>
         </div>
-            <AppFooter/>
-        </v-app>
-    </div>
-</template>
-
-<style>
-:root {
-    --color1 : #000000;
-    --color2 : #f1f6f9;
-    --color3 : #394867;
-    --color4 : #212a3e;
-    --color5 : #9ba4b5;
+    </template>
     
-    --main-font: 'Raleway', sans-serif;
-}
-/* class useful to some components */
-.bg-darker-blue-div{
-    background-color: rgba(33, 42, 62, 0.75);
-}
+    <style>
+    :root {
+        --color1 : #000000;
+        --color2 : #f1f6f9;
+        --color3 : #394867;
+        --color4 : #212a3e;
+        --color5 : #9ba4b5;
+        
+        --main-font: 'Raleway', sans-serif;
+    }
+    /* class useful to some components */
+    .bg-darker-blue-div{
+        background-color: rgba(33, 42, 62, 0.75);
+    }
 </style>
 <script setup>
 

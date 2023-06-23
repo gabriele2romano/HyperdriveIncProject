@@ -2,6 +2,24 @@
 //const { data: problem } = await useFetch('/api')
 const problem = 'Inefficiencies in Solar Energy Management'
 const solution = 'Intelligent Solar Energy Management Platform'
+const startup_name = 'Solaris'
+const startup_logo = '/img/logo.png'
+const startup_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
+const project_areas = [
+{id:0,name:"Energy",icon:"flash"},
+{id:1,name:"Sustainbaility",icon:"cash"},
+{id:2,name:"Renewable Energy",icon:"wind-power"}
+]
+const project_infocard = {
+    country: 'Malaysia',
+    foundation_year: '2020',
+    funding_date: '2020-12-12',
+}
+const supervisor = {
+    name: 'John',
+    surname: 'Doe',
+    role: 'Professor'
+}
 </script>
 
 <template>
@@ -45,77 +63,91 @@ const solution = 'Intelligent Solar Energy Management Platform'
                         </v-col>
                     </v-row>
                 </v-container>
-                </div>
-            </v-parallax>
-            
-            <!--Project description and other images-->
-            <v-container fluid class="bg-dark-blue">
-                <v-row justify="center">
-                    <v-col cols="12" lg="8" md="8" sx="12">   
-                        <div class="text-h4">Project Description</div>
-                        <p class="text-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>          
-                        <v-carousel hide-delimiters>
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-                            cover
-                            ></v-carousel-item>
-                            
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-                            cover
-                            ></v-carousel-item>
-                            
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                            cover
-                            ></v-carousel-item>
-                        </v-carousel>
-                        <project-infocard country="Veneto" foundation-year='2022' funding-date="March 2022"></project-infocard>
-                    </v-col>
-                </v-row>
-            </v-container>
-
-            <!--Startup infos-->
-            <v-container fluid class="bg-mega-grey">
-                <v-row justify="center">
-                    <v-col cols="12" lg="8" md="8" sx="12">   
-                        <div class="text-h4">Project Description</div>
-                        <p class="text-left">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </p>          
-                        <v-carousel hide-delimiters>
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-                            cover
-                            ></v-carousel-item>
-                            
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-                            cover
-                            ></v-carousel-item>
-                            
-                            <v-carousel-item
-                            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                            cover
-                            ></v-carousel-item>
-                        </v-carousel>
-                        <project-infocard country="Veneto" foundation-year='2022' funding-date="March 2022"></project-infocard>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </div>
-    </template>
+            </div>
+        </v-parallax>
+        
+        <!--Project description and other images-->
+        <v-container fluid class="bg-dark-blue">
+            <v-row justify="center">
+                <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="8" md="8" sx="12">   
+                    <div class="text-h4">Project Description</div>
+                    <p class="text-left">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>          
+                    <v-carousel hide-delimiters>
+                        <v-carousel-item
+                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                        cover
+                        ></v-carousel-item>
+                        
+                        <v-carousel-item
+                        src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
+                        cover
+                        ></v-carousel-item>
+                        
+                        <v-carousel-item
+                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        cover
+                        ></v-carousel-item>
+                    </v-carousel>
+                    <ProjectInfocard :country=project_infocard.country :foundation-year=project_infocard.foundation_year :funding-date=project_infocard.funding_date></ProjectInfocard>
+                </v-col>
+            </v-row>
+        </v-container>
+        
+        <!--Startup infos-->
+        <v-container fluid class="bg-mega-grey">
+            <v-row class="justify-center" align-self="center">
+                <v-col cols="12" md="2" justify-center>   
+                    <div class="pa-6 bg-light rounded-circle d-inline-block">
+                        <v-img src="/img/logo.png"  class="ma-auto" max-height="150" max-width="150"></v-img>
+                    </div>
+                </v-col>
+                <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="4" md="4" sx="12"> 
+                    <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5" height="250" width="100%">
+                        <div class="text-h4">{{ startup_name }}</div>
+                        <div class="text-body-3 mb-2">{{ startup_description }}</div>
+                    </div>
+                </v-col>
+            </v-row>
+            <v-row class="d-flex justify-center">
+                <v-col cols="8" justify-center>
+                    <v-divider :thickness="4" class="border-opacity-75" color="light" style="border-radius: 10%;"></v-divider>
+                </v-col>
+            </v-row>
+            <div class="text-h3 text-center">Involved Areas</div>
+            <v-row class="d-flex justify-center">
+                <v-col cols="12" md="3" v-for="area in project_areas" :key="area.id">
+                    <ProjectIconCard :card_icon="area.icon" :card_title="area.name"/>
+                </v-col>
+            </v-row>
+            <v-row class="d-flex justify-center">
+                <v-col cols="8" justify-center>
+                    <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-thin justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                        <v-row class="justify-center">
+                            <v-col cols="4" justify-center>
+                                <div class="pa-6 bg-light rounded-circle d-inline-block">
+                                    <v-img src="/img/logo.png"  class="ma-auto" max-height="120" max-width="120"></v-img>
+                                </div>
+                            </v-col>
+                            <v-col justify-center align-self="center">
+                                <div>
+                                    <div class="text-h4">Meet the Project Supervisor</div>
+                                    <div class="text-body-1 ma-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                    <div class="text-body-2 ma-2">{{ supervisor.role }}</div>
+                                </div>
+                            </v-col>
+                        </v-row>
+                        
+                    </v-sheet>
+                </v-col>
+            </v-row>
+        </v-container>
+    </div>
+</template>
