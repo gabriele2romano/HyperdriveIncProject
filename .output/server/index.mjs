@@ -18,4 +18,5 @@ import 'node:fs';
 import 'node:url';
 import 'pathe';
 import 'ipx';
+import 'http-graceful-shutdown';
 //# sourceMappingURL=index.mjs.map

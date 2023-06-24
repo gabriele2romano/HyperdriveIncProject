@@ -22,11 +22,12 @@ import 'pathe';
 import 'ipx';
 import 'http-graceful-shutdown';
 
-const index_get = defineEventHandler(async (event) => {
+const _id_ = defineEventHandler(async (event) => {
+  const id = event.context.params.id;
   const client = serverSupabaseClient(event);
-  const { data, error } = await client.from("person").select("*");
+  const { data, error } = await client.from("project").select("title,problem,solution,description,country,foundation_year,investment_date,person(name,surname,role,picture),company(name,description,icon),area(name,icon)").eq("id", id).single();
+  data.image = await client.storage.from("images").getPublicUrl("projects/bg-projects.jpg").data.publicUrl;
   if (error) {
-    console.log(error.message);
     throw createError({ statusCode: 400, statusMessage: error.message });
   }
   if (process.env.SUPABASE_LOG == true)
@@ -34,5 +35,5 @@ const index_get = defineEventHandler(async (event) => {
   return data;
 });
 
-export { index_get as default };
-//# sourceMappingURL=index.get.mjs.map
+export { _id_ as default };
+//# sourceMappingURL=_id_.mjs.map

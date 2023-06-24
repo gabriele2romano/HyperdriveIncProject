@@ -8,15 +8,17 @@ import { joinURL } from 'ufo';
 function defineRenderHandler(handler) {
   return eventHandler(async (event) => {
     if (event.node.req.url.endsWith("/favicon.ico")) {
-      event.node.res.setHeader("Content-Type", "image/x-icon");
-      event.node.res.end(
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      );
+      if (!event.handled) {
+        event.node.res.setHeader("Content-Type", "image/x-icon");
+        event.node.res.end(
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
       return;
     }
     const response = await handler(event);
     if (!response) {
-      if (!event.node.res.writableEnded) {
+      if (!event.handled) {
         event.node.res.statusCode = event.node.res.statusCode === 200 ? 500 : event.node.res.statusCode;
         event.node.res.end(
           "No response returned from render handler: " + event.node.req.url
@@ -36,8 +38,11 @@ function defineRenderHandler(handler) {
   });
 }
 
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
 function buildAssetsURL(...path) {
-  return joinURL(publicAssetsURL(), useRuntimeConfig().app.buildAssetsDir, ...path);
+  return joinURL(publicAssetsURL(), buildAssetsDir(), ...path);
 }
 function publicAssetsURL(...path) {
   const publicBase = useRuntimeConfig().app.cdnURL || useRuntimeConfig().app.baseURL;
@@ -51,6 +56,7 @@ const appRootTag = "div";
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
 const getClientManifest = () => import('../app/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getEntryId = () => getClientManifest().then((r) => Object.values(r).find((r2) => r2.isEntry).src);
 const getStaticRenderedHead = () => import('../rollup/_virtual_head-static.mjs').then((r) => r.default || r);
 const getServerEntry = () => import('../app/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => import('../app/styles.mjs').then((r) => r.default || r));
@@ -77,9 +83,10 @@ const getSSRRenderer = lazyCachedFunction(async () => {
 });
 const getSPARenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
+  const spaTemplate = await import('../rollup/_virtual_spa-template.mjs').then((r) => r.template).catch(() => "");
   const options = {
     manifest,
-    renderToString: () => `<${appRootTag} id="${appRootId}"></${appRootTag}>`,
+    renderToString: () => `<${appRootTag} id="${appRootId}">${spaTemplate}</${appRootTag}>`,
     buildAssetsURL
   };
   const renderer = createRenderer(() => () => {
@@ -88,6 +95,7 @@ const getSPARenderer = lazyCachedFunction(async () => {
   const renderToString = (ssrContext) => {
     const config = useRuntimeConfig();
     ssrContext.payload = {
+      path: ssrContext.url,
       _errors: {},
       serverRendered: false,
       data: {},
@@ -140,16 +148,16 @@ const renderer = defineRenderHandler(async (event) => {
   };
   const renderer = ssrContext.noSSR ? await getSPARenderer() : await getSSRRenderer();
   const _rendered = await renderer.renderToString(ssrContext).catch(async (error) => {
+    if (ssrContext._renderResponse && error.message === "skipping render") {
+      return {};
+    }
     const _err = !ssrError && ssrContext.payload?.error || error;
     await ssrContext.nuxt?.hooks.callHook("app:error", _err);
     throw _err;
   });
-  await ssrContext.nuxt?.hooks.callHook("app:rendered", { ssrContext });
+  await ssrContext.nuxt?.hooks.callHook("app:rendered", { ssrContext, renderResult: _rendered });
   if (ssrContext._renderResponse) {
     return ssrContext._renderResponse;
-  }
-  if (event.node.res.headersSent || event.node.res.writableEnded) {
-    return;
   }
   if (ssrContext.payload?.error && !ssrError) {
     throw ssrContext.payload.error;
@@ -159,6 +167,14 @@ const renderer = defineRenderHandler(async (event) => {
     return response2;
   }
   const renderedMeta = await ssrContext.renderMeta?.() ?? {};
+  {
+    const entryId = await getEntryId();
+    if (ssrContext.modules) {
+      ssrContext.modules.add(entryId);
+    } else if (ssrContext._registeredComponents) {
+      ssrContext._registeredComponents.add(entryId);
+    }
+  }
   const inlinedStyles = await renderInlineStyles(ssrContext.modules ?? ssrContext._registeredComponents ?? []) ;
   const NO_SCRIPTS = routeOptions.experimentalNoScripts;
   const htmlContext = {
