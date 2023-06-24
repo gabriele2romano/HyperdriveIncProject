@@ -1,39 +1,34 @@
 <script setup>
 const {device} = useDevice();
-const { data: project } = await useFetch('/api/project')
-/*const project_title = project.title
-const problem = project.problem
-const solution = project.solution
-const project_description =  project.description
-const startup_name = project.startup.name */
 
-const project_title = 'Solaris'
-const problem = 'Solar energy is not being used efficiently in Malaysia.'
-const solution = 'Solaris aims to solve this problem by providing a platform for solar energy management.'
-const project_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
-const startup_name = 'Solaris'
-const startup_logo = '/img/logo.png'
-const startup_description = 'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
-const project_areas = [
-{id:0,name:"Energy",icon:"flash"},
-{id:1,name:"Sustainbaility",icon:"cash"},
-{id:2,name:"Renewable Energy",icon:"wind-power"}
-]
-const project_infocard = {
-    country: 'Malaysia',
-    foundation_year: '2020',
-    funding_date: '2020-12-12',
-}
+const route = useRoute()
+const id = route.params.id
+const { data: project } = await useFetch('/api/projects/'+id)
+
+const project_title = project.value.title
+const problem = project.value.problem
+const solution = project.value.solution
+const project_description =  project.value.description
+const company_name = project.value.company.name
+const company_logo = '/img/logo.png'
+const company_description = project.value.company.description//'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
+const project_areas = project.value.area
+const project_country = project.value.country
+const project_foundation_year = project.value.foundation_year
+const project_investment_date = project.value.investment_date
 const supervisor = {
-    name: 'John',
-    surname: 'Doe',
-    role: 'Professor'
+    name: project.value.person.name,
+    surname: project.value.person.surname,
+    role: project.value.person.role,
+    picture: project.value.person.picture
 }
+
+const image=project.value.image
 </script>
 
 <template>
     <div>
-        <v-parallax src="/img/bg-projects.jpg" >
+        <v-parallax :src=image>
             <div class="d-flex fill-height justify-center align-center bg-darken">
                 <v-container class="text-light" max-width="80%" >
                     <v-row>
@@ -79,7 +74,6 @@ const supervisor = {
                 </v-container>
             </div>
         </v-parallax>
-        
         <!--Project description and other images-->
         <v-container fluid class="bg-dark-blue">
             <v-row justify="center">
@@ -102,7 +96,7 @@ const supervisor = {
                         cover
                         ></v-carousel-item>
                     </v-carousel>
-                    <ProjectInfocard :country=project_infocard.country :foundation-year=project_infocard.foundation_year :funding-date=project_infocard.funding_date></ProjectInfocard>
+                    <ProjectInfocard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfocard>
                 </v-col>
             </v-row>
         </v-container>
@@ -117,8 +111,8 @@ const supervisor = {
                 </v-col>
                 <v-col class="d-flex flex-column justify-center align-center" cols="12" lg="4" md="4" sx="12"> 
                     <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5 font-weight-medium" height="250" width="100%">
-                        <div class="text-h4 font-weight-medium">{{ startup_name }}</div>
-                        <div class="text-body-3 mb-2">{{ startup_description }}</div>
+                        <div class="text-h4 font-weight-medium">{{ company_name }}</div>
+                        <div class="text-body-3 mb-2">{{ company_description }}</div>
                     </div>
                 </v-col>
             </v-row>
@@ -148,7 +142,6 @@ const supervisor = {
                                 <div class="pa-2 bg-light rounded-circle d-inline-block" >
                                     <v-img src="/img/logo.png" max-height="250" max-width="250"></v-img>
                                 </div>
-
                             </v-col>
                             <v-col cols="12" class="d-md-none">
                                 <div>

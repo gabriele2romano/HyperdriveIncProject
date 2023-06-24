@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 
-//const { data: people } = await useFetch('/api')
+const { data: people } = await useFetch('/api')
 </script>
 <template>
     <div> 
