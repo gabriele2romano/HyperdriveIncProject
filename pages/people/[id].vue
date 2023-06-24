@@ -5,6 +5,10 @@ const prevMember = "Kad Nellalav",
 nextMember = "Son Kadut",
 name = "Steve Kadend",
 role = "General Administrator"
+
+const route = useRoute()
+const id = route.params.id
+const { data: person } = await useFetch('/api/people/'+id)
 </script>
 
 <template>
@@ -58,25 +62,25 @@ role = "General Administrator"
             <v-row>
                 <v-col cols="12" md="3">
                     <v-img 
-                    src="https://cdn.vuetifyjs.com/docs/images/graphics/img-placeholder.png" height="100%" cover></v-img>
+                    :src=person.picture height="100%" cover></v-img>
                 </v-col>
                 
                 <v-col cols="12" md="9">
                     <v-container>
                         <v-row align-content="space-between">
                             <v-col cols="9">
-                                <div class="text-h3 pa-2">{{ name }}</div>
-                                <div class="text-h4 pa-2">{{ role }}</div>
+                                <div class="text-h3 pa-2">{{ person.name }} {{ person.surname }}</div>
+                                <div class="text-h4 pa-2">{{ person.role }}</div>
                             </v-col>
                             
                             <v-col justify="end">
                                 <div class="text-subtitle-2 pa-2">
                                     <v-icon icon="mdi-phone"></v-icon>
-                                    +39 (123) 4567890
+                                    {{ person.phone }}
                                 </div>
                                 <div class="text-subtitle-2 pa-2">
                                     <v-icon icon="mdi-email"></v-icon>
-                                    stevekad@mega.inc
+                                    {{person.email}}
                                 </div>
                             </v-col>
                         </v-row>
@@ -84,7 +88,7 @@ role = "General Administrator"
                         <v-row>
                             <v-col cols="12">
                                 <p class="text-body-2 pa-2">
-                                    Testo di Esempio lungo. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Testo di Esempio lungo. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Testo di Esempio lungo. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.Testo di Esempio lungo. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.
+                                    {{ person.cv }}
                                 </p>
                             </v-col>
                         </v-row>

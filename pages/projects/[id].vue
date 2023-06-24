@@ -28,8 +28,8 @@ const image=project.value.image
 
 <template>
     <div>
-        <v-parallax :src=image>
-            <div class="d-flex fill-height justify-center align-center bg-darken">
+        <v-parallax :src=image >
+            <div class="d-flex fill-height justify-center align-center bg-darken" >
                 <v-container class="text-light" max-width="80%" >
                     <v-row>
                         <v-col class="d-flex flex-column" cols="12">

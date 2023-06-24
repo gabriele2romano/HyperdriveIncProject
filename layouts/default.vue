@@ -32,6 +32,11 @@
     {
         background-color: rgba(0, 0, 0, 0.3);
     }
+
+    .bg-blurred{
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+    }
 </style>
 <script setup>
 
