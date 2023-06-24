@@ -16,12 +16,12 @@
     <div>
         <NuxtLink to="/" style="text-decoration: none;">
         <v-card
-            class="d-flex flex-column justify-center align-center"
+            class="d-flex flex-column align-center pb-4"
             max-width="400px"
             color="dark-blue"
         >
             <v-card-title
-                style="color: light; font-family: 'Raleway', sans-serif;"
+                style="font-family: 'Raleway', sans-serif;"
             >
                 {{ title }}
             </v-card-title>
