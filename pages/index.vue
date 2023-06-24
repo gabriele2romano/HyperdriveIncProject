@@ -1,30 +1,20 @@
 
 <script setup lang="ts">
 
-//const { data: people } = await useFetch('/api')
+const { data: projects } = await useFetch('/api/project/relevant')
+const { data: people } = await useFetch('/api/people/')
+const { data: areas } = await useFetch('/api/areas/')
 </script>
 <template>
     <div> 
-      
-      <b-accordion class="col-3">
-        <b-accordion-item title="Accordion Item #1" visible>
-          Accordion 1
-        </b-accordion-item>
-        <b-accordion-item title="Accordion Item #2">
-          Accordion 2
-        </b-accordion-item>
-        <b-accordion-item title="Accordion Item #3">
-          Accordion 3
-        </b-accordion-item>
-      </b-accordion>
-      
-      <!-- <div>
-        List
-        <ul>
-          <li v-for="person in people" :key="person.id">
-            {{ person.name }} {{ person.surname }}
-          </li>
-        </ul>
-      </div> -->
+      <v-parallax src="img/banner_home.jpg">
+        <v-container>
+          <v-row>
+            <v-col v-for="project in projects" :key="project.id">
+                {{ project.title }}
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-parallax>
     </div>
 </template>
