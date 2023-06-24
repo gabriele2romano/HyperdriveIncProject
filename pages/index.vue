@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 
-const { data: projects } = await useFetch('/api/project/relevant')
+const { data: projects } = await useFetch('/api/projects/relevant')
 const { data: people } = await useFetch('/api/people/')
 const { data: areas } = await useFetch('/api/areas/')
 </script>
@@ -9,9 +9,9 @@ const { data: areas } = await useFetch('/api/areas/')
     <div> 
       <v-parallax src="img/banner_home.jpg">
         <v-container>
-          <v-row>
+          <v-row class="d-flex space-between text-center">
             <v-col v-for="project in projects" :key="project.id">
-                {{ project.title }}
+                <p>{{ project.title }}</p>
             </v-col>
           </v-row>
         </v-container>

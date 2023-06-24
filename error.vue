@@ -4,11 +4,16 @@
 -->
 <template>
     <NuxtLayout>
-        <main>
-            <h1>Oops, something went wrong with your request</h1>
-
-            <NuxtLink to = "/">RETURN TO HOME PAGE</NuxtLink>
-        </main>
+            <v-container class="bg-darker-blue text-center" fluid>
+                <v-row class="d-flex align-items-center"> 
+                    <v-col class="d-flex justify-center align-center">
+                        <div>
+                            <div class="text-h3 font-weight-bold pa-2">Oops, something went wrong with your request</div>
+                            <v-btn color="red" class="body-text-2 font-weight-medium pa-2"><NuxtLink to = "/" class="link-light">Go back</NuxtLink></v-btn>
+                        </div>
+                    </v-col> 
+                </v-row>
+            </v-container>
     </NuxtLayout>
 </template>
 
