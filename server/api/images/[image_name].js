@@ -13,6 +13,6 @@ export default defineEventHandler(async (event) => {
         console.log(error.message)
         throw createError({statusCode: 400, statusMessage: error.message})
     }
-    if(process.env.SUPABASE_LOG) console.log("data",data)
+    if(!process.env.SUPABASE_LOG) console.log("data",data)
     return data
 })

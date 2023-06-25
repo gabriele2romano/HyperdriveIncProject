@@ -7,12 +7,11 @@ projects.value.forEach((project,index) => {
 }); //creates a warning somehow
 
 </script>
-
 <template>
+    <!-- Start Banner -->
     <v-row class="d-flex">
         <v-col class="d-flex justify-center h-auto" cols="12">
             <v-img :src=banner_img.publicUrl cover :aspect-ratio="1" gradient="rgba(0,0,0,.8), rgba(0,0,0,.8)" class="align-center" max-height="350px" style="overflow: hidden;">
-                
                 <v-sheet class="d-flex text-light font-weight-medium pa-3" color="transparent">
                     <v-row class="d-flex justify-center align-self-center">
                         <v-col class="d-flex flex-column" cols="12" md="8" xs="12">
@@ -27,16 +26,22 @@ projects.value.forEach((project,index) => {
                             </v-col>
                         </v-row>
                     </v-sheet>
-                    
                 </v-img>
-                
             </v-col>
         </v-row>
-        <!-- <v-card :img=banner_img.publicUrl>
-            <v-card-title>Title</v-card-title>
-            <v-card-subtitle>Subtitle</v-card-subtitle>
-            <v-card-text>Text</v-card-text>
-        </v-card> -->
+        <!-- End Banner -->
+
+        <!-- Start Filter buttons -->
+        <v-container fluid class="bg-mega-grey"> 
+            <v-row class="d-flex" justify="center">
+                <v-col class="d-flex" cols="12" md="3" sx="12">  
+                    
+                </v-col>
+            </v-row>
+        </v-container>
+        <!-- End Filter buttons -->
+
+        <!-- Start Projects -->
         <v-container fluid class="bg-mega-grey"> 
             <v-row class="d-flex" justify="center">
                 <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">  
@@ -48,4 +53,5 @@ projects.value.forEach((project,index) => {
                 </v-col>
             </v-row>
         </v-container>
+        <!-- End Projects -->
     </template>

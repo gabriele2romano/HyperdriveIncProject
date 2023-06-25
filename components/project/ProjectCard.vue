@@ -23,10 +23,11 @@
         <v-img :src=project_image width="100%" max-height="300" :aspect-ratio="1" cover></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold">{{ project_title }}</v-card-title>
         <v-card-text class="text-body-2">{{ project_overview }}</v-card-text>
+        <v-divider width="50%" class="mx-auto my-0"></v-divider>
         <v-card-actions class="d-flex justify-center">
-            <div v-for="area in project_areas" :key="area.area.id" >
-                <ProjectIconCard :card_icon="area.area.icon" :icon_size="50"/>
-            </div>
+            <v-container fluid class="ma-1 pa-0">
+            <ProjectIconCard :areas="project_areas.area" :card_title="false"/>
+            </v-container>
         </v-card-actions>
     </v-card>
 </template>
