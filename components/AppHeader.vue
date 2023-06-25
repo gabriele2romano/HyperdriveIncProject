@@ -1,9 +1,11 @@
 <template>
   <div>
-    <b-navbar smart-scroll toggleable="lg" type="light" class="bg-light pa-1" fixed="top">
-      <NuxtLink to="/"><b-navbar-brand>
-        <v-img src="/favicon.ico" max-width="50" class="mx-auto"/>
-      </b-navbar-brand></NuxtLink>
+    <b-navbar smart-scroll toggleable="lg" type="light" class="bg-light pa-2" fixed="top">
+      <NuxtLink to="/">
+        <b-navbar-brand class="d-flex justify-left">
+        <v-img src="/favicon.ico" height="30px" width="30px" :aspect-ratio="1" />
+      </b-navbar-brand>
+    </NuxtLink>
       
       <b-navbar-toggle target="nav-collapse"/>
       

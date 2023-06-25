@@ -7,7 +7,7 @@
 </script>
 <template>
     <div>
-    <v-container>
+    <v-container fluid>
         <v-row no-gutters>
             <v-col class="d-flex flex-column justify-center align-center">
                 <v-icon :size=icon_size>{{ `mdi-${card_icon}` }}</v-icon>

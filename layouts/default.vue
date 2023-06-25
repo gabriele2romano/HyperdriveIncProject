@@ -3,7 +3,7 @@
         <v-app id="inspire">
             <AppHeader/>
             
-            <div style="margin-top:50px">
+            <div style="margin-top:56px">
                 <slot/>
             </div>
             <AppFooter/>
