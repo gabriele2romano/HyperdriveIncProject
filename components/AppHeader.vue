@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-navbar smart-scroll toggleable="lg" type="light" class="bg-light pa-1" fixed="top">
-      <b-navbar-brand href="#">
+      <NuxtLink to="/"><b-navbar-brand>
         <v-img src="/favicon.ico" max-width="50" class="mx-auto"/>
-      </b-navbar-brand>
+      </b-navbar-brand></NuxtLink>
       
       <b-navbar-toggle target="nav-collapse"/>
       
@@ -21,7 +21,7 @@
             <ClientOnly><NuxtLink to="/projects/" class="nav-link">Projects</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/contact/" class="nav-link">Contact</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/contacts/" class="nav-link">Contact</NuxtLink></ClientOnly>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>

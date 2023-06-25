@@ -9,7 +9,7 @@
                     <v-col class="d-flex justify-center align-center">
                         <div>
                             <div class="text-h3 font-weight-bold pa-2">Oops, something went wrong with your request</div>
-                            <v-btn color="red" class="body-text-2 font-weight-medium pa-2"><NuxtLink to = "/" class="link-light">Go back</NuxtLink></v-btn>
+                            <v-btn color="red" class="body-text-2 font-weight-medium pa-2" @click="$router.push(`/`)">Go back</v-btn>
                         </div>
                     </v-col> 
                 </v-row>

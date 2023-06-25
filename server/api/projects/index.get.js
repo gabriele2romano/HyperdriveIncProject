@@ -5,7 +5,17 @@ export default defineEventHandler(async (event) => {
 
     const { data, error }= await client.from('project').select('*')
 
-    
+    data.forEach ((project,index) => {
+        var images_url = []
+        project.images.forEach((image) => {
+            images_url.push(
+                client.storage
+                .from('images')
+                .getPublicUrl('projects/'+image).data.publicUrl
+            )
+        })
+        project.images = images_url
+    })
     
     if(error) {
         console.log(error.message)
