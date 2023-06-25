@@ -123,8 +123,8 @@ const image=project.value.image
             </v-row>
             <div class="text-h3 text-center font-weight-bold">Involved Areas</div>
             <v-row class="d-flex justify-center">
-                <v-col cols="12" md="3" v-for="area in project_areas" :key="area.id">
-                    <ProjectIconCard :card_icon="area.icon" :card_title="area.name"/>
+                <v-col cols="12" md="3" v-for="area in project_areas" :key="area.id" class="my-10">
+                    <ProjectIconCard :card_icon="area.icon" :card_title="area.name" :icon_size="80"/>
                 </v-col>
             </v-row>
             <v-row class="d-flex justify-center align-items-center">
