@@ -1,9 +1,11 @@
 <template>
   <div>
-    <b-navbar smart-scroll toggleable="lg" type="light" class="bg-light pa-1" fixed="top">
-      <b-navbar-brand href="#">
-        <v-img src="/favicon.ico" max-width="50" class="mx-auto"/>
+    <b-navbar smart-scroll toggleable="lg" type="light" variant="darker-blue" class="pa-2 border-bottom text-light navbar-dark" fixed="top" >
+      <NuxtLink to="/">
+        <b-navbar-brand class="d-flex justify-left">
+        <v-img src="/favicon.ico" height="30px" width="30px" :aspect-ratio="1" />
       </b-navbar-brand>
+    </NuxtLink>
       
       <b-navbar-toggle target="nav-collapse"/>
       
@@ -11,17 +13,20 @@
         
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item>
+          <b-nav-item style="color: light; !important">
             <ClientOnly><NuxtLink to="/" class="nav-link">Home</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/people/." class="nav-link">About</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/people/1" class="nav-link">About</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/projects/1" class="nav-link">Projects</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/projects/" class="nav-link">Projects</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/contact/" class="nav-link">Contact</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/areas/" class="nav-link">Area</NuxtLink></ClientOnly>
+          </b-nav-item>
+          <b-nav-item>
+            <ClientOnly><NuxtLink to="/contacts/" class="nav-link">Contact</NuxtLink></ClientOnly>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>

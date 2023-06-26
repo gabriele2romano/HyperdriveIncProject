@@ -28,6 +28,7 @@ const image=project.value.image
 
 <template>
     <div>
+        <!-- Start Project title and image-->
         <v-parallax :src=image >
             <div class="d-flex fill-height justify-center align-center bg-darken" >
                 <v-container class="text-light" max-width="80%" >
@@ -74,6 +75,8 @@ const image=project.value.image
                 </v-container>
             </div>
         </v-parallax>
+        <!-- End Project title and image-->
+
         <!--Project description and other images-->
         <v-container fluid class="bg-dark-blue">
             <v-row justify="center">
@@ -100,9 +103,10 @@ const image=project.value.image
                 </v-col>
             </v-row>
         </v-container>
+        <!--End Project description and other images-->
         
-        <!--Startup infos-->
         <v-container fluid class="bg-mega-grey">
+            <!--Start Startup infos-->
             <v-row class="d-flex justify-center align-items-center mt-5">
                 <v-col cols="12" md="2" class="d-flex justify-center">   
                     <div class="pa-6 bg-light rounded-circle d-inline-block">
@@ -121,21 +125,27 @@ const image=project.value.image
                     <v-divider :thickness="4" class="border-opacity-75" color="light" style="border-radius: 10%;"></v-divider>
                 </v-col>
             </v-row>
-            <div class="text-h3 text-center font-weight-bold">Involved Areas</div>
-            <v-row class="d-flex justify-center">
-                <v-col cols="12" md="3" v-for="area in project_areas" :key="area.id">
-                    <ProjectIconCard :card_icon="area.icon" :card_title="area.name"/>
+            <!--End Startup Infos-->
+
+            <!--Start Involved Areas-->
+            <v-row class="d-flex justify-center align-items-center">
+                <v-col cols="8">
+                    <div class="text-h3 text-center font-weight-bold">Involved Areas</div>
+                    <ProjectIconCard :areas="project_areas" :icon_size="80" class="my-10"/>
                 </v-col>
             </v-row>
+            <!--End Involved Areas-->
+
+            <!--Start Project Team-->
             <v-row class="d-flex justify-center align-items-center">
                 <v-col cols="8">
                     <v-sheet class="d-flex justify-center align-center bg-darker-blue text-light font-weight-thin text-center" width="100%">
                         <v-row class="ma-5">
                             <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                 <div>
-                                <div class="text-h4 pa-2 font-weight-thin">Meet the Project Supervisor</div>
-                                <div class="text-body-1 pt-2 d-none d-sm-block">{{ supervisor.name }} {{ supervisor.surname }}</div>
-                                <div class="text-body-2 pb-2 d-none d-sm-block">{{ supervisor.role }}</div>
+                                    <div class="text-h4 pa-2 font-weight-thin">Meet the Project Supervisor</div>
+                                    <div class="text-body-1 pt-2 d-none d-sm-block">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                    <div class="text-body-2 pb-2 d-none d-sm-block">{{ supervisor.role }}</div>
                                 </div>
                             </v-col>
                             <v-col cols="12" md="4" order-md="first">
@@ -145,14 +155,15 @@ const image=project.value.image
                             </v-col>
                             <v-col cols="12" class="d-md-none">
                                 <div>
-                                <div class="text-body-1 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
-                                <div class="text-body-2 pb-2">{{ supervisor.role }}</div>
+                                    <div class="text-body-1 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                    <div class="text-body-2 pb-2">{{ supervisor.role }}</div>
                                 </div>
                             </v-col>
                         </v-row>                        
                     </v-sheet>
                 </v-col>
             </v-row>
+            <!--End Project Team-->
         </v-container>
     </div>
 </template>
