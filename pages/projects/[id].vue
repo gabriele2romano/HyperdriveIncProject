@@ -82,7 +82,7 @@ const images = project.value.images
                 <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">   
                     <div class="text-h4">Project Description</div>
                     <p class="text-body-2"> {{ project_description }}</p>          
-                    <v-carousel hide-delimiters>
+                    <v-carousel hide-delimiters v-if="images.length>3">
                         <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover></v-carousel-item>
                     </v-carousel>
                     <ProjectInfocard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfocard>
