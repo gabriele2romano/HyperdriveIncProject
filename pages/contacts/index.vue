@@ -13,7 +13,7 @@ const banner_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
     <v-container fluid>
         <v-row class="justify-center">
             <v-col cols="12" md="8">
-                <ContactsForm></ContactsForm>
+                <ContactForm></ContactForm>
             </v-col>
         </v-row>
     </v-container>    

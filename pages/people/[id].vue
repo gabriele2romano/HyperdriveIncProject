@@ -10,6 +10,10 @@
 
     const { data: prevMemberName } = await useFetch('/api/people/getName/'+person.value.prevMemberId)
     const { data: nextMemberName } = await useFetch('/api/people/getName/'+person.value.nextMemberId)
+
+    //fetch projects that the person is involved in
+    const { data: projects } = await useFetch('/api/people/getProjects/'+id)
+
 </script>
 
 <template>
@@ -92,15 +96,15 @@
                     <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
 
                     <div class="text-h4 text-center text-light">
-                        Discover the projects supervised by {{ person.name }}
+                        Discover the projects supervised by {{ person.name }} {{ person.surname }}
                     </div>
                 </v-col>
             </v-row>
 
             <!--Fourth row: supervised projects cards-->
             <v-row justify="center" class="my-4">
-                <v-col v-for="n in 3">
-                    <ProjectCard title="Coso" ></ProjectCard>
+                <v-col v-for="project in projects" cols="12" md="3">
+                    <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
                 </v-col>
             </v-row>
         </v-container>

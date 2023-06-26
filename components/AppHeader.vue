@@ -17,7 +17,7 @@
             <ClientOnly><NuxtLink to="/" class="nav-link">Home</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/people/1" class="nav-link">About</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/people/" class="nav-link">About</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
             <ClientOnly><NuxtLink to="/projects/" class="nav-link">Projects</NuxtLink></ClientOnly>
