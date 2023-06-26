@@ -19,14 +19,15 @@
             </v-row>
         </v-container>
     </v-sheet> -->
-    <v-card :to="'/projects/' + project_id" class="bg-darker-blue mx-1 my-1">
-        <v-img :src=project_image width="100%" max-height="300" :aspect-ratio="1" cover class="pa-4"></v-img>
+    <v-card :to="'/projects/' + project_id" class="bg-darker-blue ma-1" >
+        <v-img :src=project_image max-height="200" width="100%" :aspect-ratio="1" cover></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold">{{ project_title }}</v-card-title>
+        <v-card-subtitle class="text-body-1">What we want to solve</v-card-subtitle>
         <v-card-text class="text-body-2">{{ project_overview }}</v-card-text>
         <v-divider width="50%" class="mx-auto my-0"></v-divider>
         <v-card-actions class="d-flex justify-center">
             <v-container fluid class="ma-1 pa-0">
-            <ProjectIconCard :areas="project_areas.area" :card_title="false"/>
+            <ProjectIconCard :areas="project_areas.area" :card_title="false" :icon_size="30"/>
             </v-container>
         </v-card-actions>
     </v-card>

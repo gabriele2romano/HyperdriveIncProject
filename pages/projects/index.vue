@@ -4,7 +4,7 @@ const{data:banner_img} = await useFetch('/api/images/banner_projects.jpg')
 const { data: projects } = await useFetch('/api/projects/')
 const { data: areas } = await useFetch('/api/areas/names')
 projects.value.forEach((project,index) => {
-    project.description = project.description.slice(0, 100)+'...';
+    project.description = project.description.slice(0, 150)+'...';
 }); //creates a warning somehow
 
 const selectedItem= null
@@ -73,7 +73,7 @@ const valid  = null
                     <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">  
                         <v-row no-gutters class="d-flex">
                             <v-col cols="12" md="4" xs="12" v-for="project in projects" :key="project.id" class="d-flex flex-column">
-                                <ProjectCard :project_id=project.id :project_title=project.title :project_overview=project.description :project_image=project.images[0]></ProjectCard>
+                                <ProjectCard :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
                             </v-col> 
                         </v-row>
                     </v-col>
