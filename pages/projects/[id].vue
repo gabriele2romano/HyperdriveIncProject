@@ -29,11 +29,12 @@ const image=project.value.image
 <template>
     <div>
         <!-- Start Project title and image-->
-        <v-parallax :src=image >
+        <v-parallax :src=image>
             <div class="d-flex fill-height justify-center align-center bg-darken" >
                 <v-container class="text-light" max-width="80%" >
                     <v-row>
                         <v-col class="d-flex flex-column" cols="12">
+                            <NuxtLink to="/projects/" class="pa-2"><b-link variant="light">See all our projects</b-link></NuxtLink>
                             <div class="text-h2 pt-3 font-weight-bold">{{ project_title }}</div>
                         </v-col>
                     </v-row>

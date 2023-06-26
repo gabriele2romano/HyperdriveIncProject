@@ -8,9 +8,20 @@ export default defineEventHandler(async (event) => {
     .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,person(name,surname,role,picture),company(name,description,icon),area(name,icon)').eq('id', id).single();
     
     //get images
-    data.image = await client.storage
+    /* data.image = await client.storage
     .from('images')
-    .getPublicUrl('projects/bg-projects.jpg').data.publicUrl
+    .getPublicUrl('projects/bg-projects.jpg').data.publicUrl */
+    data.forEach ((project,index) => {
+        var images_url = []
+        project.images.forEach((image) => {
+            images_url.push(
+                client.storage
+                .from('images')
+                .getPublicUrl('projects/'+image).data.publicUrl
+            )
+        })
+        project.images = images_url
+    })
 
     //get the number of projects
     const { _, count } = await client
