@@ -20,7 +20,7 @@
         </v-container>
     </v-sheet> -->
     <v-card :to="'/projects/' + project_id" class="bg-darker-blue mx-1 my-1">
-        <v-img :src=project_image width="100%" max-height="300" :aspect-ratio="1" cover></v-img>
+        <v-img :src=project_image width="100%" max-height="300" :aspect-ratio="1" cover class="pa-4"></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold">{{ project_title }}</v-card-title>
         <v-card-text class="text-body-2">{{ project_overview }}</v-card-text>
         <v-divider width="50%" class="mx-auto my-0"></v-divider>

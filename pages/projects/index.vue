@@ -56,7 +56,7 @@ const valid  = null
 </option></v-select> -->
                                 </v-col>
                                 <v-col>
-                                    <v-btn class="d-flex" color="darker-blue" block @click="validate" height="80%">
+                                    <v-btn class="d-flex" color="darker-blue" block @click="validate">
                                         Filter
                                     </v-btn>
                                 </v-col>
