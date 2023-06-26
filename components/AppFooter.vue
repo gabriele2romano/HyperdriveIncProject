@@ -1,6 +1,6 @@
 <template>
     <v-footer
-    class="bg-indigo-lighten-1 text-center d-flex flex-column"
+    class="bg-darker-blue text-center d-flex flex-column"
     >
     <v-container>
         <v-row align-self="center" justify="space-between">

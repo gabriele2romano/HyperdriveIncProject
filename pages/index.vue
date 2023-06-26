@@ -2,8 +2,6 @@
 <script setup lang="ts">
 
 const { data: projects } = await useFetch('/api/projects/relevant')
-const { data: people } = await useFetch('/api/people/')
-const { data: areas } = await useFetch('/api/areas/')
 </script>
 <template>
     <div> 

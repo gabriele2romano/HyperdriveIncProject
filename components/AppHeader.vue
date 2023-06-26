@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar smart-scroll toggleable="lg" type="light" variant="darker-blue" class="pa-2 border-bottom text-light navbar-dark" fixed="top" >
+    <b-navbar smart-scroll toggleable="lg" type="light" variant="dark-blue" class="pa-2 border-bottom text-light navbar-dark" fixed="top" >
       <NuxtLink to="/">
         <b-navbar-brand class="d-flex justify-left">
         <v-img src="/favicon.ico" height="30px" width="30px" :aspect-ratio="1" />

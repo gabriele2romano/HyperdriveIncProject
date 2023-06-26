@@ -19,7 +19,7 @@
             </v-row>
         </v-container>
     </v-sheet> -->
-    <v-card :to="'/projects/' + project_id" class="bg-darker-blue ma-1" >
+    <v-card :to="'/projects/' + project_id" class="bg-dark-blue ma-1" >
         <v-img :src=project_image max-height="200" width="100%" :aspect-ratio="1" cover></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold">{{ project_title }}</v-card-title>
         <v-card-subtitle class="text-body-1">What we want to solve</v-card-subtitle>
