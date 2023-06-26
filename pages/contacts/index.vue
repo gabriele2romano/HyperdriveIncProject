@@ -4,6 +4,6 @@
 
 <template>
     <NuxtLayout>
-    <ContactsForm></ContactsForm>
+    <ContactForm></ContactForm>
     </NuxtLayout>
 </template>
