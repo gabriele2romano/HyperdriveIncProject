@@ -26,14 +26,14 @@
     background-color: rgba(33, 42, 62, 0.75);
 }
 
-    .bg-dark-blue-div {
-        background-color: rgb(57, 72, 103, 0.75);
-    }
+.bg-dark-blue-div {
+    background-color: rgb(57, 72, 103, 0.75);
+}
 
-    .bg-darken
-    {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
+.bg-darken
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
 .bg-blurred{
     filter: blur(8px);
