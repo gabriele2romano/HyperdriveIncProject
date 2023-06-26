@@ -23,7 +23,7 @@
             <ClientOnly><NuxtLink to="/projects/" class="nav-link">Projects</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
-            <ClientOnly><NuxtLink to="/area/" class="nav-link">Area</NuxtLink></ClientOnly>
+            <ClientOnly><NuxtLink to="/areas/" class="nav-link">Area</NuxtLink></ClientOnly>
           </b-nav-item>
           <b-nav-item>
             <ClientOnly><NuxtLink to="/contacts/" class="nav-link">Contact</NuxtLink></ClientOnly>

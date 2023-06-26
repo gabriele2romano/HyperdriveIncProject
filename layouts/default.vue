@@ -38,5 +38,6 @@
 </style>
 <script setup>
 
+//Global and static variables
 const {device} = useDevice();
 </script>
