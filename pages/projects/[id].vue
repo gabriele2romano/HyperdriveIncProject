@@ -1,6 +1,4 @@
 <script setup>
-const {device} = useDevice();
-
 const route = useRoute()
 const id = route.params.id
 const { data: project } = await useFetch('/api/projects/'+id)
@@ -23,13 +21,13 @@ const supervisor = {
     picture: project.value.person.picture
 }
 
-const image=project.value.image
+const images = project.value.images
 </script>
 
 <template>
     <div>
         <!-- Start Project title and image-->
-        <v-parallax :src=image>
+        <v-parallax :src=images[0]>
             <div class="d-flex fill-height justify-center align-center bg-darken" >
                 <v-container class="text-light" max-width="80%" >
                     <v-row>
@@ -51,7 +49,7 @@ const image=project.value.image
                         
                         <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4" sx="12">
                             <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                <v-img src="/img/bg-projects.jpg"  height="100%" cover></v-img>
+                                <v-img :src="images[1]"  height="100%" cover></v-img>
                             </v-sheet>
                         </v-col>
                     </v-row>
@@ -69,7 +67,7 @@ const image=project.value.image
                         
                         <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4" sx="12">
                             <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
-                                <v-img src="/img/bg-projects.jpg"  height="100%" cover></v-img>
+                                <v-img :src="images[2]"  height="100%" cover></v-img>
                             </v-sheet>
                         </v-col>
                     </v-row>
@@ -85,20 +83,7 @@ const image=project.value.image
                     <div class="text-h4">Project Description</div>
                     <p class="text-body-2"> {{ project_description }}</p>          
                     <v-carousel hide-delimiters>
-                        <v-carousel-item
-                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-                        cover
-                        ></v-carousel-item>
-                        
-                        <v-carousel-item
-                        src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-                        cover
-                        ></v-carousel-item>
-                        
-                        <v-carousel-item
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                        cover
-                        ></v-carousel-item>
+                        <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover></v-carousel-item>
                     </v-carousel>
                     <ProjectInfocard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfocard>
                 </v-col>

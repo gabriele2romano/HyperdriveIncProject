@@ -1,6 +1,6 @@
 <script setup>
     const props = defineProps({
-        'banner_img': String,
+        'banner_img': Object,
         'banner_title': String,
         'banner_subtitle': String,
         'banner_body': String,
