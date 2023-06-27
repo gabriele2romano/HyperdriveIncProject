@@ -50,44 +50,46 @@
             </v-row>
 
             <!--Second row: person card-->
-            <v-row justify="center" class="my-4">
-                <v-sheet class="bg-darker-blue"> 
-                    <v-container>
-                        <v-row>
-                            <v-col cols="12" md="3">
-                                <v-img 
-                                    :src=person.picture
-                                    height="100%"
-                                    cover
-                                ></v-img>
-                            </v-col>
+            <v-row>
+                <v-col cols="12">
+                    <v-sheet class="bg-darker-blue"> 
+                        <v-container>
+                            <v-row>
+                                <v-col cols="12" md="3">
+                                    <v-img 
+                                        :src=person.picture
+                                        height="100%"
+                                        cover
+                                    ></v-img>
+                                </v-col>
 
-                            <v-col cols="12" md="9">
-                                <div class="d-flex flex-column flex-md-row justify-space-between">
-                                    <div class="d-flex flex-column">
-                                        <div class="text-h3">{{ person.name }} {{ person.surname }}</div>
-                                        <div class="text-h4">{{ person.role }}</div>
+                                <v-col cols="12" md="9">
+                                    <div class="d-flex flex-column flex-md-row justify-space-between">
+                                        <div class="d-flex flex-column">
+                                            <div class="text-h3">{{ person.name }} {{ person.surname }}</div>
+                                            <div class="text-h4">{{ person.role }}</div>
+                                        </div>
+
+                                        <div class="d-flex flex-column">
+                                            <div class="text-subtitle-1 py-1">
+                                                <v-icon icon="mdi-phone"></v-icon>
+                                                {{ person.phone }}
+                                            </div>
+                                            <div class="text-subtitle-1 py-1">
+                                                <v-icon icon="mdi-email"></v-icon>
+                                                {{ person.email }}
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="d-flex flex-column">
-                                        <div class="text-subtitle-1 py-1">
-                                            <v-icon icon="mdi-phone"></v-icon>
-                                            {{ person.phone }}
-                                        </div>
-                                        <div class="text-subtitle-1 py-1">
-                                            <v-icon icon="mdi-email"></v-icon>
-                                            {{ person.email }}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <p class="text-body-2 pt-3">
-                                    {{ person.cv }}
-                                </p>
-                            </v-col>
-                        </v-row>
-                    </v-container>
-                </v-sheet>
+                                    <p class="text-body-2 pt-3">
+                                        {{ person.cv }}
+                                    </p>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                    </v-sheet>
+                </v-col>
             </v-row>
 
             <!--Third row: divider and supervised projects title-->
@@ -110,18 +112,3 @@
         </v-container>
     </div>
 </template>
-
-<!--
-    <style scoped>
-    .team-nav-button {
-        font-family: var(--main-font);
-        font-weight: bold;
-        color: var(--color4);
-    }
-    
-    #back-to-team-button {
-        color: var(--color2);
-        background-color: var(--color3);
-    }
-</style>
--->

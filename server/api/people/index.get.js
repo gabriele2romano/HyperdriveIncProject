@@ -3,9 +3,13 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
-    const { data, error }= await client.from('person').select('*')
+    //fetch all people data
+    const { data, error }= await client.from('person').select('id, name, surname, role, picture')
 
-    
+    //for each person, get the picture
+    data.forEach((person, _) => {
+        person.image = client.storage.from('images').getPublicUrl('people/' + person.picture).data.publicUrl
+    })
     
     if(error) {
         console.log(error.message)
