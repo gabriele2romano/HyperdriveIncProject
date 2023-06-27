@@ -5,35 +5,30 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
     const { data, error }= await client
     //get project's data
-    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,person(name,surname,role,picture),company(name,description,icon),area(name,icon)').eq('id', id).single();
+    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,person(name,surname,role,picture),company(name,description,icon),area(name,icon),images').eq('id', id).single();
     
     //get images
-    /* data.image = await client.storage
+    /* data.images = await client.storage
     .from('images')
     .getPublicUrl('projects/bg-projects.jpg').data.publicUrl */
-    data.forEach ((project,index) => {
-        var images_url = []
-        project.images.forEach((image) => {
-            images_url.push(
-                client.storage
-                .from('images')
-                .getPublicUrl('projects/'+image).data.publicUrl
-            )
-        })
-        project.images = images_url
-    })
-
+    var images_url = []
+    data.images.forEach ((image) => {
+        images_url
+        .push(client.storage.from('images').getPublicUrl('projects/'+image).data.publicUrl)
+    }) 
+    data.images = images_url
+    
     //get the number of projects
     const { _, count } = await client
     .from('project')
     .select('*', { count: 'exact', head: true })
-
+    
     const intId = parseInt(id)
     //compute the ids of the previous and next members
     data.prevProjId = ((intId==1) ? count : intId-1).toString();
     data.nextProjId = ((intId==parseInt(count)) ? 1 : intId+1).toString();
-
-
+    
+    
     //console.log("data", data)
     if(error) {
         throw createError({statusCode: 400, statusMessage: error.message})
