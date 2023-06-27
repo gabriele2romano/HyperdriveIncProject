@@ -4,6 +4,7 @@
         'card_title': { type:Boolean, default:true },
         'icon_size': { type:Number, default:50 },
         'font_size': { type:String, default:"text-h5" } ,
+        'font_weight': { type:String, default:"font-weight-bold" } ,
         'areas': Array
     })
 </script>

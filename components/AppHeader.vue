@@ -1,6 +1,7 @@
 <template>
   <div>
-    <b-navbar smart-scroll toggleable="lg" type="light" variant="dark-blue" class="pa-2 border-bottom text-light navbar-dark" fixed="top" >
+    <!-- <b-navbar smart-scroll toggleable="lg" type="light" variant="dark-blue" class="pa-2 border-bottom text-light navbar-dark" fixed="top" > -->
+    <b-navbar smart-scroll toggleable="lg" type="light" :style="{background: 'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(57,72,103,.99) 70%, rgba(0,0,0,0) 100%) '}" class="pa-2 text-light navbar-dark" fixed="top" >
       <NuxtLink to="/">
         <b-navbar-brand class="d-flex justify-left">
         <v-img src="/favicon.ico" height="30px" width="30px" :aspect-ratio="1" />
