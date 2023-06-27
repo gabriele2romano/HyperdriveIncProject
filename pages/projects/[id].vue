@@ -28,54 +28,58 @@ const images = project.value.images
     <div>
         <!-- Start Project title and image-->
         <v-parallax :src=images[0]>
-            <div class="d-flex fill-height justify-center align-center bg-darken" >
-                <v-container class="text-light" max-width="80%" >
-                    <v-row>
-                        <v-col class="d-flex flex-column" cols="12">
-                            <NuxtLink to="/projects/" class="pa-2"><b-link variant="light">See all our projects</b-link></NuxtLink>
-                            <div class="text-h2 pt-3 font-weight-bold">{{ project_title }}</div>
-                        </v-col>
-                    </v-row>
-                    <!--Problem row-->
-                    <v-row>
-                        <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" sx="12">                    
-                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+            <v-container class="d-flex text-light fill-height justify-self-center align-center bg-darken" fluid>
+                <v-row class="d-flex justify-center">
+                    <v-col cols="12" md="8">
+                        <v-row>
+                            <v-col class="d-flex flex-coloumn" cols="12">
                                 <div>
-                                    <div class="text-h4">Problem</div>
-                                    <div class="text-body-3 mb-2">{{ problem }}</div>
+                                    <NuxtLink to="/projects/" class="pa-2"><b-link variant="light">See all our projects</b-link></NuxtLink>
+                                    <div class="text-h3 text-md-h2 pt-3 font-weight-bold">{{ project_title }}</div>
                                 </div>
-                            </v-sheet>
-                        </v-col>
+                            </v-col>
+                        </v-row>
+                        <!--Problem row-->
+                        <v-row>
+                            <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" xs="1">                    
+                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                                    <div>
+                                        <div class="text-h4">Problem</div>
+                                        <div class="text-body-3 mb-2">{{ problem }}</div>
+                                    </div>
+                                </v-sheet>
+                            </v-col>
+                            
+                            <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4" >
+                                <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                                    <v-img :src="images[1]"  height="100%" cover></v-img>
+                                </v-sheet>
+                            </v-col>
+                        </v-row>
                         
-                        <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4" sx="12">
-                            <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                <v-img :src="images[1]"  height="100%" cover></v-img>
-                            </v-sheet>
-                        </v-col>
-                    </v-row>
-                    
-                    <!--Solution row-->
-                    <v-row>
-                        <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" sx="12" order-md="last">                    
-                            <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                <div>
-                                    <div class="text-h4">Solution</div>
-                                    <div class="text-body-3 mb-2">{{ solution }}</div>
-                                </div>
-                            </v-sheet>
-                        </v-col>
-                        
-                        <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4" sx="12">
-                            <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
-                                <v-img :src="images[2]"  height="100%" cover></v-img>
-                            </v-sheet>
-                        </v-col>
-                    </v-row>
-                </v-container>
-            </div>
+                        <!--Solution row-->
+                        <v-row>
+                            <v-col class="d-flex flex-column justify-center align-center" cols="12" md="8" order-md="last">                    
+                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                                    <div>
+                                        <div class="text-h4">Solution</div>
+                                        <div class="text-body-3 mb-2">{{ solution }}</div>
+                                    </div>
+                                </v-sheet>
+                            </v-col>
+                            
+                            <v-col class="d-flex flex-column justify-center align-center" cols="12" md="4">
+                                <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
+                                    <v-img :src="images[2]"  height="100%" cover></v-img>
+                                </v-sheet>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-row>
+            </v-container>
         </v-parallax>
         <!-- End Project title and image-->
-
+        
         <!--Project description and other images-->
         <v-container fluid class="bg-dark-blue">
             <v-row justify="center">
@@ -112,7 +116,7 @@ const images = project.value.images
                 </v-col>
             </v-row>
             <!--End Startup Infos-->
-
+            
             <!--Start Involved Areas-->
             <v-row class="d-flex justify-center align-items-center">
                 <v-col cols="8">
@@ -121,7 +125,7 @@ const images = project.value.images
                 </v-col>
             </v-row>
             <!--End Involved Areas-->
-
+            
             <!--Start Project Team-->
             <v-row class="d-flex justify-center align-items-center">
                 <v-col cols="8">
