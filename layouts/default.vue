@@ -39,6 +39,11 @@
     filter: blur(8px);
     -webkit-filter: blur(8px);
 }
+
+.nuxt-link-active{
+    color: var(--color1);
+    font-weight: bold;
+}
 </style>
 <script setup>
 

@@ -7,8 +7,8 @@
 </script>
 
 <template>
-    <v-container class="my-10">
-        <v-row no-gutters>
+    <v-container fluid class="mt-5">
+        <v-row >
             
             <v-col class="d-flex flex-column justify-center align-center">
                 <v-icon icon="mdi-flag-variant" size="80"></v-icon>

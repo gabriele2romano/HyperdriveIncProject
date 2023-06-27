@@ -8,7 +8,7 @@
         <!-- <v-divider width="50%" class="mx-auto my-0"></v-divider> -->
         <v-card-actions class="d-flex justify-center mb-0">
             <v-container fluid class="ma-auto pa-auto">
-            <ProjectIconCard :areas="project_areas.area" :card_title="false" :icon_size="30"/>
+            <ProjectIconCard :areas="project_areas.area" :card_title="false" :icon_size="30" :font_size="'text-h5'"/>
             </v-container>
         </v-card-actions>
     </v-card>
