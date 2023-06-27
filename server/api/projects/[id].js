@@ -8,9 +8,6 @@ export default defineEventHandler(async (event) => {
     .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,person(name,surname,role,picture),company(name,description,icon),area(name,icon),images').eq('id', id).single();
     
     //get images
-    /* data.images = await client.storage
-    .from('images')
-    .getPublicUrl('projects/bg-projects.jpg').data.publicUrl */
     var images_url = []
     data.images.forEach ((image) => {
         images_url

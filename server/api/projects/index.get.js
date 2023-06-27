@@ -3,17 +3,10 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
-    const { data, error }= await client.from('project').select('*')
+    const { data, error }= await client.from('project').select('id,title,problem,images')
 
     data.forEach ((project,index) => {
-        var images_url = []
-        project.images.forEach((image) => {
-            images_url.push(
-                client.storage
-                .from('images')
-                .getPublicUrl('projects/'+image).data.publicUrl
-            )
-        })
+        var images_url = [client.storage.from('images').getPublicUrl('projects/'+project.images[0]).data.publicUrl]
         project.images = images_url
     })
     

@@ -1,5 +1,5 @@
 <template>
-    <v-card :to="'/projects/' + project_id" class="bg-dark-blue ma-1 d-flex flex-column" height="100%" >
+    <v-card :to="'/projects/' + project_id" class="bg-dark-blue d-flex flex-column" height="100%" >
         <v-img :src=project_image max-height="200" width="100%" :aspect-ratio="1" cover></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
         <v-spacer></v-spacer>
