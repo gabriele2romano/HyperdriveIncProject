@@ -20,7 +20,7 @@
               <b-dropdown-item to="/projects/" class="text-dark">All Projects</b-dropdown-item>
             </b-nav-item-dropdown>
             <li class="nav-item dropdown nav-link d-none d-md-block">
-              <v-link class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Projects</v-link>
+              <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Projects</a>
               <ul class="dropdown-menu">
                 <b-dropdown-item to="/projects/relevant" class="text-dark" >Most Relevant Projects</b-dropdown-item>
                 <b-dropdown-item to="/projects/" class="text-dark">All Projects</b-dropdown-item>

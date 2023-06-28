@@ -2,18 +2,18 @@ import { serverSupabaseClient } from '#supabase/server'
 
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
-
-    const { data, error }= await client.from('project').select('id,title,problem,images,area(id,name))')
-
-    data.forEach ((project,index) => {
+    const area_id = event.context.params.area_id
+    const { data, error }= await client.from('area').select('project(id,title,problem,images)').eq('id', area_id,{inner: true})
+    
+   /*  data.forEach ((project,index) => {
         var images_url = [client.storage.from('images').getPublicUrl('projects/'+project.images[0]).data.publicUrl]
         project.images = images_url
-    })
+    }) */
     
     if(error) {
         console.log(error.message)
         throw createError({statusCode: 400, statusMessage: error.message})
     }
-    if(process.env.SUPABASE_LOG == true )console.log(data)
+    if(!process.env.SUPABASE_LOG)console.log(data)
     return data
 })
