@@ -15,7 +15,7 @@ const banner_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, se
             <v-row class="d-flex" justify="center">
             <v-col class="d-flex flex-column justify-center" cols="12" md="8">  
                 <v-row class="d-flex">
-                    <v-col cols="12" md="6" xs="12" v-for="project in projects" :key="project.id" class="d-flex flex-column">
+                    <v-col cols="12" md="4" xs="12" v-for="project in projects" :key="project.id" class="d-flex flex-column">
                         <ProjectRelevantCard :project_id=project.id :project_title=project.title :project_overview=project.description :project_problem="project.problem" :project_solution="project.solution" :project_image=project.images></ProjectRelevantCard>
                     </v-col> 
                 </v-row>
