@@ -7,12 +7,14 @@
         banner_title="Contact Us" 
         banner_subtitle="We love questions and feedback and we're always happy to help! Here are some ways to contact us."
         :banner_img="banner_img"
+        banner_link="Go to project proposal form"
+        banner_path="/contacts/form"
     >
     </Banner>
 
     <div class="bg-mega-grey d-flex flex-column justify-center align-center pa-10">
         <!--Contacts card-->
-        <v-sheet color="dark-blue pa-10 ma-10">
+        <v-sheet color="dark-blue" class="pa-10 ma-10">
             <v-container>
                 <v-row>
                     <v-col cols="12" md="6" class="d-flex align-center">

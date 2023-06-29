@@ -38,6 +38,7 @@ onMounted(() => {
             <v-container class="text-light bg-darken align-end pt-5 pb-0 px-0" fluid ref="infoBox" :style="{backgroundImage:'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('+images[0]+')',backgroundSize:'cover'}">
                 <v-row class="justify-center px-4">
                     <v-col cols="12" md="8"> 
+                        <!-- Start See all projects -->
                         <v-row>
                             <v-col class="d-flex" cols="12">
                                 <div>
@@ -46,6 +47,8 @@ onMounted(() => {
                                 </div>
                             </v-col>
                         </v-row>
+                        <!-- End See all projects -->
+                        
                         <!-- Start Problem row -->
                         <v-row>
                             <v-col class="d-flex" cols="12" md="8">                    

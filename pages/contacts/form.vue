@@ -38,7 +38,9 @@
 </script>
 
 <template>
-    <Banner :banner_img="banner_img" :banner_title="banner_title" :banner_subtitle="banner_subtitle"></Banner>
+    <Banner :banner_img="banner_img" :banner_title="banner_title" :banner_subtitle="banner_subtitle"
+        banner_link="Go to contact info"
+        banner_path="/contacts/"></Banner>
     
     <div class="bg-mega-grey">
         <v-container>
