@@ -50,7 +50,7 @@ function onSubmit(event) {
                 <v-col cols="12" md="6">
                     <div class="bg-dark-blue pa-8 font-weight-bold text-light">
                         <!--Contact form-->
-                        <b-form @submit="onSubmit" :validated="validate">
+                        <b-form @submit="onSubmit" :validated="validate" class="card-bordered">
                             <!--Name-->
                             <b-form-group
                             label="Full Name *"
