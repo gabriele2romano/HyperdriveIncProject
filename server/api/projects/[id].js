@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
     var images_url = []
     data.images.forEach ((image) => {
         images_url
-        .push(client.storage.from('images').getPublicUrl('projects/'+image).data.publicUrl)
+        .push(client.storage.from('images').getPublicUrl('projects/project'+id+'/'+image).data.publicUrl)
     }) 
     data.images = images_url
     
