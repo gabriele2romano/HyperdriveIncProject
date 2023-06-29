@@ -7,28 +7,20 @@
                 <v-card-subtitle class="text-body-1">What we want to solve</v-card-subtitle>
                 <v-card-text class="text-body-2 pb-1">{{ project_overview }}</v-card-text> -->
                 <v-img :src=project_image[0] max-height="300" width="100%" :aspect-ratio="1" cover></v-img>
+                <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
+                
                 <v-carousel 
-                height="200px"
+                height="100px"
                 cycle
                 :interval="5000"
                 :show-arrows="false"
                 hide-delimiters
                 :continuous="false">
-                <v-carousel-item >
-                    <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
-                    
-                    <v-card-subtitle class="text-body-1">What is it</v-card-subtitle>
-                    <v-card-text class="text-body-2 pb-1">{{ project_overview }}</v-card-text>
-                </v-carousel-item>
                 <v-carousel-item>
-                    <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
-                    
                     <v-card-subtitle class="text-body-1">What is the problem</v-card-subtitle>
                     <v-card-text class="text-body-2 pb-1">{{ project_problem }}</v-card-text>
                 </v-carousel-item>
-                <v-carousel-item>
-                    <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
-                    
+                <v-carousel-item>    
                     <v-card-subtitle class="text-body-1">How we will solve</v-card-subtitle>
                     <v-card-text class="text-body-2 pb-1">{{ project_solution }}</v-card-text>
                 </v-carousel-item>

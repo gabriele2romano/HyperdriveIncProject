@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
             images_url.push(
                 client.storage
                 .from('images')
-                .getPublicUrl('projects/'+project.images[i]).data.publicUrl
+                .getPublicUrl('projects/project'+project.id+'/'+project.images[i]).data.publicUrl
             )
         }
         project.images = images_url
