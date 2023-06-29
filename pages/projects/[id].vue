@@ -49,7 +49,7 @@ onMounted(() => {
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
                                         <div class="text-h4">Problem</div>
-                                        <div class="text-body-3 mb-2">{{ problem }}</div>
+                                        <div class="text-body-h3 pa-2">{{ problem }}</div>
                                     </div>
                                 </v-sheet>
                             </v-col>
@@ -68,7 +68,7 @@ onMounted(() => {
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
                                         <div class="text-h4">Solution</div>
-                                        <div class="text-body-3 mb-2">{{ solution }}</div>
+                                        <div class="text-body-h3 mb-2 pa-2">{{ solution }}</div>
                                     </div>
                                 </v-sheet>
                             </v-col>
@@ -100,8 +100,8 @@ onMounted(() => {
                 <v-row justify="center">
                     <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">   
                         <div class="text-h4">Project Description</div>
-                        <p class="text-body-2"> {{ project_description }}</p>          
-                        <v-carousel cycle interval="5000" hide-delimiters :show-arrows="false" v-if="images.length>3">
+                        <p class="text-body-2 pa-2"> {{ project_description }}</p>          
+                        <v-carousel cycle interval="5000" hide-delimiters :show-arrows="false" v-if="images.length>3" class="card-bordered">
                             <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover></v-carousel-item>
                         </v-carousel>
                         <ProjectInfoCard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfoCard>
@@ -118,25 +118,34 @@ onMounted(() => {
                 <!-- End Divider -->
                 
                 <!--Start Startup infos-->
-                <v-row class="d-flex justify-center align-items-center mb-5">
-                    <v-col cols="12" md="2" class="d-flex justify-center">   
-                        <div class="pa-6 bg-light rounded-circle d-inline-block">
-                            <v-img :src="company.icon" class="ma-auto" max-height="150" max-width="150"></v-img>
-                        </div>
+                <v-row class="d-flex justify-center align-items-center">
+                    <v-col cols="12" md="8">
+                        <v-row>
+                            <v-col class="text-center">
+                                <div class="text-h3 font-weight-bold">Company Details</div>
+                            </v-col>
+                        </v-row>
+                        <v-row class="d-flex align-center justify-center mb-5 text-center text-md-left">
+                            <v-col cols="12" md="4" class="d-flex align-center justify-center">   
+                                <div class="pa-6 bg-light rounded-circle d-inline-block">
+                                    <v-img :src="company.icon" class="ma-5" height="170" width="170"></v-img>
+                                </div>
+                            </v-col>
+                            <v-col class="d-flex flex-column justify-center" cols="12" md="6" sx="12"> 
+                                <div class="justify-center align-center">
+                                    <div class="text-h4 font-weight-medium">{{ company.name }}</div>
+                                    <div class="text-body-3 mb-2 pa-2">{{ company.description }}</div>
+                                </div>
+                            </v-col>
+                        </v-row>
                     </v-col>
-                    <v-col class="d-flex flex-column justify-center" cols="12" lg="4" md="4" sx="12"> 
-                        <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5 font-weight-medium" height="250" width="100%">
-                            <div class="text-h4 font-weight-bold">{{ company.name }}</div>
-                            <div class="text-body-3 mb-2">{{ company.description }}</div>
-                        </div>
-                    </v-col>
-                </v-row>
+                </v-row>    
                 <!--End Startup Infos-->
                 
                 <!--Start Project Team-->
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
-                        <v-sheet class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center">
+                        <v-sheet class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center card-bordered">
                             <v-row class="ma-5">
                                 <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                     <div>
@@ -147,7 +156,7 @@ onMounted(() => {
                                 </v-col>
                                 <v-col cols="12" md="4" order-md="first">
                                     <div class="pa-2 bg-light rounded-circle d-inline-block" >
-                                        <v-img :src="supervisor.picture" max-height="250" max-width="250"></v-img>
+                                        <v-img :src="supervisor.picture" height="250" width="250"></v-img>
                                     </div>
                                 </v-col>
                                 <v-col cols="12" class="d-md-none">
