@@ -126,12 +126,12 @@ onMounted(() => {
                             </v-col>
                         </v-row>
                         <v-row class="d-flex align-center justify-center mb-5 text-center text-md-left">
-                            <v-col cols="12" md="4" class="d-flex align-center justify-center">   
+                            <v-col cols="12" lg="4" class="d-flex align-center justify-center">   
                                 <div class="pa-6 bg-light rounded-circle d-inline-block">
                                     <v-img :src="company.icon" class="ma-5" height="170" width="170"></v-img>
                                 </div>
                             </v-col>
-                            <v-col class="d-flex flex-column justify-center" cols="12" md="6" sx="12"> 
+                            <v-col class="d-flex flex-column justify-center" cols="12" lg="6" sx="12"> 
                                 <div class="justify-center align-center">
                                     <div class="text-h4 font-weight-medium">{{ company.name }}</div>
                                     <div class="text-body-3 mb-2 pa-2">{{ company.description }}</div>
@@ -145,7 +145,7 @@ onMounted(() => {
                 <!--Start Project Team-->
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
-                        <v-sheet class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center card-bordered">
+                        <v-sheet v-ripple  @click="$router.push('/people/'+supervisor.id)" class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center " :rounded="true">
                             <v-row class="ma-5">
                                 <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                     <div>
@@ -159,7 +159,7 @@ onMounted(() => {
                                         <v-img :src="supervisor.picture" height="250" width="250"></v-img>
                                     </div>
                                 </v-col>
-                                <v-col cols="12" class="d-md-none">
+                                <v-col cols="12" class="d-sm-none">
                                     <div>
                                         <div class="text-body-1 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
                                         <div class="text-body-2 pb-2">{{ supervisor.role }}</div>
