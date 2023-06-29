@@ -42,7 +42,7 @@
   /* ============ desktop view ============ */
   @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu{ display: none !important; }
-    .navbar .nav-item:hover .nav-link{  }
+    .navbar .dropdown-menu .nav-item:hover .nav-link{ background-color: white}
     .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
     .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
   }
