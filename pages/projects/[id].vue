@@ -2,24 +2,18 @@
 const route = useRoute()
 const id = route.params.id
 const { data: project } = await useFetch('/api/projects/'+id)
+const { data: company } = await useFetch('/api/projects/getCompany/'+project.value.company_id)
+const { data: supervisor } = await useFetch('/api/projects/getSupervisor/'+project.value.supervisor_id)
 
 const project_title = project.value.title
 const problem = project.value.problem
 const solution = project.value.solution
 const project_description =  project.value.description
-const company_name = project.value.company.name
-const company_logo = '/img/logo.png'
-const company_description = project.value.company.description//'Solaris is a startup that aims to solve the problem of inefficiencies in solar energy management.'
 const project_areas = project.value.area
 const project_country = project.value.country
 const project_foundation_year = project.value.foundation_year
 const project_investment_date = project.value.investment_date
-const supervisor = {
-    name: project.value.person.name,
-    surname: project.value.person.surname,
-    role: project.value.person.role,
-    picture: project.value.person.picture
-} 
+
 const images = project.value.images
 
 //get height of infoBox
@@ -42,7 +36,7 @@ onMounted(() => {
                         <v-row>
                             <v-col class="d-flex" cols="12">
                                 <div>
-                                    <NuxtLink to="/projects/" class="pa-2"><b-link variant="light">See all our projects</b-link></NuxtLink>
+                                    <b-link class="pa-2 link-light" to="/projects/" variant="light">See all our projects</b-link>
                                     <div class="text-h3 text-md-h2 pt-3 font-weight-bold">{{ project_title }}</div>
                                 </div>
                             </v-col>
@@ -127,13 +121,13 @@ onMounted(() => {
                 <v-row class="d-flex justify-center align-items-center mb-5">
                     <v-col cols="12" md="2" class="d-flex justify-center">   
                         <div class="pa-6 bg-light rounded-circle d-inline-block">
-                            <v-img src="/img/logo.png"  class="ma-auto" max-height="150" max-width="150"></v-img>
+                            <v-img :src="company.icon" class="ma-auto" max-height="150" max-width="150"></v-img>
                         </div>
                     </v-col>
                     <v-col class="d-flex flex-column justify-center" cols="12" lg="4" md="4" sx="12"> 
                         <div class="justify-center align-center flex-wrap text-left pa-2 ma-2 pl-5 font-weight-medium" height="250" width="100%">
-                            <div class="text-h4 font-weight-bold">{{ company_name }}</div>
-                            <div class="text-body-3 mb-2">{{ company_description }}</div>
+                            <div class="text-h4 font-weight-bold">{{ company.name }}</div>
+                            <div class="text-body-3 mb-2">{{ company.description }}</div>
                         </div>
                     </v-col>
                 </v-row>
@@ -153,7 +147,7 @@ onMounted(() => {
                                 </v-col>
                                 <v-col cols="12" md="4" order-md="first">
                                     <div class="pa-2 bg-light rounded-circle d-inline-block" >
-                                        <v-img src="/img/logo.png" max-height="250" max-width="250"></v-img>
+                                        <v-img :src="supervisor.picture" max-height="250" max-width="250"></v-img>
                                     </div>
                                 </v-col>
                                 <v-col cols="12" class="d-md-none">
