@@ -59,10 +59,6 @@ function onReset(event) {
 
 const sent = ref(false)
 
-function greet() {
-    alert('Coso')
-}
-
 </script>
 
 <template>
@@ -76,7 +72,7 @@ function greet() {
                 <v-col cols="12" md="6">
                     <div class="bg-dark-blue pa-8 font-weight-bold text-light">
                         <!--Contact form-->
-                        <b-form @submit="onSubmit" :validated="validate" class="card-bordered">
+                        <b-form @submit="onSubmit" :validated="true" class="card-bordered">
                             <!--Name-->
                             <b-form-group label="Full Name *" label-for="input-name" class="pb-5">
                                 <b-form-input id="input-name" v-model="company_info.sender_name" placeholder="Your full name"
