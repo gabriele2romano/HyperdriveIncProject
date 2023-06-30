@@ -45,6 +45,10 @@
     color: var(--color1);
     font-weight: bold;
 }
+
+.card-bordered{
+    border-radius: 4px;
+}
 </style>
 <script setup>
 

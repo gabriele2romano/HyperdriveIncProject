@@ -1,6 +1,6 @@
 <script setup>
 
-const{data:banner_img} = await useFetch('/api/images/banner_team.jpg')
+const{data:banner_img} = await useFetch('/api/images/banner_aboutus.jpg')
 
 const {data:people} = await useFetch('/api/people/')
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark-blue" class="border-bottom text-light navbar-dark" fixed="top" >
+    <b-navbar toggleable="lg" type="dark" variant="dark-blue" class="border-bottom text-light navbar-dark shadow-lg" fixed="top" :elevation="6" >
       <!-- <b-navbar smart-scroll toggleable="lg" type="light" :style="{background: 'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(57,72,103,.99) 70%, rgba(0,0,0,0) 100%) '}" class="pa-2 text-light navbar-dark" fixed="top" > -->
         
         <b-navbar-brand to="/" class="d-flex" >
