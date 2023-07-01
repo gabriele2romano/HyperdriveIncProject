@@ -209,10 +209,11 @@ const sent = ref(false)
 
                             <!--Submit button-->
                             <div class="d-flex justify-center pt-10">
-                                <b-button type="submit"
+                               <!--  <b-button type="submit"
                                     class="text-light text-h5 bg-darker-blue font-weight-bold border-transparent" size="lg">
                                     Submit
-                                </b-button>
+                                </b-button> -->
+                                <v-btn type="submit" class="text-light bg-darker-blue font-weight-bold">Submit </v-btn>
                             </div>
                         </b-form>
                     </div>
