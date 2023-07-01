@@ -70,9 +70,9 @@ const sent = ref(false)
         <v-container>
             <v-row justify="center">
                 <v-col cols="12" md="6">
-                    <div class="bg-dark-blue pa-8 font-weight-bold text-light">
+                    <div class="bg-dark-blue pa-8 font-weight-bold text-light card-bordered">
                         <!--Contact form-->
-                        <b-form @submit="onSubmit" :validated="true" class="card-bordered">
+                        <b-form @submit="onSubmit" :validated="true">
                             <!--Name-->
                             <b-form-group label="Full Name *" label-for="input-name" class="pb-5">
                                 <b-form-input id="input-name" v-model="company_info.sender_name" placeholder="Your full name"

@@ -95,7 +95,7 @@ const contacts = [
 <v-container fluid class="bg-mega-grey">
     <v-row class="d-flex justify-center my-5">
         <v-col cols="12" md="8" class="justify-center align-center">
-            <v-sheet v-ripple color="dark-blue" rounded class="pa-2 pa-md-10">
+            <v-sheet color="dark-blue" rounded class="pa-2 pa-md-10">
                 <v-container>
                     <v-row>
                         <v-col cols="12" md="6" class="d-flex align-center" v-for="contact_det in contacts">
