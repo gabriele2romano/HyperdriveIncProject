@@ -86,7 +86,7 @@ onMounted(() => {
                 <!--Start Involved Areas-->
                 <v-row class="bg-darker-blue-div mt-10 align-center">
                     <v-col cols="12" class="d-flex justify-center">
-                        <ProjectIconCard :areas="project_areas" :icon_size="30"/>
+                        <ProjectIconCard :areas="project_areas" :icon_size="30" justify="space-around"/>
                     </v-col>
                 </v-row>
                 <!--End Involved Areas-->
