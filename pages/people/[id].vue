@@ -13,7 +13,6 @@
 
     //fetch projects that the person is involved in
     const { data: projects } = await useFetch('/api/people/getProjects/'+id)
-
 </script>
 
 <template>
@@ -105,8 +104,8 @@
 
             <!--Fourth row: supervised projects cards-->
             <v-row justify="center" class="my-4">
-                <v-col v-for="project in projects" cols="12" md="3">
-                    <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
+                <v-col v-for="project in projects" cols="12" md="4">
+                    <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
                 </v-col>
             </v-row>
         </v-container>
