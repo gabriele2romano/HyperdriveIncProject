@@ -1,7 +1,7 @@
 <script setup>
 const { data:banner_img } = await useFetch('/api/images/banner_contact.jpg')
 
-const size_icon = 100
+const size_icon = 80
 const contacts = [
 {
     icon: "mdi-map-marker",
@@ -109,15 +109,15 @@ const contacts = [
             
             <v-row class="d-flex justify-center">
                 <v-col cols="8" class="d-flex justify-center align-center" >
-                    <v-divider style="border-radius: 10%;" cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center my-10"></v-divider>
+                    <v-divider  cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center my-10"></v-divider>
                 </v-col>
             </v-row>
             
-            <div class="text-h4 text-light font-weight-bold">
+            <div class="text-h4 text-light font-weight-bold d-none d-md-flex">
                 Are you a company? Would you like to get<br>funding for your latest project?
             </div>
             <NuxtLink to="/contacts/form" class="d-flex mt-5" style="text-decoration: none;">
-                <v-btn class="text-light text-h6 bg-darker-blue font-weight-bold ml-auto" size="x-large" variant="tonal" rounded=6>
+                <v-btn class="text-light text-h6 bg-darker-blue font-weight-bold mr-auto ml-auto mr-md-0" size="x-large" variant="tonal" rounded=6>
                     Send us your proposal
                 </v-btn>
             </NuxtLink>

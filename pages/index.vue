@@ -97,7 +97,7 @@ const card_array = [
           <v-col  cols="12" md="3" class="justify-center d-none d-sm-flex">
             <div class="text-h6 font-weight-bold d-flex text-center">Want to talk with us?</div>
           </v-col>
-          <v-col cols="8" md="4" class="d-flex justify-center">
+          <v-col cols="10" md="4" class="d-flex justify-center">
             <v-btn to="/contacts/" class="mx-2" color="darker-blue" block text>Contact Us</v-btn>
           </v-col>
         </v-row>
@@ -105,7 +105,7 @@ const card_array = [
           <v-col  cols="12" md="3" class="justify-center d-none d-sm-flex">
             <div class="text-h6 font-weight-bold d-flex text-center">Does your projects needs financing?</div>
           </v-col>
-          <v-col cols="8" md="4" class="d-flex justify-center">
+          <v-col cols="10" md="4" class="d-flex justify-center">
             <v-btn to="/contacts/form" class="mx-2" color="darker-blue" block text>Send us your proposal</v-btn>
           </v-col>
         </v-row>
