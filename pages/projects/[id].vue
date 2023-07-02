@@ -15,7 +15,6 @@ const project_foundation_year = project.value.foundation_year
 const project_investment_date = project.value.investment_date
 
 const images = project.value.images
-
 //get height of infoBox
 /* const infoBox = ref(null)
 var height = ref(0)
@@ -23,10 +22,29 @@ onMounted(() => {
     height= infoBox.value.$el.clientHeight
     console.log(height)
 }) */
+const selectedImage = ref(null);
+
+function toggleFullscreen(elem) {
+    selectedImage.value = elem;
+}
 </script>
 
 <template>
     <div>
+        <!-- Start Full Screen Image -->
+        <div v-if="selectedImage" class="overlay">
+                    <v-img
+                    class="mt-12"
+                    :src="selectedImage"
+                    alt=""
+                    height="95vh"
+                    contain
+                    dark
+                    @click.stop="selectedImage = null"
+                    ></v-img>
+        </div>
+        <!-- End Full Screen Image -->
+
         <!-- Start Project title and image-->
         <!--  <v-parallax :src=images[0]> -->
             <v-container class="text-light bg-darken align-end pt-5 pb-0 px-0" fluid ref="infoBox" :style="{backgroundImage:'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('+images[0]+')',backgroundSize:'cover'}">
@@ -56,7 +74,7 @@ onMounted(() => {
                             
                             <v-col class="d-flex " cols="12" md="4" >
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                    <v-img :src="images[1]"  height="100%" cover></v-img>
+                                    <v-img :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])"/>
                                 </v-sheet>
                             </v-col>
                         </v-row>
@@ -75,7 +93,7 @@ onMounted(() => {
                             
                             <v-col class="d-flex " cols="12" md="4">
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
-                                    <v-img :src="images[2]"  height="100%" cover></v-img>
+                                    <v-img :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])"></v-img>
                                 </v-sheet>
                             </v-col>
                         </v-row>
@@ -102,7 +120,7 @@ onMounted(() => {
                         <div class="text-h4">Project Description</div>
                         <p class="text-body-2 pa-2"> {{ project_description }}</p>          
                         <v-carousel cycle interval="5000" hide-delimiters :show-arrows="false" v-if="images.length>3" class="card-bordered">
-                            <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover></v-carousel-item>
+                            <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover @click="toggleFullscreen(images[i-1+3])"></v-carousel-item>
                         </v-carousel>
                         <ProjectInfoCard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfoCard>
                     </v-col>
@@ -128,7 +146,7 @@ onMounted(() => {
                         <v-row class="d-flex align-center justify-center mb-5 text-center text-md-left">
                             <v-col cols="12" lg="4" class="d-flex align-center justify-center">   
                                 <div class="pa-6 bg-light rounded-circle d-inline-block">
-                                    <v-img :src="company.icon" class="ma-5" height="170" width="170"></v-img>
+                                    <v-img :src="company.icon" class="ma-5" height="170" width="170" @click="toggleFullscreen(company.icon)"></v-img>
                                 </div>
                             </v-col>
                             <v-col class="d-flex flex-column justify-center" cols="12" lg="6" sx="12"> 

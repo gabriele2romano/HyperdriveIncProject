@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   
   <v-hover v-slot="{ isHovering, props }">
-    <v-card color="dark-blue" class="px-7 py-3" :elevation="isHovering ? 12 : 2" :class="{ 'on-hover': isHovering }" v-bind="props" height="100%">
+    <v-card :to="path" color="dark-blue" class="px-7 py-3" :elevation="isHovering ? 12 : 2" :class="{ 'on-hover': isHovering }" v-bind="props" height="100%">
       <v-card-title class="text-h4 font-weight-black">{{title}}</v-card-title>
       <v-card-text class="text-body-h1 font-weight-medium">{{description}}</v-card-text>
       <v-btn :to="path" variant="text" class="btn-card" style="overflow: hidden;
