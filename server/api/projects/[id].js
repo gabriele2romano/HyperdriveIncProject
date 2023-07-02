@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
     const { data, error }= await client
     //get project's data
-    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,supervisor_id,company_id,area(name,icon),images').eq('id', id).single();
+    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,supervisor_id,company_id,area(id,name,icon),images').eq('id', id).single();
     
     //get images
     var images_url = []

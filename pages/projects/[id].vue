@@ -107,7 +107,7 @@ function toggleFullscreen(elem) {
                 <!--Start Involved Areas-->
                 <v-row class="bg-darker-blue-div mt-10 align-center">
                     <v-col cols="12" class="d-flex justify-center">
-                        <ProjectIconCard :areas="project_areas" :icon_size="30" justify="space-around"/>
+                        <ProjectIconCard :areas="project_areas" :icon_size="30" justify="space-around" clickable="true"/>
                     </v-col>
                 </v-row>
                 <!--End Involved Areas-->
@@ -166,7 +166,7 @@ function toggleFullscreen(elem) {
                 <!--Start Project Team-->
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
-                        <v-sheet v-ripple  @click="$router.push('/people/'+supervisor.id)" class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center " :rounded="true">
+                        <v-sheet v-ripple  @click="$router.push('/people/'+supervisor.id)" class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center be-pointed" :rounded="true">
                             <v-row class="ma-5">
                                 <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                     <div>
