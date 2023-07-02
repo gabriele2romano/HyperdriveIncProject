@@ -22,8 +22,10 @@
     </Banner>
     
     <div class="bg-mega-grey">
-        <v-container fluid class="text-light" style="max-width: 1200px;">
-            <v-row justify="center" class="pa-4">
+        <v-container fluid class="text-light">
+        <v-row class="d-flex" justify="center">
+            <v-col class="d-flex flex-column justify-center" cols="12" md="10">
+            <v-row justify="center">
                 <v-col cols="12">
                     <div class="text-h4 font-weight-bold">
                         Why we're interested in {{ area_name }} 
@@ -45,7 +47,8 @@
                     <ProjectCard :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
                 </v-col>
             </v-row>
-            
+            </v-col>
+            </v-row>
         </v-container>
     </div>
 </template>

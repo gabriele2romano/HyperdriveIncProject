@@ -1,18 +1,18 @@
 <!--This is the page containing information about a single member of the VC's team-->
 
 <script setup>
-    const route = useRoute()
-    const id = route.params.id
-    const { data: person } = await useFetch('/api/people/'+id)
+const route = useRoute()
+const id = route.params.id
+const { data: person } = await useFetch('/api/people/'+id)
 
-    const prevMemberRoute = "/people/" + person.value.prevMemberId
-    const nextMemberRoute = "/people/" + person.value.nextMemberId
+const prevMemberRoute = "/people/" + person.value.prevMemberId
+const nextMemberRoute = "/people/" + person.value.nextMemberId
 
-    const { data: prevMemberName } = await useFetch('/api/people/getName/'+person.value.prevMemberId)
-    const { data: nextMemberName } = await useFetch('/api/people/getName/'+person.value.nextMemberId)
+const { data: prevMemberName } = await useFetch('/api/people/getName/'+person.value.prevMemberId)
+const { data: nextMemberName } = await useFetch('/api/people/getName/'+person.value.nextMemberId)
 
-    //fetch projects that the person is involved in
-    const { data: projects } = await useFetch('/api/people/getProjects/'+id)
+//fetch projects that the person is involved in
+const { data: projects } = await useFetch('/api/people/getProjects/'+id)
 </script>
 
 <template>
@@ -23,52 +23,52 @@
             <v-row justify="center" class="my-4">
                 <v-col cols="12" md="2" class="d-flex justify-center">
                     <NuxtLink to="/people" style="text-decoration: none;">
-                    <v-btn class="text-light text-body-1 bg-dark-blue" variant="tonal" rounded=6>
-                        See our whole team
-                    </v-btn>
+                        <v-btn class="text-light text-body-1 bg-dark-blue" variant="tonal" rounded=6>
+                            See our whole team
+                        </v-btn>
                     </NuxtLink>
                 </v-col>
-
+                
                 <v-col cols="12" md="2" class="d-flex justify-center ml-md-auto">
                     <NuxtLink :to=prevMemberRoute style="text-decoration: none;">
-                    <v-btn class="text-darker-blue text-body-1" variant="text">
-                        <v-icon icon="mdi-arrow-left"></v-icon>
-                        Previous member:<br>{{ prevMemberName.name }} {{ prevMemberName.surname }}
-                    </v-btn>
+                        <v-btn class="text-darker-blue text-body-1" variant="text">
+                            <v-icon icon="mdi-arrow-left"></v-icon>
+                            Previous member:<br>{{ prevMemberName.name }} {{ prevMemberName.surname }}
+                        </v-btn>
                     </NuxtLink>
                 </v-col>
-
+                
                 <v-col cols="12" md="2" class="d-flex justify-center">
                     <NuxtLink :to=nextMemberRoute style="text-decoration: none;">
-                    <v-btn class="text-darker-blue text-body-1" variant="text">
-                        Next member:<br>{{ nextMemberName.name }} {{ nextMemberName.surname }}
-                        <v-icon icon="mdi-arrow-right"></v-icon>
-                    </v-btn>
+                        <v-btn class="text-darker-blue text-body-1" variant="text">
+                            Next member:<br>{{ nextMemberName.name }} {{ nextMemberName.surname }}
+                            <v-icon icon="mdi-arrow-right"></v-icon>
+                        </v-btn>
                     </NuxtLink>
                 </v-col>
             </v-row>
-
+            
             <!--Second row: person card-->
             <v-row>
                 <v-col cols="12">
-                    <v-sheet class="bg-darker-blue"> 
+                    <v-sheet class="bg-darker-blue card-bordered"> 
                         <v-container>
                             <v-row>
                                 <v-col cols="12" md="3">
                                     <v-img 
-                                        :src=person.picture
-                                        height="100%"
-                                        cover
+                                    :src=person.picture
+                                    height="100%"
+                                    cover
                                     ></v-img>
                                 </v-col>
-
+                                
                                 <v-col cols="12" md="9">
                                     <div class="d-flex flex-column flex-md-row justify-space-between">
                                         <div class="d-flex flex-column">
                                             <div class="text-h3">{{ person.name }} {{ person.surname }}</div>
                                             <div class="text-h4">{{ person.role }}</div>
                                         </div>
-
+                                        
                                         <div class="d-flex flex-column">
                                             <div class="text-subtitle-1 py-1">
                                                 <v-icon icon="mdi-phone"></v-icon>
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
                                     <p class="text-body-2 pt-3">
                                         {{ person.cv }}
                                     </p>
@@ -90,26 +90,28 @@
                     </v-sheet>
                 </v-col>
             </v-row>
-
+            
             <!--The following rows are only displayed if there are projects to show. Otherwise, just margin is added-->
             <div v-if="projects.length > 0">
                 <!--Third row: divider and supervised projects title-->
                 <v-row justify="center" class="my-4">
                     <v-col cols="12">
                         <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
-
+                        
                         <div class="text-h4 text-center text-light">
                             Discover the projects supervised by {{ person.name }} {{ person.surname }}
                         </div>
                     </v-col>
                 </v-row>
-
-            <!--Fourth row: supervised projects cards-->
-            <v-row justify="center" class="my-4">
-                <v-col v-for="project in projects" cols="12" md="4">
-                    <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
-                </v-col>
-            </v-row>
+                
+                <!--Fourth row: supervised projects cards-->
+                <v-row justify="center" class="my-4">
+                    <v-col v-for="project in projects" cols="12" md="4">
+                        <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
+                    </v-col>
+                </v-row>
+                
+            </div>
         </v-container>
     </div>
 </template>

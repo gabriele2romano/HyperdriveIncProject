@@ -13,7 +13,7 @@ const { data: areas } = await useFetch('/api/areas')
     
     <v-container fluid class="bg-mega-grey">
         <v-row class="d-flex" justify="center">
-            <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">
+            <v-col class="d-flex flex-column justify-center" cols="12" md="10">
                 <v-row class="d-flex">
                     <v-col cols="12" md="4" v-for="area in areas" :key="area.id" class="pa-4">
                         

@@ -10,7 +10,7 @@ const card_array = [
   title: "The Group",
   description:"​Since its inception in 2019, MEGA Group has embarked on an inspiring journey, driven by a strong vision to make a meaningful impact in the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability. In the early years, we established a diverse and talented team, carefully selecting individuals with deep expertise and a shared passion for responsible investing.",
   button:"Learn more about us",
-  path:"/people"
+  path:"/about"
 },
 {
   title:"The Team",
@@ -21,7 +21,7 @@ const card_array = [
 {
   title:"The Impact",
   description:"​​We have supported a portfolio of highly impactful projects that are driving innovation and making a difference in the world. These projects, spanning across the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability, showcase our commitment to investing in transformative ideas with long-term potential.",
-  button:"Discover our most relevant projects",
+  button:"See our most relevant projects",
   path:"/projects/relevant"
 }
 ]
@@ -75,7 +75,7 @@ const card_array = [
       <v-col cols="12" md="8" class="justify-center">
         <v-row class="d-flex justify-center">
           <v-col cols="12" class="justify-center">
-            <div class="text-h6 font-weight-bold text-center pa-2">Companies we've helped</div>
+            <div class="text-h6 font-weight-bold text-center pa-2">Startup we've helped</div>
           </v-col>
         </v-row>
         <v-row class="d-flex justify-center">

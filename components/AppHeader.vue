@@ -1,3 +1,8 @@
+<script setup>
+//fetch areas
+const { data: areas } = await useFetch('/api/areas/names')
+
+</script>
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark-blue" class="border-bottom text-light navbar-dark shadow-lg" fixed="top" :elevation="6" >
@@ -13,6 +18,7 @@
           
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
+            <b-nav-item to="/" class="nav-link">Home</b-nav-item>
             <b-nav-item to="/about/" class="nav-link">About Us</b-nav-item>
             <b-nav-item-dropdown to="/projects/" text="Projects"  data-bs-toggle="dropdown" class="nav-link d-block d-md-none">
               <b-dropdown-item to="/projects/relevant" class="text-dark" >Most Relevant Projects</b-dropdown-item>
@@ -23,27 +29,45 @@
               <ul class="dropdown-menu">
                 <b-dropdown-item to="/projects/relevant" class="text-dark" >Most Relevant Projects</b-dropdown-item>
                 <b-dropdown-item to="/projects/" class="text-dark">All Projects</b-dropdown-item>
-                <!-- <b-dropdown-divider></b-dropdown-divider>
-                  <b-dropdown-item>three</b-dropdown-item> -->
-                </ul>
-              </li>
-              <b-nav-item to="/people/" class="nav-link">Our Team</b-nav-item>
-              <b-nav-item to="/contacts/" class="nav-link">Contacts</b-nav-item>
-            </b-navbar-nav>
-          </b-collapse>
-        </b-navbar>
-      </div>
-    </template>
-    
-    <script>
-  </script>
-  <style>
-  /* ============ desktop view ============ */
-  @media all and (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu{ display: none !important; }
-    .navbar .dropdown-menu .nav-item:hover .nav-link{ background-color: white}
-    .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
-    .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
-  }
-  /* ============ desktop view .end// ============ */
+              </ul>
+            </li>
+            <b-nav-item to="/people/" class="nav-link">Our Team</b-nav-item>
+            <b-nav-item-dropdown text="Area"  data-bs-toggle="dropdown" class="nav-link d-block d-md-none">
+              <b-dropdown-item to="/areas/" class="text-dark" >All Areas</b-dropdown-item>
+              <!-- <b-dropdown-item to="/areas/" class="text-dark"></b-dropdown-item> -->
+              <b-dropdown-item v-for="area in areas" :to="'/areas/'+area.id" class="text-dark" >{{ area.name }}</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <li class="nav-item dropdown nav-link d-none d-md-block">
+              <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Area</a>
+              <ul class="dropdown-menu">
+                <b-dropdown-item to="/areas/" class="text-dark" >All Areas</b-dropdown-item>
+                <b-dropdown-item v-for="area in areas" :to="'/areas/'+area.id" class="text-dark" >{{ area.name }}</b-dropdown-item>
+              </ul>
+            </li>
+            <b-nav-item-dropdown text="Contacts"  data-bs-toggle="dropdown" class="nav-link d-block d-md-none">
+              <b-dropdown-item to="/contacts/" class="text-dark" >Info</b-dropdown-item>
+              <b-dropdown-item to="/contacts/form" class="text-dark">Work with us</b-dropdown-item>
+            </b-nav-item-dropdown>
+            <li class="nav-item dropdown nav-link d-none d-md-block">
+              <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Contacts
+              </a>
+              <ul class="dropdown-menu">
+                <b-dropdown-item to="/contacts/" class="text-dark" >Info</b-dropdown-item>
+                <b-dropdown-item to="/contacts/form" class="text-dark" >Work with us</b-dropdown-item>
+              </ul>
+            </li>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+  </template>
+<style>
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu{ display: none !important; }
+  .navbar .dropdown-menu .nav-item:hover .nav-link{ background-color: white}
+  .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
+  .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
+}
+/* ============ desktop view .end// ============ */
 </style>

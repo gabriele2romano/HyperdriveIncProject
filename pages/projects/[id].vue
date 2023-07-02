@@ -122,7 +122,7 @@ function toggleFullscreen(elem) {
                     <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">   
                         <div class="text-h4">Project Description</div>
                         <p class="text-body-2 pa-2"> {{ project_description }}</p>          
-                        <v-carousel cycle interval="5000" hide-delimiters :show-arrows="false" v-if="images.length>3" class="card-bordered">
+                        <v-carousel hide-delimiters :show-arrows="true" v-if="images.length>3" class="card-bordered">
                             <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover @click="toggleFullscreen(images[i-1+3])"></v-carousel-item>
                         </v-carousel>
                         <ProjectInfoCard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfoCard>
@@ -142,8 +142,8 @@ function toggleFullscreen(elem) {
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
                         <v-row>
-                            <v-col class="text-center">
-                                <div class="text-h3 font-weight-bold">Company Details</div>
+                            <v-col class="text-center text-md-left">
+                                <div class="text-h3 font-weight-bold">Project By</div>
                             </v-col>
                         </v-row>
                         <v-row class="d-flex align-center justify-center mb-5 text-center text-md-left">

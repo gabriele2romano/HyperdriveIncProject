@@ -43,7 +43,7 @@
     <div class="bg-mega-grey text-light">
         <v-container fluid>
             <v-row justify="center">
-                <v-col cols="12" md="8">
+                <v-col cols="12" md="10">
                     <div class="text-h4 text-center pa-3 font-weight-bold">
                         Who are we?
                     </div>
@@ -113,7 +113,7 @@
                         color="light"
                         :continuous="true"
                         :hide-delimiter-background="true"
-                        class="fill-height"
+                        class="fill-height card-bordered"
                     >
                         <v-carousel-item v-for="(year, i) in years" :key="i" cover class="d-flex flex-column align-center justify-center">
                             <div
@@ -133,7 +133,7 @@
             </v-row>
 
             <v-row justify="center">
-                <v-col cols="12" md="8">
+                <v-col cols="12" md="10">
                     <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
 
                     <div class="text-h4 text-center pa-3 font-weight-bold">Why choose us?</div>
@@ -142,7 +142,7 @@
                     <v-container>
                         <v-row justify="center">
                             <v-col>
-                                <div class="bg-dark-blue-div">
+                                <div class="bg-dark-blue-div card-bordered">
                                     <div class="text-h5 text-center pt-3 font-weight-bold">
                                         Professionalism
                                     </div>
@@ -158,7 +158,7 @@
                             </v-col>
 
                             <v-col>
-                                <div class="bg-dark-blue-div">
+                                <div class="bg-dark-blue-div card-bordered">
                                     <div class="text-h5 text-center pt-3 font-weight-bold">
                                         Loyalty
                                     </div>
@@ -175,7 +175,7 @@
 
                         <v-row justify="center">
                             <v-col>
-                                <div class="bg-dark-blue-div">
+                                <div class="bg-dark-blue-div card-bordered">
                                     <div class="text-h5 text-center pt-3 font-weight-bold">
                                         Passion
                                     </div>
@@ -190,7 +190,7 @@
                             </v-col>
 
                             <v-col>
-                                <div class="bg-dark-blue-div">
+                                <div class="bg-dark-blue-div card-bordered">
                                     <div class="text-h5 text-center pt-3 font-weight-bold">
                                         Uniqueness
                                     </div>

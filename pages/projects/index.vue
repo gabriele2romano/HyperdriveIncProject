@@ -41,7 +41,7 @@ const resetFilter = () => {
     <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_body="banner_body" :banner_img="banner_img" banner_link="Go to most relevant projects" banner_path="/projects/relevant"></Banner>
     <v-container fluid class="bg-mega-grey"> 
         <v-row class="d-flex justify-center">
-            <v-col cols="12" md="8" class="mb-5 justify-center">  
+            <v-col cols="12" md="10" class="mb-5 justify-center">  
                 <!-- Start Filter buttons -->
                 <v-row>
                     <v-col cols="12" md="8">

@@ -69,7 +69,7 @@ const sent = ref(false)
     <div class="bg-mega-grey">
         <v-container>
             <v-row justify="center">
-                <v-col cols="12" md="6">
+                <v-col cols="12" md="9">
                     <div class="bg-dark-blue pa-8 font-weight-bold text-light card-bordered">
                         <!--Contact form-->
                         <b-form @submit="onSubmit" :validated="true">
@@ -208,13 +208,17 @@ const sent = ref(false)
                             </b-form-group>
 
                             <!--Submit button-->
-                            <div class="d-flex justify-center pt-10">
+                            <!-- <div class="d-flex justify-center pt-10"> -->
                                <!--  <b-button type="submit"
                                     class="text-light text-h5 bg-darker-blue font-weight-bold border-transparent" size="lg">
                                     Submit
                                 </b-button> -->
-                                <v-btn type="submit" class="text-light bg-darker-blue font-weight-bold">Submit </v-btn>
-                            </div>
+                                <v-row class="justify-center mt-5">
+                                    <v-col cols="6">
+                                        <v-btn type="submit" block class="text-light bg-darker-blue font-weight-bold">Submit </v-btn>
+                                    </v-col>
+                                </v-row>
+                            <!-- </div> -->
                         </b-form>
                     </div>
                 </v-col>
@@ -222,10 +226,12 @@ const sent = ref(false)
 
             <!--Dynamic success message-->
             <v-row justify="center" v-if="sent">
-                <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
+                <v-col cols="8" md="6">
+                    <v-divider  cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center "></v-divider>
+                </v-col>
 
-                <v-col cols="8">
-                    <v-sheet class="rounded-lg bg-dark-blue ma-2 pa-3 text-light font-weight-bold d-flex flex-column align-center">
+                <v-col cols="12" md="9">
+                    <v-sheet class="bg-dark-blue  pa-3 text-light font-weight-bold d-flex flex-column align-center card-bordered">
                         <v-icon icon="mdi-check" size="50" class="pt-3"></v-icon>
                         <div class="text-h5 text-center">Thank you, your proposal has been sent.<br>We'll contact you back soon.</div>
 
