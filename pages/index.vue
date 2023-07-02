@@ -1,11 +1,10 @@
 
 <script setup lang="ts">
-import path from 'path';
-
-
+//get companies data
 const{data:banner_img} = await useFetch('/api/images/banner_home.jpg')
 const{data:companies} = await useFetch('/api/companies/')
 
+//array of infos
 const card_array = [
 {
   title: "The Group",

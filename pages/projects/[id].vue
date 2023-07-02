@@ -1,10 +1,11 @@
 <script setup>
 const route = useRoute()
+
+//get project data
 const id = route.params.id
 const { data: project } = await useFetch('/api/projects/'+id)
 const { data: company } = await useFetch('/api/projects/getCompany/'+project.value.company_id)
 const { data: supervisor } = await useFetch('/api/projects/getSupervisor/'+project.value.supervisor_id)
-
 const project_title = project.value.title
 const problem = project.value.problem
 const solution = project.value.solution
@@ -13,8 +14,8 @@ const project_areas = project.value.area
 const project_country = project.value.country
 const project_foundation_year = project.value.foundation_year
 const project_investment_date = project.value.investment_date
-
 const images = project.value.images
+
 //get height of infoBox
 /* const infoBox = ref(null)
 var height = ref(0)
@@ -22,6 +23,8 @@ onMounted(() => {
     height= infoBox.value.$el.clientHeight
     console.log(height)
 }) */
+
+// Full Screen Image
 const selectedImage = ref(null);
 
 function toggleFullscreen(elem) {

@@ -1,19 +1,17 @@
 <script setup>
 
+//get all projects data
 const{data:banner_img} = await useFetch('/api/images/banner_projects.jpg')
 const { data: projects } = await useFetch('/api/projects/')
 var filtered_projects = ref([])
 filtered_projects.value = projects.value
 const { data: areas } = await useFetch('/api/areas/names')
 areas.value.unshift({id:0, name:' -- Select an Area to Filter -- ',disabled:true})
-/* projects.value.forEach((project,index) => {
-    project.description = project.description.slice(0, 150)+'...';
-}); */ //creates a warning somehow
 
+//Banner Info
 const banner_title = "Our Projects"
 const banner_subtitle = "IT Solution & IT Startup"
 const banner_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  nisi ut aliquip ex ea commodo consequat."
-
 
 //Filter Management
 const filterByArea = (area_id) => {
@@ -25,7 +23,6 @@ const filterByArea = (area_id) => {
         return projects.value.filter(project => project.area.some(area => area.id == area_id))
     }
 }
-
 var selected_area = ref(0)
 var area_id = ref(0)
 const forceRender = () => {
