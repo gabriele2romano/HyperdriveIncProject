@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     const { data, error }= await client.from('project').select('id,title,problem,images,area(id,name))').order('id', { ascending: true })
 
-    data.forEach ((project,index) => {
+    data.forEach((project,index) => {
         var images_url = [client.storage.from('images').getPublicUrl('projects/project'+project.id+'/'+project.images[0]).data.publicUrl]
         project.images = images_url
     })

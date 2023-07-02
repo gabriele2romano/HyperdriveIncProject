@@ -16,12 +16,14 @@ const banner_subtitle = "We are a group of many talented people. Learn more abou
         <v-row class="d-flex" justify="center">
             <v-col class="d-flex flex-column justify-center" cols="12" md="10">
                 <v-row class="d-flex">
-                    <v-col cols="12" md="4" xs="12" v-for="person in people" :key="person.id" class="d-flex flex-column">
+                    <v-col cols="12" md="4" v-for="person in people" :key="person.id">
                         
-                        <v-card :to="'/people/' + person.id" class="bg-darker-blue-div ma-1 font-weight-bold text-light">
+                        <v-card :to="'/people/' + person.id" class="bg-dark-blue-div ma-1 font-weight-bold text-light d-flex flex-column justify-space-between" min-height="500px">
                             <v-img :src=person.image max-height="350" width="100%" cover></v-img>
-                            <v-card-title class="text-h5 pb-3 font-weight-bold text-center">{{ person.name }} {{ person.surname }}</v-card-title>
-                            <v-card-text class="text-h6 text-center">{{ person.role }}</v-card-text>
+                            <div>
+                                <v-card-title class="text-h4 pb-3 font-weight-bold text-center">{{ person.name }} {{ person.surname }}</v-card-title>
+                                <v-card-text class="text-h6 text-center">{{ person.role }}</v-card-text>
+                            </div>
                         </v-card>
 
                     </v-col>

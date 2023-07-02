@@ -10,8 +10,7 @@ areas.value.unshift({id:0, name:' -- Select an Area to Filter -- ',disabled:true
 
 //Banner Info
 const banner_title = "Our Projects"
-const banner_subtitle = "IT Solution & IT Startup"
-const banner_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  nisi ut aliquip ex ea commodo consequat."
+const banner_subtitle = "Discover the projects we finance"
 
 //Filter Management
 const filterByArea = (area_id) => {

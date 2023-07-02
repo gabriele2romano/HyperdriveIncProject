@@ -64,7 +64,7 @@ const contacts = [
                 <v-col cols="12" md="4" class="d-flex justify-center my-auto">
                     <NuxtLink to="/contacts/form" class="d-flex my-auto" style="text-decoration: none;">
                         <v-btn class="text-light text-h6 bg-darker-blue font-weight-bold mr-auto ml-auto mr-md-0" size="x-large" variant="tonal" rounded=6>
-                            Send us your proposal
+                            Send us your project proposal
                         </v-btn>
                     </NuxtLink>
                 </v-col>

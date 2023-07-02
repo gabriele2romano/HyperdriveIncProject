@@ -69,8 +69,8 @@ function toggleFullscreen(elem) {
                             <v-col class="d-flex" cols="12" md="8">                    
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
-                                        <div class="text-h4">Problem</div>
-                                        <div class="text-body-h3 pa-2">{{ problem }}</div>
+                                        <div class="text-h4 font-weight-bold">Problem</div>
+                                        <div class="text-body-1 pa-2 font-weight-bold">{{ problem }}</div>
                                     </div>
                                 </v-sheet>
                             </v-col>
@@ -88,8 +88,8 @@ function toggleFullscreen(elem) {
                             <v-col class="d-flex " cols="12" md="8" order-md="last">                    
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
-                                        <div class="text-h4">Solution</div>
-                                        <div class="text-body-h3 mb-2 pa-2">{{ solution }}</div>
+                                        <div class="text-h4 font-weight-bold">Solution</div>
+                                        <div class="text-body-1 mb-2 pa-2 font-weight-bold">{{ solution }}</div>
                                     </div>
                                 </v-sheet>
                             </v-col>
@@ -120,8 +120,8 @@ function toggleFullscreen(elem) {
             <v-container fluid class="bg-dark-blue">
                 <v-row justify="center">
                     <v-col class="d-flex flex-column justify-center" cols="12" lg="8" md="8" sx="12">   
-                        <div class="text-h4">Project Description</div>
-                        <p class="text-body-2 pa-2"> {{ project_description }}</p>          
+                        <div class="text-h4 font-weight-bold">Project Description</div>
+                        <p class="text-body-1 pa-2"> {{ project_description }}</p>          
                         <v-carousel hide-delimiters :show-arrows="true" v-if="images.length>3" class="card-bordered">
                             <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover @click="toggleFullscreen(images[i-1+3])"></v-carousel-item>
                         </v-carousel>
@@ -141,12 +141,12 @@ function toggleFullscreen(elem) {
                 <!--Start Startup infos-->
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
-                        <v-row>
+                        <!-- <v-row>
                             <v-col class="text-center text-md-left">
-                                <div class="text-h3 font-weight-bold">Project By</div>
+                                <div class="text-h4 text-center font-weight-bold">Project By</div>
                             </v-col>
-                        </v-row>
-                        <v-row class="d-flex align-center justify-center mb-5 text-center text-md-left">
+                        </v-row> -->
+                        <v-row class="d-flex align-center justify-center mb-5 text-md-left">
                             <v-col cols="12" lg="4" class="d-flex align-center justify-center">   
                                 <div class="pa-6 bg-light rounded-circle d-inline-block">
                                     <v-img :src="company.icon" class="ma-5" height="170" width="170" @click="toggleFullscreen(company.icon)"></v-img>
@@ -154,8 +154,9 @@ function toggleFullscreen(elem) {
                             </v-col>
                             <v-col class="d-flex flex-column justify-center" cols="12" lg="6" sx="12"> 
                                 <div class="justify-center align-center">
-                                    <div class="text-h4 font-weight-medium">{{ company.name }}</div>
-                                    <div class="text-body-3 mb-2 pa-2">{{ company.description }}</div>
+                                    <div class="text-h4 pb-3">Project by</div>
+                                    <div class="text-h4 font-weight-bold">{{ company.name }}</div>
+                                    <div class="text-body-1 mb-2 pa-2">{{ company.description }}</div>
                                 </div>
                             </v-col>
                         </v-row>

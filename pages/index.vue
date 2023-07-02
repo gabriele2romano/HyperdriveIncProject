@@ -8,25 +8,26 @@ const{data:companies} = await useFetch('/api/companies/')
 const card_array = [
 {
   title: "The Group",
-  description:"​Since its inception in 2019, MEGA Group has embarked on an inspiring journey, driven by a strong vision to make a meaningful impact in the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability. In the early years, we established a diverse and talented team, carefully selecting individuals with deep expertise and a shared passion for responsible investing.",
+  description:"Since its inception in 2019, MEGA Group has embarked on an inspiring journey, driven by a strong vision to make a meaningful impact in the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability. In the early years, we established a diverse and talented team, carefully selecting individuals with deep expertise and a shared passion for responsible investing.",
   button:"Learn more about us",
   path:"/about"
 },
 {
   title:"The Team",
-  description:"​​We have supported a portfolio of highly impactful projects that are driving innovation and making a difference in the world. These projects, spanning across the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability, showcase our commitment to investing in transformative ideas with long-term potential.",
+  description:"We have supported a portfolio of highly impactful projects that are driving innovation and making a difference in the world. These projects, spanning across the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability, showcase our commitment to investing in transformative ideas with long-term potential.",
   button:"Meet our team",
   path:"/people"
 },
 {
   title:"The Impact",
-  description:"​​We have supported a portfolio of highly impactful projects that are driving innovation and making a difference in the world. These projects, spanning across the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability, showcase our commitment to investing in transformative ideas with long-term potential.",
+  description: "We have supported a portfolio of highly impactful projects that are driving innovation and making a difference in the world. These projects, spanning across the fields of robotics, finance, healthcare, space exploration, agriculture, and sustainability, showcase our commitment to investing in transformative ideas with long-term potential.",
   button:"See our most relevant projects",
   path:"/projects/relevant"
 }
 ]
 
 </script>
+
 <template>
   <!-- <v-container class="bg-darker-blue" fluid>
     <v-row class="justify-center align-center">
@@ -46,8 +47,8 @@ const card_array = [
           <v-row>
             <v-col cols="12" class="text-light text-center mb-10 mt-5">
               <v-img src="img/logo.png" height="400"/>
-              <div class="text-h3 font-weight-black pa-2">Mega Group</div>
-              <div class="text-h6 font-weight-thin pa-2">​We believe in the dreams of young businesses.We transform your Ideas into investments for a sustainable future.</div>
+              <div class="text-h3 font-weight-black pa-2">MEGA Group</div>
+              <div class="text-h6 font-weight-thin pa-2">We believe in the dreams of young businesses. We transform your Ideas into investments for a sustainable future.</div>
             </v-col>
           </v-row>
         </v-col>
@@ -75,7 +76,7 @@ const card_array = [
       <v-col cols="12" md="8" class="justify-center">
         <v-row class="d-flex justify-center">
           <v-col cols="12" class="justify-center">
-            <div class="text-h6 font-weight-bold text-center pa-2">Startup we've helped</div>
+            <div class="text-h6 font-weight-bold text-center pa-2">Startups we've helped</div>
           </v-col>
         </v-row>
         <v-row class="d-flex justify-center">
@@ -97,15 +98,15 @@ const card_array = [
             <div class="text-h6 font-weight-bold d-flex text-center">Want to talk with us?</div>
           </v-col>
           <v-col cols="10" md="4" class="d-flex justify-center">
-            <v-btn to="/contacts/" class="mx-2" color="darker-blue" block>Contact Us</v-btn>
+            <v-btn to="/contacts/" class="mx-2 font-weight-bold" color="darker-blue" block>Contact Us</v-btn>
           </v-col>
         </v-row>
         <v-row class="d-flex justify-space-around">
           <v-col  cols="12" md="3" class="justify-center d-none d-sm-flex">
-            <div class="text-h6 font-weight-bold d-flex text-center">Does your projects needs financing?</div>
+            <div class="text-h6 font-weight-bold d-flex text-center">Does your project need financing?</div>
           </v-col>
-          <v-col cols="10" md="4" class="d-flex justify-center">
-            <v-btn to="/contacts/form" class="mx-2" color="darker-blue" block>Send us your proposal</v-btn>
+          <v-col cols="10" md="4" class="d-flex justify-center align-center">
+            <v-btn to="/contacts/form" class="mx-2 font-weight-bold" color="darker-blue" block>Send us your project proposal</v-btn>
           </v-col>
         </v-row>
       </v-col>

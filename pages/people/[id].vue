@@ -18,7 +18,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
 <template>
     <div class="bg-mega-grey d-flex justify-center align-center">
         <!--Container for the page content-->
-        <v-container class="font-weight-bold my-auto" style="max-width: 1200px;">
+        <v-container class="my-auto" style="max-width: 1200px;">
             <!--First row: team navigation buttons under the header-->
             <v-row justify="center" class="my-4">
                 <v-col cols="12" md="2" class="d-flex justify-center">
@@ -51,7 +51,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
             <!--Second row: person card-->
             <v-row>
                 <v-col cols="12">
-                    <v-sheet class="bg-darker-blue card-bordered"> 
+                    <v-sheet class="bg-dark-blue card-bordered"> 
                         <v-container>
                             <v-row>
                                 <v-col cols="12" md="3">
@@ -65,8 +65,8 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                                 <v-col cols="12" md="9">
                                     <div class="d-flex flex-column flex-md-row justify-space-between">
                                         <div class="d-flex flex-column">
-                                            <div class="text-h3">{{ person.name }} {{ person.surname }}</div>
-                                            <div class="text-h4">{{ person.role }}</div>
+                                            <div class="text-h3 font-weight-bold">{{ person.name }} {{ person.surname }}</div>
+                                            <div class="text-h6">{{ person.role }}</div>
                                         </div>
                                         
                                         <div class="d-flex flex-column">
@@ -81,7 +81,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                                         </div>
                                     </div>
                                     
-                                    <p class="text-body-2 pt-3">
+                                    <p class="text-body-1 pt-3">
                                         {{ person.cv }}
                                     </p>
                                 </v-col>

@@ -6,8 +6,7 @@ const { data: projects } = await useFetch('/api/projects/relevant')
 
 //Banner info
 const banner_title = "Our Most Relevant Projects"
-const banner_subtitle = "IT Solution & IT Startup"
-const banner_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation  nisi ut aliquip ex ea commodo consequat."
+const banner_subtitle = "Discover our trending projects"
 
 </script>
 <template>

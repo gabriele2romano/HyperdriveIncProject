@@ -30,6 +30,28 @@
         experience and expertise in investment analysis enable us to navigate complex market dynamics and capture emerging opportunities for our 
         investors while driving positive change in the world.`
     ]
+
+    const values = ['Professionalism', 'Loyalty', 'Passion', 'Uniqueness']
+    const value_descriptions = [
+    `Professionalism is at the core of everything we do. Our team of experts brings a wealth of 
+    knowledge and experience to the table, ensuring meticulous analysis, strategic decision-making, 
+    and diligent execution. We hold ourselves to the highest standards of integrity, professionalism, 
+    and ethical conduct. Our commitment to professionalism enables us to provide our investors with reliable, 
+    well-informed advice and deliver exceptional results.`,
+    `Loyalty is the cornerstone of our relationships, both with our investors and our portfolio companies. 
+    We prioritize long-term partnerships built on trust, transparency, and mutual respect. We are dedicated to 
+    fostering enduring relationships, standing by our commitments, and supporting the growth and success of our partners. 
+    Our loyalty extends beyond financial gains, as we strive to be a trusted ally throughout the journey, through both the ups and downs.`,
+    `Passion is the driving force behind our investment endeavors. We are passionate about identifying and supporting innovative 
+    ideas that have the potential to make a positive impact. Our team's genuine enthusiasm for entrepreneurship, technological 
+    advancements, and sustainable solutions fuels our dedication to finding and nurturing exceptional ventures. It is this passion 
+    that propels us to go the extra mile, bringing energy and excitement to every investment opportunity.`,
+    `What sets us apart is our unique blend of expertise, perspectives, and values. We embrace diversity and foster an inclusive 
+    culture that encourages creativity and out-of-the-box thinking. Our ability to see opportunities where others may not, 
+    combined with our forward-thinking approach, allows us to uncover hidden gems and unlock their true potential. Our commitment 
+    to sustainability and responsible investing further distinguishes us, as we seek ventures that align with our vision for a better 
+    and more sustainable future.`,
+    ]
 </script>
 
 <template>
@@ -47,7 +69,7 @@
                     <div class="text-h4 text-center pa-3 font-weight-bold">
                         Who are we?
                     </div>
-                    <div class="text-h5 font-weight-bold">
+                    <div class="text-h5 text-center">
                         We believe facts are worth much more than words, and numbers speak for themselves. 
                         Even though we're a young venture capital firm, we have achieved a few remarkable milestones in our journey so far. 
                         So, instead of a lengthy introduction, here's a few of those facts and figures.
@@ -60,7 +82,7 @@
                                 <v-icon icon="mdi-account" size="100" color="light"></v-icon>
                                 <div class="text-h5 pb-2 font-weight-bold">12 Experts</div>
                                 <NuxtLink to="/people" style="text-decoration: none;">
-                                    <v-btn class="bg-darker-blue">Meet our team</v-btn>
+                                    <v-btn class="bg-darker-blue font-weight-bold">Meet our team</v-btn>
                                 </NuxtLink>
                             </v-col>
 
@@ -68,7 +90,7 @@
                                 <v-icon icon="mdi-note-edit" size="100" color="light"></v-icon>
                                 <div class="text-h5 pb-2 font-weight-bold">17 Projects Funded</div>
                                 <NuxtLink to="/projects" style="text-decoration: none;">
-                                    <v-btn class="bg-darker-blue">Discover our projects</v-btn>
+                                    <v-btn class="bg-darker-blue font-weight-bold">Discover our projects</v-btn>
                                 </NuxtLink>
                             </v-col>
 
@@ -116,14 +138,12 @@
                         class="fill-height card-bordered"
                     >
                         <v-carousel-item v-for="(year, i) in years" :key="i" cover class="d-flex flex-column align-center justify-center">
-                            <div
-                                class="bg-dark-blue text-light pt-5 pb-12 px-12"
-                            >
+                            <div class="bg-dark-blue-div text-light pt-5 pb-12 px-12" style="min-height: 400px;">
                                 <div class="text-h4 py-3 text-center font-weight-bold">
                                     {{ year }}
                                 </div>
 
-                                <div class="text-body-1 text-center font-weight-bold" style="padding-left: 10%; padding-right: 10%;">
+                                <div class="text-h6 text-md-center" style="padding-left: 10%; padding-right: 10%;">
                                     {{ stories[i] }}
                                 </div>
                             </div>
@@ -141,68 +161,20 @@
                     <!--value cards-->
                     <v-container>
                         <v-row justify="center">
-                            <v-col>
-                                <div class="bg-dark-blue-div card-bordered">
-                                    <div class="text-h5 text-center pt-3 font-weight-bold">
-                                        Professionalism
-                                    </div>
+                            <v-col cols="12" md="8">
+                                <v-row justify="center">
+                                    <v-col v-for="(value, i) in values" :key="i" cols="12" md="6">
+                                        <div class="bg-dark-blue-div card-bordered pa-4 d-flex flex-column justify-center" style="min-height: 340px;">
+                                            <div class="text-h5 text-center pt-3 font-weight-bold">
+                                                {{ value }}
+                                            </div>
 
-                                    <div class="text-body-1 text-center pa-3 font-weight-bold">
-                                        Professionalism is at the core of everything we do. Our team of experts brings a wealth of 
-                                        knowledge and experience to the table, ensuring meticulous analysis, strategic decision-making, 
-                                        and diligent execution. We hold ourselves to the highest standards of integrity, professionalism, 
-                                        and ethical conduct. Our commitment to professionalism enables us to provide our investors with reliable, 
-                                        well-informed advice and deliver exceptional results.
-                                    </div>
-                                </div>
-                            </v-col>
-
-                            <v-col>
-                                <div class="bg-dark-blue-div card-bordered">
-                                    <div class="text-h5 text-center pt-3 font-weight-bold">
-                                        Loyalty
-                                    </div>
-
-                                    <div class="text-body-1 text-center pa-3 font-weight-bold">
-                                        Loyalty is the cornerstone of our relationships, both with our investors and our portfolio companies. 
-                                        We prioritize long-term partnerships built on trust, transparency, and mutual respect. We are dedicated to 
-                                        fostering enduring relationships, standing by our commitments, and supporting the growth and success of our partners. 
-                                        Our loyalty extends beyond financial gains, as we strive to be a trusted ally throughout the journey, through both the ups and downs.
-                                    </div>
-                                </div>
-                            </v-col>
-                        </v-row>
-
-                        <v-row justify="center">
-                            <v-col>
-                                <div class="bg-dark-blue-div card-bordered">
-                                    <div class="text-h5 text-center pt-3 font-weight-bold">
-                                        Passion
-                                    </div>
-
-                                    <div class="text-body-1 text-center pa-3 font-weight-bold">
-                                        Passion is the driving force behind our investment endeavors. We are passionate about identifying and supporting innovative 
-                                        ideas that have the potential to make a positive impact. Our team's genuine enthusiasm for entrepreneurship, technological 
-                                        advancements, and sustainable solutions fuels our dedication to finding and nurturing exceptional ventures. It is this passion 
-                                        that propels us to go the extra mile, bringing energy and excitement to every investment opportunity.
-                                    </div>
-                                </div>
-                            </v-col>
-
-                            <v-col>
-                                <div class="bg-dark-blue-div card-bordered">
-                                    <div class="text-h5 text-center pt-3 font-weight-bold">
-                                        Uniqueness
-                                    </div>
-
-                                    <div class="text-body-1 text-center pa-3 font-weight-bold">
-                                        What sets us apart is our unique blend of expertise, perspectives, and values. We embrace diversity and foster an inclusive 
-                                        culture that encourages creativity and out-of-the-box thinking. Our ability to see opportunities where others may not, 
-                                        combined with our forward-thinking approach, allows us to uncover hidden gems and unlock their true potential. Our commitment 
-                                        to sustainability and responsible investing further distinguishes us, as we seek ventures that align with our vision for a better 
-                                        and more sustainable future.
-                                    </div>
-                                </div>
+                                            <div class="text-body-1 text-center pa-3">
+                                                {{ value_descriptions[i] }}
+                                            </div>
+                                        </div>
+                                    </v-col>
+                                </v-row>
                             </v-col>
                         </v-row>
                     </v-container>
