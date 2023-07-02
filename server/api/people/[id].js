@@ -5,8 +5,8 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
     //get person's data
-    const { data, error }= await client.from('person').select('*').eq('id', id).single();
-    
+    const { data, error } = await client.from('person').select('*').eq('id', id).single()
+
     //add picture url
     data.picture = await client.storage
     .from('images')
