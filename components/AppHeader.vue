@@ -13,8 +13,7 @@
           
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-item to="/" class="nav-link">Home</b-nav-item>
-            <b-nav-item to="/people/" class="nav-link">About</b-nav-item>
+            <b-nav-item to="/about/" class="nav-link">About Us</b-nav-item>
             <b-nav-item-dropdown to="/projects/" text="Projects"  data-bs-toggle="dropdown" class="nav-link d-block d-md-none">
               <b-dropdown-item to="/projects/relevant" class="text-dark" >Most Relevant Projects</b-dropdown-item>
               <b-dropdown-item to="/projects/" class="text-dark">All Projects</b-dropdown-item>
@@ -28,8 +27,8 @@
                   <b-dropdown-item>three</b-dropdown-item> -->
                 </ul>
               </li>
-              <b-nav-item to="/areas/" class="nav-link">Area</b-nav-item>
-              <b-nav-item to="/contacts/" class="nav-link">Contact</b-nav-item>
+              <b-nav-item to="/people/" class="nav-link">Our Team</b-nav-item>
+              <b-nav-item to="/contacts/" class="nav-link">Contacts</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>

@@ -13,7 +13,6 @@
 
     //fetch projects that the person is involved in
     const { data: projects } = await useFetch('/api/people/getProjects/'+id)
-
 </script>
 
 <template>
@@ -92,23 +91,28 @@
                 </v-col>
             </v-row>
 
-            <!--Third row: divider and supervised projects title-->
-            <v-row justify="center" class="my-4">
-                <v-col cols="12">
-                    <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
+            <!--The following rows are only displayed if there are projects to show. Otherwise, just margin is added-->
+            <div v-if="projects.length > 0">
+                <!--Third row: divider and supervised projects title-->
+                <v-row justify="center" class="my-4">
+                    <v-col cols="12">
+                        <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
 
-                    <div class="text-h4 text-center text-light">
-                        Discover the projects supervised by {{ person.name }} {{ person.surname }}
-                    </div>
-                </v-col>
-            </v-row>
+                        <div class="text-h4 text-center text-light">
+                            Discover the projects supervised by {{ person.name }} {{ person.surname }}
+                        </div>
+                    </v-col>
+                </v-row>
 
-            <!--Fourth row: supervised projects cards-->
-            <v-row justify="center" class="my-4">
-                <v-col v-for="project in projects" cols="12" md="3">
-                    <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
-                </v-col>
-            </v-row>
+                <!--Fourth row: supervised projects cards-->
+                <v-row justify="center" class="my-4">
+                    <v-col v-for="project in projects" cols="12" md="4">
+                        <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
+                    </v-col>
+                </v-row>
+            </div>
+
+            <div v-else class="my-10"></div>
         </v-container>
     </div>
 </template>
