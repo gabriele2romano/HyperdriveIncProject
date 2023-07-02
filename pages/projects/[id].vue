@@ -176,8 +176,8 @@ function toggleFullscreen(elem) {
                                     </div>
                                 </v-col>
                                 <v-col cols="12" md="4" order-md="first">
-                                    <div class="pa-2 bg-light rounded-circle d-inline-block" >
-                                        <v-img :src="supervisor.picture" height="250" width="250"></v-img>
+                                    <div class="pa-2 bg-light rounded-circle d-inline-block"  :style="{backgroundImage:'url('+supervisor.picture+')',backgroundSize:'cover',height:'250px',width:'250px'}" >
+                                        <!-- <v-img :src="supervisor.picture" height="250" width="250"></v-img> -->
                                     </div>
                                 </v-col>
                                 <v-col cols="12" class="d-sm-none">
