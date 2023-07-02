@@ -170,9 +170,9 @@ function toggleFullscreen(elem) {
                             <v-row class="ma-5">
                                 <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                     <div>
-                                        <div class="text-h4 pa-2 font-weight-black">Meet the Project Supervisor</div>
-                                        <div class="text-body-1 pt-2 d-none d-sm-block font-weight-bold">{{ supervisor.name }} {{ supervisor.surname }}</div>
-                                        <div class="text-body-2 pb-2 d-none d-sm-block font-weight-bold">{{ supervisor.role }}</div>
+                                        <div class="text-h4 pa-2 font-weight-bold">Meet the Project Supervisor</div>
+                                        <div class="text-h2 pa-2 d-none d-sm-block font-weight-bold">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                        <div class="text-body-1 pb-2 d-none d-sm-block font-weight-bold">{{ supervisor.role }}</div>
                                     </div>
                                 </v-col>
                                 <v-col cols="12" md="4" order-md="first">
@@ -182,8 +182,8 @@ function toggleFullscreen(elem) {
                                 </v-col>
                                 <v-col cols="12" class="d-sm-none">
                                     <div>
-                                        <div class="text-body-1 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
-                                        <div class="text-body-2 pb-2">{{ supervisor.role }}</div>
+                                        <div class="text-h4 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                        <div class="text-h6 pb-2">{{ supervisor.role }}</div>
                                     </div>
                                 </v-col>
                             </v-row>                        
