@@ -4,7 +4,7 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
     //fetch all people data
-    const { data, error }= await client.from('person').select('id, name, surname, role, picture')
+    const { data, error }= await client.from('person').select('id, name, surname, role, picture').order('id', { ascending: true })
 
     //for each person, get the picture
     data.forEach((person, _) => {

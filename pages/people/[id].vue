@@ -18,7 +18,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
 <template>
     <div class="bg-mega-grey d-flex justify-center align-center">
         <!--Container for the page content-->
-        <v-container class="my-auto" style="max-width: 1200px;">
+        <v-container class="my-auto">
             <!--First row: team navigation buttons under the header-->
             <v-row justify="center" class="my-4">
                 <v-col cols="12" md="2" class="d-flex justify-center">
@@ -49,27 +49,32 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
             </v-row>
             
             <!--Second row: person card-->
-            <v-row>
-                <v-col cols="12">
-                    <v-sheet class="bg-dark-blue card-bordered"> 
-                        <v-container>
-                            <v-row>
-                                <v-col cols="12" md="3">
-                                    <v-img 
-                                    :src=person.picture
-                                    height="100%"
-                                    cover
-                                    ></v-img>
+            <v-row justify="center">
+                <v-col cols="12" md="10">
+
+                    <v-card class="bg-dark-blue"> 
+                        <v-container fluid>
+                            <v-row class="ma-n4">
+                                <!--Picture-->
+                                <v-col cols="12" md="3" class="pa-0 ma-0">
+                                    <div class="bg-light fill-height">
+                                        <v-img 
+                                        :src=person.picture
+                                        height="100%"
+                                        cover
+                                        ></v-img>
+                                    </div>
                                 </v-col>
                                 
-                                <v-col cols="12" md="9">
+                                <!--Description: name, role, phone, email and small cv-->
+                                <v-col cols="12" md="9" align-self="center" class="px-10">
                                     <div class="d-flex flex-column flex-md-row justify-space-between">
                                         <div class="d-flex flex-column">
                                             <div class="text-h3 font-weight-bold">{{ person.name }} {{ person.surname }}</div>
-                                            <div class="text-h6">{{ person.role }}</div>
+                                            <div class="text-subtitle-1">{{ person.role }}</div>
                                         </div>
                                         
-                                        <div class="d-flex flex-column">
+                                        <div class="d-flex flex-column pr-5">
                                             <div class="text-subtitle-1 py-1">
                                                 <v-icon icon="mdi-phone"></v-icon>
                                                 {{ person.phone }}
@@ -87,7 +92,8 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                                 </v-col>
                             </v-row>
                         </v-container>
-                    </v-sheet>
+                    </v-card>
+
                 </v-col>
             </v-row>
             
@@ -95,10 +101,10 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
             <div v-if="projects.length > 0">
                 <!--Third row: divider and supervised projects title-->
                 <v-row justify="center" class="my-4">
-                    <v-col cols="12">
+                    <v-col cols="12" md="10">
                         <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
                         
-                        <div class="text-h4 text-center text-light">
+                        <div class="text-h4 text-center text-light font-weight-bold">
                             Discover the projects supervised by {{ person.name }} {{ person.surname }}
                         </div>
                     </v-col>
@@ -106,7 +112,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                 
                 <!--Fourth row: supervised projects cards-->
                 <v-row justify="center" class="my-4">
-                    <v-col v-for="project in projects" cols="12" md="4">
+                    <v-col v-for="project in projects" cols="12" md="3">
                         <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
                     </v-col>
                 </v-row>

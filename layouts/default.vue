@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <v-app id="inspire">
+            <NuxtLoadingIndicator color="#f1f6f9" :height=6 />
             <AppHeader/>
             
             <!-- <div class="mt-10 mt-sm-10"> -->
@@ -12,7 +13,7 @@
         </div>
     </template>
     
-    <style>
+<style>
     :root {
         --color1 : #000000;
         --color2 : #f1f6f9;
@@ -74,5 +75,3 @@
     }
     
 </style>
-<script setup>
-</script>

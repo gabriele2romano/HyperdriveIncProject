@@ -167,7 +167,12 @@ function toggleFullscreen(elem) {
                 <!--Start Project Team-->
                 <v-row class="d-flex justify-center align-items-center">
                     <v-col cols="12" md="8">
-                        <v-sheet v-ripple  @click="$router.push('/people/'+supervisor.id)" class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center be-pointed" :rounded="true">
+                        <v-sheet 
+                            v-ripple  
+                            @click="$router.push('/people/'+supervisor.id)" 
+                            class="d-flex justify-center align-center text-light bg-mega-grey font-weight-thin text-center be-pointed" 
+                            :rounded="true"
+                        >
                             <v-row class="ma-5">
                                 <v-col cols="12" md="8" class="d-flex align-self-center justify-center">
                                     <div>

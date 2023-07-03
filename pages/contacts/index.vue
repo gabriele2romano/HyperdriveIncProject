@@ -9,7 +9,7 @@ const contacts = [
 },
 {
     icon: "mdi-email",
-    text: "contact@megagroup.com"
+    text: "contact@mega.inc"
 },
 {
     icon: "mdi-phone",

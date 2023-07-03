@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="pt-0 mx-auto font-weight-medium" >
-                    Via Leonardo 38 , Milano , 20123<br> Fax : 02383598429<br>Telefono : 3189893204<br>Mail : contact@megagroup.com
+                    Via Leonardo 38, Milano (IT), 20123<br> Fax : 0238359842<br>Phone Number: +39 318 989 3204<br>Mail: contact@mega.inc
                 </div>
             </v-col>
         </v-row>
