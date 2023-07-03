@@ -1,5 +1,7 @@
 import { serverSupabaseClient } from '#supabase/server'
 
+//this endpoint is used on the home page to fetch all startup logos
+
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 

@@ -3,10 +3,12 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
     const supervisor_id = event.context.params.supervisor_id
     const client = serverSupabaseClient(event)
+
+    //get project supervisor's data
     const { data, error }= await client
     .from('person').select('*').eq('id', supervisor_id).single();
     
-    //get picture url
+    //get supervisor's picture's url
     data.picture = client.storage.from('images').getPublicUrl('people/'+data.picture).data.publicUrl
 
     if(error) {

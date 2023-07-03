@@ -3,6 +3,7 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
+    //select the names of all areas
     const { data, error }= await client.from('area').select('id,name')
     
     if(error) {

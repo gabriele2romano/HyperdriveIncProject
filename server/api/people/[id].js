@@ -4,23 +4,11 @@ export default defineEventHandler(async (event) => {
     const id = event.context.params.id
     const client = serverSupabaseClient(event)
 
-    //get person's data
-    const { data, error } = await client.from('person').select('*').eq('id', id).single()
+    //get person's data. It includes next and previous people's full names
+    const { data, error } = await client.from('person_data').select('*').eq('id', id).single()
 
-    //add picture url
-    data.picture = await client.storage
-    .from('images')
-    .getPublicUrl('people/'+data.picture).data.publicUrl
-
-    //get the number of people
-    const { _, count } = await client
-    .from('person')
-    .select('*', { count: 'exact', head: true })
-
-    const intId = parseInt(id)
-    //compute the ids of the previous and next members
-    data.prevMemberId = ((intId==1) ? count : intId-1).toString();
-    data.nextMemberId = ((intId==parseInt(count)) ? 1 : intId+1).toString();
+    //get the picture url
+    data.picture = await client.storage.from('images').getPublicUrl('people/'+data.picture).data.publicUrl
 
     if(error) {
         console.log(error.message)

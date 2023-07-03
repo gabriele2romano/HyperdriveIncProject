@@ -3,13 +3,11 @@
 <script setup>
 const route = useRoute()
 const id = route.params.id
+
 const { data: person } = await useFetch('/api/people/'+id)
 
-const prevMemberRoute = "/people/" + person.value.prevMemberId
-const nextMemberRoute = "/people/" + person.value.nextMemberId
-
-const { data: prevMemberName } = await useFetch('/api/people/getName/'+person.value.prevMemberId)
-const { data: nextMemberName } = await useFetch('/api/people/getName/'+person.value.nextMemberId)
+const prevMemberRoute = "/people/" + (parseInt(id)-1)
+const nextMemberRoute = "/people/" + (parseInt(id)+1)
 
 //fetch projects that the person is involved in
 const { data: projects } = await useFetch('/api/people/getProjects/'+id)
@@ -29,19 +27,19 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                     </NuxtLink>
                 </v-col>
                 
-                <v-col cols="12" md="2" class="d-flex justify-center ml-md-auto">
+                <v-col v-if="person.prevname != null" cols="12" md="2" class="d-flex justify-center ml-md-auto">
                     <NuxtLink :to=prevMemberRoute style="text-decoration: none;">
                         <v-btn class="text-darker-blue text-body-1" variant="text">
                             <v-icon icon="mdi-arrow-left"></v-icon>
-                            Previous member:<br>{{ prevMemberName.name }} {{ prevMemberName.surname }}
+                            Previous member:<br>{{ person.prevname }} {{ person.prevsurname }}
                         </v-btn>
                     </NuxtLink>
                 </v-col>
                 
-                <v-col cols="12" md="2" class="d-flex justify-center">
+                <v-col v-if="person.nextname != null" cols="12" md="2" class="d-flex justify-center">
                     <NuxtLink :to=nextMemberRoute style="text-decoration: none;">
                         <v-btn class="text-darker-blue text-body-1" variant="text">
-                            Next member:<br>{{ nextMemberName.name }} {{ nextMemberName.surname }}
+                            Next member:<br>{{ person.nextname }} {{ person.nextsurname }}
                             <v-icon icon="mdi-arrow-right"></v-icon>
                         </v-btn>
                     </NuxtLink>

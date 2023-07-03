@@ -4,9 +4,10 @@ export default defineEventHandler(async (event) => {
     const id = event.context.params.id
     const client = serverSupabaseClient(event)
 
-    const { data, error }= await client
-    .from('area').select('*').eq('id', id).single();
+    //get the area's data. It includes previous and next areas' names and icons
+    const { data, error }= await client.from('area_data').select('*').eq('id', id).single();
 
+    //get banner picture for the area
     data.image = await client.storage.from('images').getPublicUrl('areas/' + data.banner)
 
     if(error) {
