@@ -25,34 +25,47 @@
     <div class="bg-mega-grey d-flex justify-center align-center">
         <v-container class="my-auto">
             <!--First row: team navigation buttons under the header-->
-            <v-row justify="center" class="my-4">
-                <v-col cols="12" md="2" class="d-flex justify-center">
+            <v-row justify="center" class="my-2">
+                <v-col 
+                    cols="12" 
+                    md="10" 
+                    class="d-flex flex-column flex-align-center flex-md-row flex-md-justify-center"
+                >
                     <!--button to get back to the team page-->
-                    <NuxtLink to="/people" style="text-decoration: none;">
-                        <v-btn class="text-light text-body-1 bg-dark-blue" variant="tonal" rounded=6>
-                            See our whole team
-                        </v-btn>
-                    </NuxtLink>
-                </v-col>
-                
-                <v-col v-if="person.prevname != null" cols="12" md="2" class="d-flex justify-center ml-md-auto">
+                    <v-btn
+                        color="darker-blue"
+                        class="text-body-1 text-light ma-2" 
+                        size="large"
+                        to="/people"
+                    >
+                        Meet our whole team
+                    </v-btn>
+
+                    <v-spacer></v-spacer>
+
                     <!--previous member button. Not displayed if the person is the first of the list-->
-                    <NuxtLink :to=prevMemberRoute style="text-decoration: none;">
-                        <v-btn class="text-darker-blue text-body-1" variant="text">
-                            <v-icon icon="mdi-arrow-left"></v-icon>
-                            Previous member:<br>{{ person.prevname }} {{ person.prevsurname }}
-                        </v-btn>
-                    </NuxtLink>
-                </v-col>
-                
-                <v-col v-if="person.nextname != null" cols="12" md="2" class="d-flex justify-center">
+                    <v-btn
+                        v-if="person.prevname != null"
+                        color="darker-blue" 
+                        prepend-icon="mdi-arrow-left" 
+                        class="text-body-1 text-light ma-2" 
+                        size="large"
+                        :to=prevMemberRoute
+                    >
+                        Previous member:<br>{{ person.prevname }} {{ person.prevsurname }}
+                    </v-btn>
+
                     <!--next member button. Not displayed if the person is the last of the list-->
-                    <NuxtLink :to=nextMemberRoute style="text-decoration: none;">
-                        <v-btn class="text-darker-blue text-body-1" variant="text">
-                            Next member:<br>{{ person.nextname }} {{ person.nextsurname }}
-                            <v-icon icon="mdi-arrow-right"></v-icon>
-                        </v-btn>
-                    </NuxtLink>
+                    <v-btn 
+                        v-if="person.nextname != null"
+                        color="darker-blue" 
+                        append-icon="mdi-arrow-right" 
+                        class="text-body-1 text-light ma-2" 
+                        size="large"
+                        :to="nextMemberRoute"
+                    >
+                        Next member:<br>{{ person.nextname }} {{ person.nextsurname }}
+                    </v-btn>
                 </v-col>
             </v-row>
             

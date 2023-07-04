@@ -15,6 +15,9 @@
     const area_banner = area.value.image.data
     const area_interest = area.value.interest
 
+    const prevAreaRoute = '/areas/' + (parseInt(id)-1)
+    const nextAreaRoute = '/areas/' + (parseInt(id)+1)
+
     const title = ref('MEGA - ' + area_name)
 
     useSeoMeta({
@@ -30,20 +33,51 @@
         :banner_body="area_description"
         :banner_img="area_banner"
         banner_link="Go to all areas" 
-        banner_path="/areas">
+        banner_path="/areas"
+    >
     </Banner>
     
     <div class="bg-mega-grey">
         <v-container fluid class="text-light">
             <v-row class="d-flex" justify="center">
                 <v-col class="d-flex flex-column justify-center" cols="12" md="10">
+                    <!--description title and previous and next area buttons-->
+                    <v-row>
+                        <v-col cols="12" class="d-flex flex-column justify-center flex-md-row">
+                            <div class="text-h4 font-weight-bold align-self-start align-self-md-end order-last order-md-first mt-3">
+                                    Why we're interested in {{ area_name }} 
+                            </div>
+
+                            <v-spacer></v-spacer>
+
+                            <v-btn
+                                v-if="area.prevname != null"
+                                color="darker-blue" 
+                                :prepend-icon="'mdi-'+area.previcon" 
+                                class="text-body-1 text-light ma-2" 
+                                size="large"
+                                :to="prevAreaRoute"
+                            >
+                                Previous Area:<br>{{ area.prevname }}
+                            </v-btn>
+
+                            <v-btn
+                                v-if="area.nextname != null"
+                                color="darker-blue" 
+                                :append-icon="'mdi-'+area.nexticon" 
+                                class="text-body-1 text-light ma-2" 
+                                size="large"
+                                :to="nextAreaRoute"
+                            >
+                                Next Area:<br>{{ area.nextname }}
+                            </v-btn>
+                        </v-col>   
+                    </v-row>
+
                     <v-row justify="center">
                         <!--introduction to the area-->
                         <v-col cols="12">
-                            <div class="text-h4 font-weight-bold">
-                                Why we're interested in {{ area_name }} 
-                            </div>
-                            <div class="text-body-1 pt-4 font-weight-bold">
+                            <div class="text-body-1 font-weight-bold">
                                     {{ area_interest }}
                             </div>
 

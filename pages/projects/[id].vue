@@ -139,7 +139,7 @@ related startup and supervisor-->
                         <div class="text-h4 font-weight-bold">Project Description</div>
                         <p class="text-body-1 pa-2"> {{ project_description }}</p>          
                         <v-carousel hide-delimiters :show-arrows="true" v-if="images.length>3" class="card-bordered">
-                            <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover @click="toggleFullscreen(images[i-1+3])"></v-carousel-item>
+                            <v-carousel-item v-for="i in images.length-3" :key="i" :src="images[i-1+3]" cover @click="toggleFullscreen(images[i-1+3])" alt=""></v-carousel-item>
                         </v-carousel>
                         <ProjectInfoCard :country=project_country :foundation-year=project_foundation_year :funding-date=project_investment_date></ProjectInfoCard>
                     </v-col>
