@@ -7,6 +7,7 @@ import "@mdi/font/css/materialdesignicons.css";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
 import "@mdi/font/css/materialdesignicons.css";
 
+//main theme used in the whole website
 const customLightTheme = {
     dark: false,
     colors: {

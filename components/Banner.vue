@@ -1,14 +1,16 @@
-<script setup>
-const props = defineProps({
-    'banner_path': String,
-    'banner_link': String,
-    'banner_img': Object,
-    'banner_title': String,
-    'banner_subtitle': String,
-    'banner_body': String,
-})
+<!--Manages the banner of a page. Used in most pages-->
 
+<script setup>
+    const props = defineProps({
+        'banner_path': String,
+        'banner_link': String,
+        'banner_img': Object,
+        'banner_title': String,
+        'banner_subtitle': String,
+        'banner_body': String,
+    })
 </script>
+
 <template>
     <!-- Start Banner -->
     <v-container fluid :style="{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(' + banner_img.publicUrl + ')', backgroundSize:'cover'}">

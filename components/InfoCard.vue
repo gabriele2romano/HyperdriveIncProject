@@ -1,11 +1,12 @@
-<script setup>
-const props = defineProps({
-  title: String,
-  description: String,
-  button: String,
-  path: String
-})
+<!--This card is used in the home page to introduce the main sections of the website.-->
 
+<script setup>
+  const props = defineProps({
+    title: String,
+    description: String,
+    button: String,
+    path: String
+  })
 </script>
 <template>
   

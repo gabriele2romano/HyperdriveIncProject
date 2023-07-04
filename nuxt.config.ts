@@ -1,5 +1,18 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  app: {
+    //global SEO attributes
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1.0",
+      meta: [
+        {
+          name: "author",
+          content: "hyperdrive-inc"
+        }
+      ]
+    }
+  },
   modules: [
     '@bootstrap-vue-next/nuxt', //bootstrap vue for nuxt3
     '@nuxtjs/supabase', //supabase for nuxt3
@@ -23,12 +36,6 @@ export default defineNuxtConfig({
   alias: {
     assets: "/<rootDir>/assets", //for enablig the fetch of assets with @/css
   },
-  supabase: {
-    // Options
-  },
-  image: {
-    //dir: 'assets/img' //enabling fetch for nuxt-img in assets/img -------- VERCEL DO NOT SUPPORT IT
-  },
   devtools: { enabled: false },
-  ssr: true
+  ssr: true,
 });

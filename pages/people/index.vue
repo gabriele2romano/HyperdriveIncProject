@@ -1,11 +1,20 @@
+<!--Introductory page to the team, with cards for all members-->
+
 <script setup>
 
-const{data:banner_img} = await useFetch('/api/images/banner_aboutus.jpg')
+    //fetch banner image
+    const{data:banner_img} = await useFetch('/api/images/banner_aboutus.jpg')
 
-const {data:people} = await useFetch('/api/people/')
+    const banner_title = "Meet our team of experts"
+    const banner_subtitle = "We are a group of many talented people. Learn more about each of us."
 
-const banner_title = "Meet our team of experts"
-const banner_subtitle = "We are a group of many talented people. Learn more about each of us."
+    //fetch the whole team's pictures, names and roles
+    const {data:people} = await useFetch('/api/people/')
+
+    useSeoMeta({
+        title: "MEGA - Our team",
+        description: "List of team members at MEGA Group.",
+    })
 
 </script>
 
@@ -16,6 +25,7 @@ const banner_subtitle = "We are a group of many talented people. Learn more abou
         <v-row class="d-flex" justify="center">
             <v-col class="d-flex flex-column justify-center" cols="12" md="8">
                 <v-row class="d-flex">
+                    <!--person cards, each with picture, name and role-->
                     <v-col cols="12" md="4" v-for="person in people" :key="person.id">
                         
                         <v-card :to="'/people/' + person.id" class="bg-dark-blue-div ma-1 font-weight-bold text-light d-flex flex-column justify-space-between" min-height="500px">

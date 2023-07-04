@@ -1,25 +1,33 @@
-<!--This is the page containing information about a single member of the VC's team-->
+<!--Page for a single member of the VC's team-->
 
 <script setup>
-const route = useRoute()
-const id = route.params.id
+    const route = useRoute()
+    const id = route.params.id
 
-const { data: person } = await useFetch('/api/people/'+id)
+    //fetch person's data, including previous and next team members' names
+    const { data: person } = await useFetch('/api/people/'+id)
 
-const prevMemberRoute = "/people/" + (parseInt(id)-1)
-const nextMemberRoute = "/people/" + (parseInt(id)+1)
+    const prevMemberRoute = "/people/" + (parseInt(id)-1)
+    const nextMemberRoute = "/people/" + (parseInt(id)+1)
 
-//fetch projects that the person is involved in
-const { data: projects } = await useFetch('/api/people/getProjects/'+id)
+    //fetch projects that the person supervises
+    const { data: projects } = await useFetch('/api/people/getProjects/'+id)
+
+    const title = ref("MEGA - " + person.value.name + " " + person.value.surname)
+
+    useSeoMeta({
+        title,
+        description: () => `Presentation of MEGA Group's team member ${person.value.name + " " + person.value.surname}, ${person.value.role}.`,
+    })
 </script>
 
 <template>
     <div class="bg-mega-grey d-flex justify-center align-center">
-        <!--Container for the page content-->
         <v-container class="my-auto">
             <!--First row: team navigation buttons under the header-->
             <v-row justify="center" class="my-4">
                 <v-col cols="12" md="2" class="d-flex justify-center">
+                    <!--button to get back to the team page-->
                     <NuxtLink to="/people" style="text-decoration: none;">
                         <v-btn class="text-light text-body-1 bg-dark-blue" variant="tonal" rounded=6>
                             See our whole team
@@ -28,6 +36,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                 </v-col>
                 
                 <v-col v-if="person.prevname != null" cols="12" md="2" class="d-flex justify-center ml-md-auto">
+                    <!--previous member button. Not displayed if the person is the first of the list-->
                     <NuxtLink :to=prevMemberRoute style="text-decoration: none;">
                         <v-btn class="text-darker-blue text-body-1" variant="text">
                             <v-icon icon="mdi-arrow-left"></v-icon>
@@ -37,6 +46,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                 </v-col>
                 
                 <v-col v-if="person.nextname != null" cols="12" md="2" class="d-flex justify-center">
+                    <!--next member button. Not displayed if the person is the last of the list-->
                     <NuxtLink :to=nextMemberRoute style="text-decoration: none;">
                         <v-btn class="text-darker-blue text-body-1" variant="text">
                             Next member:<br>{{ person.nextname }} {{ person.nextsurname }}
@@ -95,7 +105,7 @@ const { data: projects } = await useFetch('/api/people/getProjects/'+id)
                 </v-col>
             </v-row>
             
-            <!--The following rows are only displayed if there are projects to show. Otherwise, just margin is added-->
+            <!--The following rows are only displayed if there are projects to show-->
             <div v-if="projects.length > 0">
                 <!--Third row: divider and supervised projects title-->
                 <v-row justify="center" class="my-4">

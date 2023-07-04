@@ -1,8 +1,8 @@
 <script setup>
-//fetch areas
+//fetch names of all areas
 const { data: areas } = await useFetch('/api/areas/names')
-
 </script>
+
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark-blue" class="border-bottom text-light navbar-dark shadow-lg px-md-5" fixed="top" :elevation="6" >

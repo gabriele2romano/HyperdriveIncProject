@@ -1,35 +1,50 @@
+<!--Page for a single project. Includes many pieces of information, such as the project's presentation, images, related areas,
+related startup and supervisor-->
+
 <script setup>
-const route = useRoute()
+    const route = useRoute()
+    const id = route.params.id
 
-//get project data
-const id = route.params.id
-const { data: project } = await useFetch('/api/projects/'+id)
-const { data: company } = await useFetch('/api/projects/getCompany/'+project.value.company_id)
-const { data: supervisor } = await useFetch('/api/projects/getSupervisor/'+project.value.supervisor_id)
-const project_title = project.value.title
-const problem = project.value.problem
-const solution = project.value.solution
-const project_description =  project.value.description
-const project_areas = project.value.area
-const project_country = project.value.country
-const project_foundation_year = project.value.foundation_year
-const project_investment_date = project.value.investment_date
-const images = project.value.images
+    //fetch project data
+    const { data: project } = await useFetch('/api/projects/'+id)
+    //fetch related company data
+    const { data: company } = await useFetch('/api/projects/getCompany/'+project.value.company_id)
+    //fetch supervisor data
+    const { data: supervisor } = await useFetch('/api/projects/getSupervisor/'+project.value.supervisor_id)
 
-//get height of infoBox
-/* const infoBox = ref(null)
-var height = ref(0)
-onMounted(() => {
-    height= infoBox.value.$el.clientHeight
-    console.log(height)
-}) */
+    const project_title = project.value.title
+    const problem = project.value.problem
+    const solution = project.value.solution
+    const project_description =  project.value.description
+    const project_areas = project.value.area
+    const project_country = project.value.country
+    const project_foundation_year = project.value.foundation_year
+    const project_investment_date = project.value.investment_date
+    const images = project.value.images
 
-// Full Screen Image
-const selectedImage = ref(null);
+    //get height of infoBox
+    /* const infoBox = ref(null)
+    var height = ref(0)
+    onMounted(() => {
+        height= infoBox.value.$el.clientHeight
+        console.log(height)
+    }) */
 
-function toggleFullscreen(elem) {
-    selectedImage.value = elem;
-}
+    // Full Screen Image
+    const selectedImage = ref(null);
+
+    function toggleFullscreen(elem) {
+        selectedImage.value = elem;
+    }
+
+    const title = ref("MEGA - Project: " + project_title)
+
+    useSeoMeta({
+        title,
+        description: () => `Presentation of project ${project_title}, financed by MEGA Group. The page introduces a problem and how this project
+            intends to solve it. A short description of the project and several descriptive images are then provided, along with an
+            introduction to the startup responsible for the project and to the member of MEGA Group's team who supervises it.`,
+    })
 </script>
 
 <template>

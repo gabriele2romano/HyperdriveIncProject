@@ -1,3 +1,6 @@
+<!--Used in the page for a single project. Displays three key features of the project: country, foundation year and month-year when
+the project was first funded-->
+
 <script setup>
     defineProps({
         'country': String,

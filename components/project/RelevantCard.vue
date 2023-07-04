@@ -1,3 +1,6 @@
+<!--Used in page most relevant projects. Presents a preview of each project and allows navigation to that project's page. Slightly
+different from the card used in other pages-->
+
 <template>
     <div>
         <v-card :to="'/projects/' + project_id" class="bg-dark-blue d-flex flex-column" height="100%" >
@@ -23,16 +26,16 @@
         </v-card>
     </div>
 </template>
-<script setup>
 
-const props = defineProps({
-    'project_id': Number,
-    'project_title': String,
-    'project_overview': String,
-    'project_problem': String,
-    'project_solution': String,
-    'project_image': Array,
-})
-var id = ref(props.project_id).value
-const {data:project_areas} = await useFetch('/api/projects/getArea/'+id)
+<script setup>
+    const props = defineProps({
+        'project_id': Number,
+        'project_title': String,
+        'project_overview': String,
+        'project_problem': String,
+        'project_solution': String,
+        'project_image': Array,
+    })
+    var id = ref(props.project_id).value
+    const {data:project_areas} = await useFetch('/api/projects/getArea/'+id)
 </script>

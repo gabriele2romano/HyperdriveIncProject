@@ -1,3 +1,5 @@
+<!--Default layout used by all pages. Includes the header and footer-->
+
 <template>
     <div id="app">
         <v-app id="inspire">
@@ -57,7 +59,7 @@
         font-family: 'Raleway', sans-serif;
     }
 
-    /* class useful to some components */
+    /* classes useful to some components for setting a transparent or darkened background */
     .bg-darker-blue-div{
         background-color: rgba(33, 42, 62, 0.75);
     }

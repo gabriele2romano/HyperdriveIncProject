@@ -1,9 +1,10 @@
-<!--This is the About Us page. It contains several pieces of information concerning the VC's history, work and ethics.-->
+<!--About Us page. It contains several pieces of information concerning the VC's achievements, history and ethics.-->
 
 <script setup>
     //fetch banner image
     const { data: banner_image } = await useFetch('/api/images/banner_aboutus.jpg')
 
+    //data that describes the venture's history, grouped by year
     const years = ['2019', '2020', '2021', '2022', '2023', 'Future Growth and Impact']
     const stories = [
         `In 2019, our investment company was founded with a bold vision to transform the investment landscape in the fields of robotics, 
@@ -31,6 +32,7 @@
         investors while driving positive change in the world.`
     ]
 
+    //data that describes the venture's values
     const values = ['Professionalism', 'Loyalty', 'Passion', 'Uniqueness']
     const value_descriptions = [
     `Professionalism is at the core of everything we do. Our team of experts brings a wealth of 
@@ -52,6 +54,11 @@
     to sustainability and responsible investing further distinguishes us, as we seek ventures that align with our vision for a better 
     and more sustainable future.`,
     ]
+
+    useSeoMeta({
+        title: "MEGA - About Us",
+        description: "Detailed presentation of MEGA Group. Main achievements, brief history and values of the venture.",
+    })
 </script>
 
 <template>
@@ -65,6 +72,7 @@
     <div class="bg-mega-grey text-light">
         <v-container fluid>
             <v-row justify="center">
+                <!--page introduction-->
                 <v-col cols="12" md="10">
                     <div class="text-h4 text-center pa-3 font-weight-bold">
                         Who are we?
@@ -75,7 +83,7 @@
                         So, instead of a lengthy introduction, here's a few of those facts and figures.
                     </div>
 
-                    <!--data points-->
+                    <!--info pieces-->
                     <v-container>
                         <v-row justify="center" class="text-center">
                             <v-col cols="12" md="4" class="d-flex flex-column align-center">
@@ -120,6 +128,7 @@
                 </v-col>
             </v-row>
 
+            <!--divider and second section title-->
             <v-row justify="center">
                 <v-col cols="12" md="8">
                     <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>

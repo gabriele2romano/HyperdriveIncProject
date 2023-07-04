@@ -1,16 +1,26 @@
+<!--Introductory page to all areas-->
+
 <script setup>
 
-const{ data: banner_img } = await useFetch('/api/images/banner_areas.jpg')
-const banner_title = "Our Areas of Investment"
-const banner_subtitle = "Take a look at the intriguing areas we focus on for the projects we finance."
+    //fetch banner image
+    const{ data: banner_img } = await useFetch('/api/images/banner_areas.jpg')
+    const banner_title = "Our Areas of Investment"
+    const banner_subtitle = "Take a look at the intriguing areas we focus on for the projects we finance."
 
-const { data: areas } = await useFetch('/api/areas')
+    //fetch all areas' data
+    const { data: areas } = await useFetch('/api/areas')
+
+    useSeoMeta({
+        title: "MEGA - Areas",
+        description: "List of all areas of investment that MEGA Group is interested in.",
+    })
 
 </script>
 
 <template>
     <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_img="banner_img"></Banner>
     
+    <!--area cards-->
     <v-container fluid class="bg-mega-grey">
         <v-row class="d-flex" justify="center">
             <v-col class="d-flex flex-column justify-center" cols="12" md="10">

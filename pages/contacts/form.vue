@@ -1,65 +1,72 @@
+<!--Work with us page. Includes a form to be used by companies to send project proposals to the VC in order to get funding-->
+
 <script setup>
 
-//fetch the banner image
-const { data: banner_img } = await useFetch('/api/images/banner_contact.jpg')
-const banner_title = "Work with us"
-const banner_subtitle = "Send us your project proposal by filling the form below. We'll contact you back as soon as possible."
+    //fetch the banner image
+    const { data: banner_img } = await useFetch('/api/images/banner_contact.jpg')
+    const banner_title = "Work with us"
+    const banner_subtitle = "Send us your project proposal by filling the form below. We'll contact you back as soon as possible."
 
-//fetch the names of areas
-const { data: area_data } = await useFetch('/api/areas/names')
+    //fetch the names of areas
+    const { data: area_data } = await useFetch('/api/areas/names')
 
-let areas = ref([])
-for (var area of area_data.value) {
-    areas.value.push({ text: area.name, value: area.id })
-}
+    let areas = ref([])
+    for (var area of area_data.value) {
+        areas.value.push({ text: area.name, value: area.id })
+    }
 
-//reactive objects with fields for user input
-const company_info = reactive({
-    sender_name: '',
-    company_name: '',
-    email: '',
-    phone: '',
-})
+    //reactive objects with fields for user input
+    const company_info = reactive({
+        sender_name: '',
+        company_name: '',
+        email: '',
+        phone: '',
+    })
 
-const project_info = reactive({
-    title: '',
-    description: '',
-    selected_areas: [],
-    revenue: '',
-    budget: '',
-    impact: '',
-})
+    const project_info = reactive({
+        title: '',
+        description: '',
+        selected_areas: [],
+        revenue: '',
+        budget: '',
+        impact: '',
+    })
 
-const sent = ref(false)
+    const sent = ref(false)
 
-//check for the correct number of areas
-const areaCheck = computed(() => {
-    return project_info.selected_areas.length > 0 && project_info.selected_areas.length <= 3
-})
+    //check for the correct number of areas
+    const areaCheck = computed(() => {
+        return project_info.selected_areas.length > 0 && project_info.selected_areas.length <= 3
+    })
 
-function onSubmit(event) {
-    event.preventDefault()
-    sent.value = true
-}
+    function onSubmit(event) {
+        event.preventDefault()
+        sent.value = true
+    }
 
-function onReset(event) {
-    event.preventDefault()
-    company_info.sender_name = ''
-    company_info.company_name = ''
-    company_info.email = ''
-    company_info.phone = ''
+    function onReset(event) {
+        event.preventDefault()
+        company_info.sender_name = ''
+        company_info.company_name = ''
+        company_info.email = ''
+        company_info.phone = ''
 
-    project_info.title = ''
-    project_info.description = ''
-    project_info.selected_areas = []
-    project_info.revenue = ''
-    project_info.budget = ''
-    project_info.impact = ''
+        project_info.title = ''
+        project_info.description = ''
+        project_info.selected_areas = []
+        project_info.revenue = ''
+        project_info.budget = ''
+        project_info.impact = ''
 
-    sent.value = false
+        sent.value = false
 
-    window.scrollTo(0, 0)
-}
+        window.scrollTo(0, 0)
+    }
+
+    useSeoMeta({
+        title: "MEGA - Work with us",
+        description: "Form to be used by companies to send their project proposals to MEGA Group, in order to be financed.",
+    })
 
 </script>
 
