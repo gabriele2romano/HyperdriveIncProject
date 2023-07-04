@@ -5,7 +5,7 @@
                 <!--MEGA logo-->
                 <v-col cols="12" md="4" xs="12" align-self="center" >
                     <div>
-                        <v-img src="/img/logo.png" max-width="100" class="ma-auto"></v-img>
+                        <v-img src="/img/logo.png" max-width="100" class="ma-auto" alt="MEGA Group logo"></v-img>
                     </div>
                 </v-col>
                 
@@ -13,11 +13,12 @@
                     <!--navigation buttons to social media-->
                     <div>
                         <v-btn
-                        v-for="icon in icons"
-                        :key="icon"
-                        class="mx-4"
-                        :icon="icon.name"
-                        variant="text"
+                            v-for="icon in icons"
+                            :key="icon"
+                            class="mx-4"
+                            :icon="icon.name"
+                            variant="text"
+                            :aria-label="icon.aria"
                         ></v-btn>
                     </div>
 
@@ -33,9 +34,9 @@
 
 <script setup>
     const icons = [
-    { name: 'mdi-facebook', link: 'https://facebook.com/'},
-    { name: 'mdi-twitter', link: 'https://twitter.com/'},
-    { name: 'mdi-linkedin', link: 'https://linkedin.com/'},
-    { name: 'mdi-instagram', link: 'https://www.instagram.com/'},
+    { name: 'mdi-facebook', link: 'https://facebook.com/', aria: 'facebook'},
+    { name: 'mdi-twitter', link: 'https://twitter.com/', aria: 'twitter'},
+    { name: 'mdi-linkedin', link: 'https://linkedin.com/', aria: 'linkedin'},
+    { name: 'mdi-instagram', link: 'https://www.instagram.com/', aria: 'instagram'},
     ]
 </script>

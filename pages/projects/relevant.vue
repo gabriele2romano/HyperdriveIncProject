@@ -13,7 +13,7 @@
 
     useSeoMeta({
         title: "MEGA - Relevant Projects",
-        description: "List of currently most relevant projects financed by MEGA Group.",
+        description: "List of currently most relevant projects financed by MEGA Group."
     })
 
 </script>
@@ -27,7 +27,7 @@
                 <v-row>
                     <!--Relevant projects cards-->
                     <v-col cols="12" md="6" sm="6" v-for="project in projects" :key="project.id">
-                        <ProjectRelevantCard :project_id=project.id :project_title=project.title :project_overview=project.description :project_problem="project.problem" :project_solution="project.solution" :project_image=project.images></ProjectRelevantCard>
+                        <ProjectRelevantCard :project_id=project.id :project_title=project.title :project_overview=project.description :project_problem="project.problem" :project_solution="project.solution" :project_image=project.images :project_alt="project.alt[0]"></ProjectRelevantCard>
                     </v-col> 
                 </v-row>
             </v-col>

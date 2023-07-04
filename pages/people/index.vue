@@ -30,7 +30,7 @@
                         
                         <v-card :to="'/people/' + person.id" class="bg-dark-blue-div ma-1 font-weight-bold text-light d-flex flex-column justify-space-between" min-height="500px">
                             <div class="bg-light">
-                                <v-img :src=person.image height="100%" cover></v-img>
+                                <v-img :src=person.image height="100%" cover :alt="`Picture of ${person.name} ${person.surname}`"></v-img>
                             </div>
                             <div class="py-4">
                                 <v-card-title class="text-h4 font-weight-bold text-center">{{ person.name }} {{ person.surname }}</v-card-title>

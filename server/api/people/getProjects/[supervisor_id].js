@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
     //get all projects supervised by the person
-    const { data, error }= await client.from('project').select('id,title,problem,images').eq('supervisor_id',supervisor_id)
+    const { data, error }= await client.from('project').select('id,title,problem,images,alt').eq('supervisor_id',supervisor_id)
 
     //get the image for each project
     data.forEach((project, _) => {

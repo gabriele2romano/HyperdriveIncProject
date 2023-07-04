@@ -8,23 +8,28 @@
     const contacts = [
     {
         icon: "mdi-map-marker",
-        text: "Via Leonardo 38 - Milano (IT)"
+        text: "Via Leonardo 38 - Milano (IT)",
+        label: "address"
     },
     {
         icon: "mdi-email",
-        text: "contact@mega.inc"
+        text: "contact@mega.inc",
+        label: "email"
     },
     {
         icon: "mdi-phone",
-        text: "+39 318 989 3204"
+        text: "+39 318 989 3204",
+        label: "phone number"
     },
     {
         icon: "mdi-fax",
-        text: "0238359842"
+        text: "0238359842",
+        label: "fax"
     },
     {
         icon: "mdi-receipt-text",
-        text: "P.IVA 1234567890"
+        text: "P.IVA 1234567890",
+        label: "vat number"
     }
     ]
 
@@ -52,7 +57,7 @@
                     <v-container>
                         <v-row>
                             <v-col cols="12" md="6" class="d-flex align-center" v-for="contact_det in contacts">
-                                <v-icon :icon="contact_det.icon" :size="size_icon" color="light">
+                                <v-icon :icon="contact_det.icon" :size="size_icon" color="light" :aria-label="contact_det.label">
                                 </v-icon>
                                 <div class="text-body-1 text-md-h6 text-light font-weight-bold pa-2">{{contact_det.text}}</div>
                             </v-col>

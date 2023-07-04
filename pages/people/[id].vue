@@ -70,6 +70,7 @@
                                         :src=person.picture
                                         height="100%"
                                         cover
+                                        :alt="`Picture of ${person.name} ${person.surname}`"
                                         ></v-img>
                                     </div>
                                 </v-col>
@@ -121,7 +122,7 @@
                 <!--Fourth row: supervised projects cards-->
                 <v-row justify="center" class="my-4">
                     <v-col v-for="project in projects" cols="12" md="3">
-                        <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
+                        <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images :alt="project.alt[0]"></ProjectCard>
                     </v-col>
                 </v-row>
                 

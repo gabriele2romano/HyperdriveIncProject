@@ -13356,7 +13356,8 @@ const VCarousel = genericComponent()({
               color: props.color,
               icon: props.delimiterIcon,
               size: "x-small",
-              variant: "text"
+              variant: "text",
+              ariaLabel: "this.$vuetify.t(`$vuetify.carousel.${direction}`)"
             }
           },
           "scoped": true

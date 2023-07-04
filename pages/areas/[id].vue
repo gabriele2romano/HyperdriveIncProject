@@ -59,7 +59,7 @@
                     <!--project cards-->
                     <v-row class="pa-4">
                         <v-col v-for="project in area_projects" cols="12" md="4">
-                            <ProjectCard :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images></ProjectCard>
+                            <ProjectCard :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images :project_alt="project.alt[0]"></ProjectCard>
                         </v-col>
                     </v-row>
                 </v-col>

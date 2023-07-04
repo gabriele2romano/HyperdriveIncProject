@@ -4,7 +4,7 @@ the page of a single area and the page of a team member-->
 <template>
     <v-card :to="'/projects/' + project_id" class="bg-dark-blue d-flex flex-column" height="100%" >
         <!--introductory image of the project-->
-        <v-img :src=project_image max-height="200" width="100%" :aspect-ratio="1" cover></v-img>
+        <v-img :src=project_image max-height="200" width="100%" :aspect-ratio="1" cover :alt="project_alt"></v-img>
         <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
         <v-spacer></v-spacer>
         <v-card-subtitle class="text-body-1">What we want to solve</v-card-subtitle>
@@ -25,6 +25,7 @@ the page of a single area and the page of a team member-->
         'project_title': String,
         'project_overview': String,
         'project_image': String,
+        'project_alt': String
     })
     var id = ref(props.project_id).value
     const {data:project_areas} = await useFetch('/api/projects/getArea/'+id)

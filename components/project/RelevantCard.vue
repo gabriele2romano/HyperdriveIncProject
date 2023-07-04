@@ -4,7 +4,7 @@ different from the card used in other pages-->
 <template>
     <div>
         <v-card :to="'/projects/' + project_id" class="bg-dark-blue d-flex flex-column" height="100%" >
-            <v-img :src=project_image[0] max-height="300" width="100%" :aspect-ratio="1" cover></v-img>
+            <v-img :src=project_image[0] max-height="300" width="100%" :aspect-ratio="1" cover :alt="project_alt"></v-img>
             <v-card-title class="text-h5 pb-3 font-weight-bold" style="white-space: normal;">{{ project_title }}</v-card-title>
             <v-spacer></v-spacer>
                 <v-carousel height="100px" :show-arrows="false" hide-delimiters :continuous="false">
@@ -35,6 +35,7 @@ different from the card used in other pages-->
         'project_problem': String,
         'project_solution': String,
         'project_image': Array,
+        'project_alt': String
     })
     var id = ref(props.project_id).value
     const {data:project_areas} = await useFetch('/api/projects/getArea/'+id)

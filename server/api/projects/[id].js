@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
     //get project's data
     const { data, error }= await client
-    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,supervisor_id,company_id,area(id,name,icon),images').eq('id', id).single();
+    .from('project').select('title,problem,solution,description,country,foundation_year,investment_date,supervisor_id,company_id,area(id,name,icon),images, alt').eq('id', id).single();
     
     //get project images
     var images_url = []

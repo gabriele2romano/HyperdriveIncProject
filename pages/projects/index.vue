@@ -50,7 +50,7 @@
 </script>
 
 <template>
-    <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_body="banner_body" :banner_img="banner_img" banner_link="Go to most relevant projects" banner_path="/projects/relevant"></Banner>
+    <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_img="banner_img" banner_link="Go to most relevant projects" banner_path="/projects/relevant"></Banner>
     
     <v-container fluid class="bg-mega-grey"> 
         <v-row class="d-flex justify-center">
@@ -71,7 +71,7 @@
                 <v-row>
                     <v-col v-if="filtered_projects.length==0" ><div  class="text-h6 font-weight-thin ">No Projects with selected area</div></v-col>
                     <v-col cols="12" md="4" sm="6" v-for="project in filtered_projects" :key="filtered_projects">
-                        <ProjectCard :key="filtered_projects" :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0]></ProjectCard>
+                        <ProjectCard :key="filtered_projects" :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images[0] :alt="project.alt[0]"></ProjectCard>
                     </v-col> 
                 </v-row>
                 <!-- End Projects -->

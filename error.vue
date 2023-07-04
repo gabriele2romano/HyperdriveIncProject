@@ -17,3 +17,10 @@
         </v-container>
     </NuxtLayout>
 </template>
+
+<script setup>
+    useSeoMeta({
+        title: "MEGA - Error",
+        robots: "none",
+    })
+</script>

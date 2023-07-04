@@ -22,6 +22,7 @@
                 style="z-index: 3; border: 2px solid white;"
                 class="ma-3"
                 @click="toTop"
+                aria-label="back to page top"
             ></v-btn>
 
             <AppFooter/>

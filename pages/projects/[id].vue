@@ -21,6 +21,7 @@ related startup and supervisor-->
     const project_foundation_year = project.value.foundation_year
     const project_investment_date = project.value.investment_date
     const images = project.value.images
+    const alt = project.value.alt
 
     //get height of infoBox
     /* const infoBox = ref(null)
@@ -92,7 +93,7 @@ related startup and supervisor-->
                             
                             <v-col class="d-flex " cols="12" md="4" >
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                    <v-img :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])"/>
+                                    <v-img :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])" :alt="alt[1]"/>
                                 </v-sheet>
                             </v-col>
                         </v-row>
@@ -111,7 +112,7 @@ related startup and supervisor-->
                             
                             <v-col class="d-flex " cols="12" md="4">
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
-                                    <v-img :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])"></v-img>
+                                    <v-img :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])" :alt="alt[2]"></v-img>
                                 </v-sheet>
                             </v-col>
                         </v-row>
@@ -164,7 +165,7 @@ related startup and supervisor-->
                         <v-row class="d-flex align-center justify-center mb-5 text-md-left">
                             <v-col cols="12" lg="4" class="d-flex align-center justify-center">   
                                 <div class="pa-6 bg-light rounded-circle d-inline-block">
-                                    <v-img :src="company.icon" class="ma-5" height="170" width="170" @click="toggleFullscreen(company.icon)"></v-img>
+                                    <v-img :src="company.icon" :alt="company.name + ' logo'" class="ma-5" height="170" width="170" @click="toggleFullscreen(company.icon)"></v-img>
                                 </div>
                             </v-col>
                             <v-col class="d-flex flex-column justify-center" cols="12" lg="6" sx="12"> 

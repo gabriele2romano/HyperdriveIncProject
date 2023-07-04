@@ -45,13 +45,13 @@
       </v-col>
     </v-row>
   </v-container> -->
-  <v-parallax :src="banner_img?.publicUrl">
+  <v-parallax :src="banner_img?.publicUrl" alt="">
     <div class="d-flex flex-column fill-height justify-center align-center text-white text-center bg-darken">
       <v-row class="d-flex justify-center ma-0">
         <v-col class="d-flex" cols="12" md="8">
           <v-row>
             <v-col cols="12" class="text-light text-center mb-10 mt-5">
-              <v-img src="img/logo.png" height="400"/>
+              <v-img src="img/logo.png" height="400" alt="MEGA Group logo"/>
               <div class="text-h3 font-weight-black pa-2">MEGA Group</div>
               <div class="text-h6 font-weight-thin pa-2">We believe in the dreams of young businesses. We transform your Ideas into investments for a sustainable future.</div>
             </v-col>
@@ -86,7 +86,7 @@
         </v-row>
         <v-row class="d-flex justify-center">
           <v-col cols="3" md="1" v-for="company in companies" class="justify-center" >
-            <v-img :src="company.icon" height="50"  aspect-ratio="1" width="50" contain :alt="company.name" :key="company.id"/>
+            <v-img :src="company.icon" height="50"  aspect-ratio="1" width="50" contain :alt="company.name + ' logo'" :key="company.id"/>
           </v-col>
         </v-row>
       </v-col>
