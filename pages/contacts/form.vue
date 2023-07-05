@@ -32,16 +32,26 @@
         impact: '',
     })
 
-    const sent = ref(false)
+    const status = ref('')
 
     //check for the correct number of areas
     const areaCheck = computed(() => {
         return project_info.selected_areas.length > 0 && project_info.selected_areas.length <= 3
     })
 
-    function onSubmit(event) {
+    async function onSubmit(event) {
         event.preventDefault()
-        sent.value = true
+
+        //send fields to the server and check for correctness
+        const res = await $fetch('/api/form', {
+                    method: "POST",
+                    body: {
+                        company: company_info,
+                        project: project_info
+                    }
+                })
+
+        status.value = res
     }
 
     function onReset(event) {
@@ -58,7 +68,7 @@
         project_info.budget = ''
         project_info.impact = ''
 
-        sent.value = false
+        status.value = ''
 
         window.scrollTo(0, 0)
     }
@@ -227,19 +237,30 @@
                 </v-col>
             </v-row>
 
-            <!--Dynamic success message, only displays on validated form submit-->
-            <v-row justify="center" v-if="sent">
+            <!--Dynamic success/failure message, only displays on validated form submit-->
+            <v-row justify="center" v-if="status !== ''">
                 <v-col cols="8" md="6">
                     <v-divider  cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center "></v-divider>
                 </v-col>
 
                 <v-col cols="12" md="9">
-                    <v-sheet class="bg-dark-blue  pa-3 text-light font-weight-bold d-flex flex-column align-center card-bordered">
+                    <!--success message-->
+                    <v-sheet v-if="status === 'valid'" class="bg-dark-blue  pa-3 text-light font-weight-bold d-flex flex-column align-center card-bordered">
                         <v-icon icon="mdi-check" size="50" class="pt-3"></v-icon>
                         <div class="text-h5 text-center">Thank you, your proposal has been sent.<br>We'll contact you back soon.</div>
 
                         <!--Reset button to clear fields and restart the form-->
                         <div class="text-h6 text-center pt-10">Would you like to send another proposal?</div>
+                        <v-btn v-on:click="onReset" class="bg-darker-blue my-3" size="large">Reset form</v-btn>
+                    </v-sheet>
+
+                    <!--failure message-->
+                    <v-sheet v-if="status === 'invalid'" class="bg-dark-blue  pa-3 text-light font-weight-bold d-flex flex-column align-center card-bordered">
+                        <v-icon icon="mdi-close" size="50" class="pt-3"></v-icon>
+                        <div class="text-h5 text-center">Sorry, something went wrong with your request.<br>Try again later.</div>
+
+                        <!--Reset button to clear fields and restart the form-->
+                        <div class="text-h6 text-center pt-10">Would you like to reset the form?</div>
                         <v-btn v-on:click="onReset" class="bg-darker-blue my-3" size="large">Reset form</v-btn>
                     </v-sheet>
                 </v-col>

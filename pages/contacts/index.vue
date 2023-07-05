@@ -5,33 +5,10 @@
     const { data:banner_img } = await useFetch('/api/images/banner_contact.jpg')
 
     const size_icon = 90
-    const contacts = [
-    {
-        icon: "mdi-map-marker",
-        text: "Via Leonardo 38 - Milano (IT)",
-        label: "address"
-    },
-    {
-        icon: "mdi-email",
-        text: "contact@mega.inc",
-        label: "email"
-    },
-    {
-        icon: "mdi-phone",
-        text: "+39 318 989 3204",
-        label: "phone number"
-    },
-    {
-        icon: "mdi-fax",
-        text: "0238359842",
-        label: "fax"
-    },
-    {
-        icon: "mdi-receipt-text",
-        text: "P.IVA 1234567890",
-        label: "vat number"
-    }
-    ]
+
+    //fetch contact info
+    const { data:info } = await useFetch('/api/text/contact_info')
+    const contacts = info.value.contacts_array
 
     useSeoMeta({
         title: "MEGA - Contacts",
