@@ -8,44 +8,45 @@
     const banner_title = "Our Projects"
     const banner_subtitle = "Discover the projects we finance."
 
-    //fetch data of all projects
-    const { data: projects } = await useFetch('/api/projects/')
 
-    //project filtering by area
-    var filtered_projects = ref([])
+//fetch data of all projects
+const { data: projects } = await useFetch('/api/projects/')
+
+//project filtering by area
+var filtered_projects = ref([])
+filtered_projects.value = projects.value
+
+//fetch names of all areas to use for filtering
+const { data: areas } = await useFetch('/api/areas/names')
+areas.value.unshift({id:0, name:' -- Select an Area to Filter -- ',disabled:true})
+
+//filter management
+const filterByArea = (area_id) => {
+    if(area_id == 0){
+        return projects.value
+    }
+    else{
+        //console.log("Project no filter: "+ JSON.stringify(projects.value))
+        return projects.value.filter(project => project.area.some(area => area.id == area_id))
+    }
+}
+var selected_area = ref(0)
+var area_id = ref(0)
+const forceRender = () => {
+    area_id.value = selected_area.value
+    //console.log("LID: "+area_id.value)
+    filtered_projects.value = filterByArea(selected_area.value)
+    //console.log("Projects: "+JSON.stringify(filtered_projects.value))
+}
+const resetFilter = () => {
+    selected_area.value = 0
     filtered_projects.value = projects.value
+}
 
-    //fetch names of all areas to use for filtering
-    const { data: areas } = await useFetch('/api/areas/names')
-    areas.value.unshift({id:0, name:' -- Select an Area to Filter -- ',disabled:true})
-
-    //filter management
-    const filterByArea = (area_id) => {
-        if(area_id == 0){
-            return projects.value
-        }
-        else{
-            //console.log("Project no filter: "+ JSON.stringify(projects.value))
-            return projects.value.filter(project => project.area.some(area => area.id == area_id))
-        }
-    }
-    var selected_area = ref(0)
-    var area_id = ref(0)
-    const forceRender = () => {
-        area_id.value = selected_area.value
-        //console.log("LID: "+area_id.value)
-        filtered_projects.value = filterByArea(selected_area.value)
-        //console.log("Projects: "+JSON.stringify(filtered_projects.value))
-    }
-    const resetFilter = () => {
-        selected_area.value = 0
-        filtered_projects.value = projects.value
-    }
-
-    useSeoMeta({
-        title: "MEGA - Projects",
-        description: "List of all projects financed by MEGA Group. Projects may be filtered by area.",
-    })
+useSeoMeta({
+    title: "MEGA - Projects",
+    description: "List of all projects financed by MEGA Group. Projects may be filtered by area.",
+})
 
 </script>
 
@@ -66,7 +67,11 @@
                     </v-col>
                 </v-row>
                 <!-- End Filter buttons -->
-                <v-divider cols="12" class="my-6"></v-divider>
+                <v-row class="d-flex justify-center">
+                    <v-col cols="8" class="d-flex justify-center align-center" >
+                        <v-divider cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center"></v-divider>
+                    </v-col>
+                </v-row>
                 <!-- Start Project Cards -->
                 <v-row>
                     <v-col v-if="filtered_projects.length==0" ><div  class="text-h6 font-weight-thin ">No Projects with selected area</div></v-col>

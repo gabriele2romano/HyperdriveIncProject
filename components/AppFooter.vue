@@ -3,13 +3,13 @@
         <v-container>
             <v-row align-self="center" justify="space-between">
                 <!--MEGA logo-->
-                <v-col cols="12" md="4" xs="12" align-self="center" >
+                <v-col cols="12" md="4" align-self="center" >
                     <div>
                         <v-img src="/img/logo.png" max-width="100" class="ma-auto" alt="MEGA Group logo"></v-img>
                     </div>
                 </v-col>
                 
-                <v-col cols="12" md="4" xs="12" align-self="center">
+                <v-col cols="12" md="4" align-self="center">
                     <!--navigation buttons to social media-->
                     <div>
                         <v-btn

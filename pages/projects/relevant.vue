@@ -26,8 +26,8 @@
             <v-col class="justify-center" cols="12" md="10">  
                 <v-row>
                     <!--Relevant projects cards-->
-                    <v-col cols="12" md="6" sm="6" v-for="project in projects" :key="project.id">
-                        <ProjectRelevantCard :project_id=project.id :project_title=project.title :project_overview=project.description :project_problem="project.problem" :project_solution="project.solution" :project_image=project.images :project_alt="project.alt[0]"></ProjectRelevantCard>
+                    <v-col cols="12" md="4" sm="6" v-for="project in projects" :key="project.id">
+                        <ProjectCard :project_id=project.id :project_title=project.title :project_overview="project.problem" :project_solution="project.solution" :project_image=project.images[0] :project_alt="project.alt[0]"/>
                     </v-col> 
                 </v-row>
             </v-col>

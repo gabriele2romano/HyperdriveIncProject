@@ -134,11 +134,23 @@
                 
                 <!--Fourth row: supervised projects cards-->
                 <v-row justify="center" class="my-4">
-                    <v-col v-for="project in projects" cols="12" md="3">
+                    <v-col v-for="project in projects" cols="12" md="4" sm="6">
                         <ProjectCard  :project_id=project.id :project_title=project.title :project_overview=project.problem :project_image=project.images :alt="project.alt[0]"></ProjectCard>
                     </v-col>
                 </v-row>
                 
+            </div>
+            <div v-else>
+                <!--Third row: divider and supervised projects title-->
+                <v-row justify="center" class="my-4">
+                    <v-col cols="12" md="10">
+                        <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
+                        
+                        <div class="text-h5 text-center text-light font-weight-medium">
+                           No Project supervised from {{ person.name }} {{ person.surname }}
+                        </div>
+                    </v-col>
+                </v-row>
             </div>
         </v-container>
     </div>

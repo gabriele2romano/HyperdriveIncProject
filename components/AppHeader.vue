@@ -49,9 +49,9 @@ const { data: areas } = await useFetch('/api/areas/names')
               <b-dropdown-item to="/contacts/form" class="text-dark">Work with us</b-dropdown-item>
             </b-nav-item-dropdown>
             <li class="nav-item dropdown nav-link d-none d-md-block">
-              <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown">Contacts
+              <a class="nav-link  dropdown-toggle " href="#" data-bs-toggle="dropdown">Contacts
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-start">
                 <b-dropdown-item to="/contacts/" class="text-dark" >Info</b-dropdown-item>
                 <b-dropdown-item to="/contacts/form" class="text-dark" >Work with us</b-dropdown-item>
               </ul>
@@ -64,10 +64,22 @@ const { data: areas } = await useFetch('/api/areas/names')
 <style>
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
-  .navbar .nav-item .dropdown-menu{ display: none !important; }
-  .navbar .dropdown-menu .nav-item:hover .nav-link{ background-color: white}
+  .navbar .nav-item .dropdown-menu{ display: none !important; padding-top: 0px; padding-bottom: 0px;}
+  .navbar .dropdown-menu .nav-item:hover{ border-radius: 4px;}
   .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
   .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
+
+  .navbar-nav .active{
+    border-radius: 4px;
+    background-color:#9ba4b5 ;
+  }
 }
 /* ============ desktop view .end// ============ */
+.navbar .dropdown-menu .nav-item:hover{ border-radius: 4px;}
+.navbar .dropdown-menu .nav-item:active{ border-radius: 4px; background-color: #9ba4b5;}
+.navbar-nav .nav-item .active{
+    border-radius: 4px;
+    background-color:#9ba4b5 ;
+  }
+
 </style>

@@ -82,7 +82,7 @@ related startup and supervisor-->
                         
                         <!-- Start Problem row -->
                         <v-row>
-                            <v-col class="d-flex" cols="12" md="8">                    
+                            <v-col class="d-flex" cols="12" sm="8">                    
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
                                         <div class="text-h4 font-weight-bold">Problem</div>
@@ -91,7 +91,7 @@ related startup and supervisor-->
                                 </v-sheet>
                             </v-col>
                             
-                            <v-col class="d-flex " cols="12" md="4" >
+                            <v-col class="d-flex " cols="12" sm="4" >
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <v-img :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])" :alt="alt[1]"/>
                                 </v-sheet>
@@ -101,7 +101,7 @@ related startup and supervisor-->
                         
                         <!-- Start Solution row -->
                         <v-row>
-                            <v-col class="d-flex " cols="12" md="8" order-md="last">                    
+                            <v-col class="d-flex " cols="12" sm="8" order-sm="last">                    
                                 <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
                                     <div>
                                         <div class="text-h4 font-weight-bold">Solution</div>
@@ -110,7 +110,7 @@ related startup and supervisor-->
                                 </v-sheet>
                             </v-col>
                             
-                            <v-col class="d-flex " cols="12" md="4">
+                            <v-col class="d-flex " cols="12" sm="4">
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
                                     <v-img :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])" :alt="alt[2]"></v-img>
                                 </v-sheet>
@@ -204,7 +204,7 @@ related startup and supervisor-->
                                 </v-col>
                                 <v-col cols="12" class="d-sm-none">
                                     <div>
-                                        <div class="text-h4 pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
+                                        <div class="text-h4 font-weight-bold pt-2">{{ supervisor.name }} {{ supervisor.surname }}</div>
                                         <div class="text-h6 pb-2">{{ supervisor.role }}</div>
                                     </div>
                                 </v-col>

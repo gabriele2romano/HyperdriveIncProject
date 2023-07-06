@@ -61,7 +61,7 @@
           </v-col>
         </v-row>
         <v-row class="d-flex justify-center">
-          <v-col cols="3" md="1" v-for="company in companies" class="justify-center" >
+          <v-col cols="3" md="1" v-for="company in companies" class="d-flex justify-center" >
             <v-img :src="company.icon" height="50"  aspect-ratio="1" width="50" contain :alt="company.name + ' logo'" :key="company.id"/>
           </v-col>
         </v-row>
