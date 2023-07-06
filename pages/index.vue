@@ -1,18 +1,18 @@
 <!--Home page-->
 
 <script setup lang="ts">
-  //fetch the array of info items for the cards
-  const {data:card_info} = await useFetch('/api/text/home_data')
-  const card_array = card_info.value.card_array
+//fetch the array of info items for the cards
+const {data:card_info} = await useFetch('/api/text/home_data')
+const card_array = card_info.value.card_array
 
-  //get companies data
-  const{data:banner_img} = await useFetch('/api/images/banner_home.jpg')
-  const{data:companies} = await useFetch('/api/companies/')
+//get companies data
+const{data:banner_img} = await useFetch('/api/images/banner_home.jpg')
+const{data:companies} = await useFetch('/api/companies/')
 
-  useSeoMeta({
-    title: "MEGA Group",
-    description: "Introduction to venture capital MEGA Group.",
-  })
+useSeoMeta({
+  title: "MEGA Group",
+  description: "Introduction to venture capital MEGA Group.",
+})
 </script>
 
 <template>
@@ -32,7 +32,7 @@
       </v-row>
     </div>
   </v-parallax>
-
+  
   <!--introductory info cards-->
   <v-container class="bg-mega-grey py-10" fluid>
     <v-row class="justify-center my-10">
@@ -50,7 +50,7 @@
       </v-col>
     </v-row>
   </v-container>
-
+  
   <v-container class="bg-dark-blue py-10" fluid>
     <!--startup logos-->
     <v-row class="justify-center">
@@ -68,14 +68,14 @@
         </v-row>
       </v-col>
     </v-row>
-
+    
     <!--divider-->
     <v-row class="d-flex justify-center">
       <v-col cols="8" class="d-flex justify-center align-center" >
         <v-divider cols="10" color="light" thickness="7" class="d-flex border-opacity-100 justify-center my-5"></v-divider>
       </v-col>
     </v-row>
-
+    
     <!--contact buttons-->
     <v-row class="d-flex justify-center">
       <v-col cols="12" md="8" class="justify-center">
