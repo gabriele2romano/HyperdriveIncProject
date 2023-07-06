@@ -19,6 +19,7 @@
                             :icon="icon.name"
                             variant="text"
                             :aria-label="icon.aria"
+                            :href="icon.link"
                         ></v-btn>
                     </div>
 

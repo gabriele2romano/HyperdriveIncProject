@@ -9,7 +9,7 @@ const { data: areas } = await useFetch('/api/areas/names')
       <!-- <b-navbar smart-scroll toggleable="lg" type="light" :style="{background: 'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(57,72,103,.99) 70%, rgba(0,0,0,0) 100%) '}" class="pa-2 text-light navbar-dark" fixed="top" > -->
         
         <b-navbar-brand to="/" class="d-flex" aria-label="Go to home page">
-          <v-img src="/favicon.ico" height="50px" width="50px" alt="MEGA Group logo"/>
+          <v-img  lazy-src="/favicon.ico" src="/favicon.ico" height="50px" width="50px" alt="MEGA Group logo"/>
         </b-navbar-brand>
         
         <b-navbar-toggle target="nav-collapse"/>

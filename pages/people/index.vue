@@ -30,7 +30,16 @@ useSeoMeta({
                         
                         <v-card :to="'/people/' + person.id" class="bg-dark-blue-div ma-1 font-weight-bold text-light d-flex flex-column justify-space-between" min-height="500px">
                             <div class="bg-light">
-                                <v-img :src=person.image height="100%" cover :alt="`Picture of ${person.name} ${person.surname}`"></v-img>
+                                <v-img :lazy-src=person.image :src=person.image height="100%" cover :alt="`Picture of ${person.name} ${person.surname}`">
+                                    <template v-slot:placeholder>
+                                    <div class="d-flex align-center justify-center fill-height">
+                                        <v-progress-circular
+                                        color="grey-lighten-4"
+                                        indeterminate
+                                        ></v-progress-circular>
+                                    </div>
+                                </template>
+                                </v-img>
                             </div>
                             <div class="py-4">
                                 <v-card-title class="text-h5 font-weight-bold text-center">{{ person.name }} {{ person.surname }}</v-card-title>
