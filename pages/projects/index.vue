@@ -6,7 +6,7 @@
     const{data:banner_img} = await useFetch('/api/images/banner_projects.jpg')
     
     const banner_title = "Our Projects"
-    const banner_subtitle = "Discover the projects we finance"
+    const banner_subtitle = "Discover the projects we finance."
 
     //fetch data of all projects
     const { data: projects } = await useFetch('/api/projects/')

@@ -19,7 +19,7 @@
 </script>
 
 <template>
-    <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_body="banner_body" :banner_img="banner_img"  banner_link="Go to all projects" banner_path="/projects/"></Banner>
+    <Banner :banner_title="banner_title" :banner_subtitle="banner_subtitle" :banner_img="banner_img"  banner_link="Go to all projects" banner_path="/projects/"></Banner>
     
     <v-container fluid class="bg-mega-grey"> 
         <v-row class="d-flex justify-center">

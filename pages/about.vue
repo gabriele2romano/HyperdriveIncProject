@@ -91,7 +91,7 @@
 
             <!--divider and second section title-->
             <v-row justify="center">
-                <v-col cols="12" md="8">
+                <v-col cols="12" md="10">
                     <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
 
                     <div class="text-h4 text-center pa-3 font-weight-bold">A taste of our history</div>

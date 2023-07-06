@@ -5,7 +5,7 @@
     //fetch banner image
     const{data:banner_img} = await useFetch('/api/images/banner_aboutus.jpg')
 
-    const banner_title = "Meet our team of experts"
+    const banner_title = "Meet our Team of Experts"
     const banner_subtitle = "We are a group of many talented people. Learn more about each of us."
 
     //fetch the whole team's pictures, names and roles
