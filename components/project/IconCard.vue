@@ -1,4 +1,4 @@
-<!--Used in the page for a single project. Displays an array of area icons and names, each used to navigate to that area's page-->
+<!--Used in the page for a single project and in ProjectCard. Displays an array of area icons and names, each used to navigate to that area's page-->
 
 <script setup>
     const props = defineProps({

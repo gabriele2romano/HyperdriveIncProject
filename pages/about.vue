@@ -26,7 +26,7 @@ useSeoMeta({
     <!--top banner-->
     <Banner
     banner_title="About Us"
-    banner_subtitle="Get to know us a bit more"
+    banner_subtitle="Get to know us a bit more."
     :banner_img="banner_image"
     ></Banner>
     
