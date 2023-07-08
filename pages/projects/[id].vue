@@ -83,7 +83,7 @@
                         <!-- Start Problem row -->
                         <v-row>
                             <v-col class="d-flex" cols="12" sm="8">                    
-                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto card-bordered" height="250" width="100%">
                                     <div>
                                         <div class="text-h4 font-weight-bold">Problem</div>
                                         <div class="text-body-1 pa-2 font-weight-bold">{{ problem }}</div>
@@ -93,7 +93,7 @@
                             
                             <v-col class="d-flex " cols="12" sm="4" >
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
-                                    <v-img :lazy-src="images[1]" :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])" :alt="alt[1]">
+                                    <v-img :lazy-src="images[1]" :src="images[1]"  height="100%" cover  @click="toggleFullscreen(images[1])" :alt="alt[1]" class="card-bordered">
                                         <template v-slot:placeholder>
                                             <div class="d-flex align-center justify-center fill-height">
                                                 <v-progress-circular
@@ -111,7 +111,7 @@
                         <!-- Start Solution row -->
                         <v-row>
                             <v-col class="d-flex " cols="12" sm="8" order-sm="last">                    
-                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto" height="250" width="100%">
+                                <v-sheet class="d-flex bg-darker-blue-div text-light font-weight-medium justify-center align-center flex-wrap text-center mx-auto card-bordered" height="250" width="100%">
                                     <div>
                                         <div class="text-h4 font-weight-bold">Solution</div>
                                         <div class="text-body-1 mb-2 pa-2 font-weight-bold">{{ solution }}</div>
@@ -121,7 +121,7 @@
                             
                             <v-col class="d-flex " cols="12" sm="4">
                                 <v-sheet class="bg-darker-blue-div justify-center align-center flex-wrap text-center mx-auto"  height="250" width="100%">
-                                    <v-img :lazy-src="images[2]" :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])" :alt="alt[2]">
+                                    <v-img :lazy-src="images[2]" :src="images[2]"  height="100%" cover @click="toggleFullscreen(images[2])" :alt="alt[2]"  class="card-bordered">
                                         <template v-slot:placeholder>
                                             <div class="d-flex align-center justify-center fill-height">
                                                 <v-progress-circular

@@ -16,9 +16,16 @@
 <template>
     <div>
     <v-row class="d-flex" :justify="justify">
-        <v-col v-if="clickable" v-ripple cols="4" class="rounded-circle d-flex justify-center text-center mb-2 be-pointed" @click="$router.push('/areas/'+area.id)" v-for="area in areas">
-            <div>
-            <v-icon class="d-flex mx-auto" v-if="card_icon" :size=icon_size :aria-label="area.name">{{ `mdi-${area.icon}` }}</v-icon>
+        <v-col v-if="clickable" cols="4" class="d-flex justify-center text-center mb-2" v-for="area in areas">
+            <div >
+                <v-btn
+                :key="area"
+                class="mx-4"
+                :icon="'mdi-'+area.icon"
+                variant="text"
+                :aria-label="area.name"
+                :to="'/areas/'+area.id"
+            ></v-btn>
             <div v-if="card_title" class="text-body-h6  font-weight-thin align-self-end" >{{ area.name }}</div>
             </div>
         </v-col>
