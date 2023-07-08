@@ -61,25 +61,40 @@ const { data: areas } = await useFetch('/api/areas/names')
       </b-navbar>
     </div>
   </template>
-<style>
-/* ============ desktop view ============ */
-@media all and (min-width: 992px) {
-  .navbar .nav-item .dropdown-menu{ display: none !important; padding-top: 0px; padding-bottom: 0px;}
+  <style>
+  /* ============ desktop view ============ */
+  @media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{ display: none !important; padding-left: 10px; padding-right: 10px;}
+    .navbar .dropdown-menu .nav-item:hover{ border-radius: 4px;}
+    .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
+    .navbar-nav 
+    .navbar-nav .active{
+      border-radius: 4px;
+      background-color:#9ba4b5 ;
+    }
+  }
+  /* ============ desktop view .end// ============ */
+
+  /* ============ mobile and over view ============ */
   .navbar .dropdown-menu .nav-item:hover{ border-radius: 4px;}
-  .navbar .nav-item:hover .dropdown-menu{ display: block !important; }
-  .navbar .nav-item .dropdown-menu{ margin-top:0 !important; }
-
-  .navbar-nav .active{
+  .navbar-nav .nav-item a{
+    padding-left: 10px; padding-right: 10px;
+  }
+  .navbar-nav .nav-item button{
+    padding-left: 10px; padding-right: 10px;
+  }
+  .navbar-nav .nav-item .active{
     border-radius: 4px;
     background-color:#9ba4b5 ;
   }
-}
-/* ============ desktop view .end// ============ */
-.navbar .dropdown-menu .nav-item:hover{ border-radius: 4px;}
-.navbar .dropdown-menu .nav-item:active{ border-radius: 4px; background-color: #9ba4b5;}
-.navbar-nav .nav-item .active{
-    border-radius: 4px;
-    background-color:#9ba4b5 ;
+  .navbar-nav .nav-item .dropdown-menu{
+    border-radius: 4px;padding-left: 10px; padding-right: 10px;
   }
-
+  
+  .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover{
+    background-color:#dfdfdf ;
+    border-radius: 4px;
+  }
+  /* ============ mobile and over view .end// ============ */
 </style>
