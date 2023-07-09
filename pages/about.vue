@@ -144,19 +144,7 @@ useSeoMeta({
                         <v-col cols="12" md="8">
                             <v-row justify="center">
                                 <v-col v-for="value_item in value_array" :key="i" cols="12" sm="6">
-                                    <v-hover
-                                    v-slot="{ isHovering, props }"
-                                    >
-                                    <!-- <div class="bg-dark-blue-div card-bordered pa-4 d-flex flex-column justify-center" style="min-height: 340px;">
-                                        <div class="text-h5 text-center pt-3 font-weight-bold">
-                                            {{ value_item.name }}
-                                        </div>
-                                        
-                                        <div class="text-body-1 text-left pa-3">
-                                            {{ value_item.description }}
-                                        </div>
-                                    </div> -->
-                                    <v-card  :elevation="isHovering ? 8 : 2" v-bind="props" class="bg-dark-blue-div text-light pa-4 fill-height">
+                                    <v-card  elevation="8" class="bg-dark-blue-div text-light pa-4 fill-height">
                                         <div class="text-h5 text-center pt-3 font-weight-bold">
                                             {{ value_item.name }}
                                         </div>
@@ -165,7 +153,6 @@ useSeoMeta({
                                             {{ value_item.description }}
                                         </div>
                                     </v-card>
-                                </v-hover>
                             </v-col>
                         </v-row>
                     </v-col>
