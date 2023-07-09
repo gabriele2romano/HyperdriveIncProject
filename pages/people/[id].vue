@@ -156,8 +156,8 @@ useSeoMeta({
         <v-col cols="12" md="10">
             <v-divider :thickness="3" color="light" class="border-opacity-100"></v-divider>
             
-            <div class="text-h5 text-center text-light font-weight-medium">
-                No Project supervised from {{ person.name }} {{ person.surname }}
+            <div class="text-h5 text-center text-light font-weight-bold">
+                There are currently no projects supervised by {{ person.name }} {{ person.surname }}
             </div>
         </v-col>
     </v-row>

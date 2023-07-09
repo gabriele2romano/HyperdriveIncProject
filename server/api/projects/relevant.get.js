@@ -3,19 +3,10 @@ import { serverSupabaseClient } from '#supabase/server'
 export default defineEventHandler(async (event) => {
     const client = serverSupabaseClient(event)
 
+    //fetch all relevant projects' data, including related areas
     const { data, error }= await client.from('project').select('id,title,problem,images,alt,area(id,name))').eq('relevant', true)
 
-    /* data.forEach ((project,index) => {
-        var images_url = []
-        for(var i = 0; i < 3; i++) {
-            images_url.push(
-                client.storage
-                .from('images')
-                .getPublicUrl('projects/project'+project.id+'/'+project.images[i]).data.publicUrl
-            )
-        }
-        project.images = images_url
-    }) */
+    //fetch the first image of each project, to be used in the corresponding project card
     data.forEach((project,index) => {
         var images_url = [client.storage.from('images').getPublicUrl('projects/project'+project.id+'/'+project.images[0]).data.publicUrl]
         project.images = images_url
